@@ -7,11 +7,9 @@ class LoginViewController: UIViewController {
             loginButton.setTitle("Login", for: .normal)
         }
     }
-    @IBOutlet weak var registerButton: PrimaryButton! {
+    @IBOutlet weak var registerButton: SecondaryButton! {
         didSet {
             registerButton.setTitle("Register", for: .normal)
-            registerButton.buttonBorderColor = UIColor.darkGray
-            registerButton.backgroundColor = .blue
         }
     }
     

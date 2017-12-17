@@ -72,7 +72,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="SecondaryButton" customModule="CostumeParty" customModuleProvider="target">
                                 <rect key="frame" x="48" y="520" width="279" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="KhL-o8-kdh"/>

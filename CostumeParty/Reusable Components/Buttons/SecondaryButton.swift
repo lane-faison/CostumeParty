@@ -1,8 +1,8 @@
 import UIKit
 
-class PrimaryButton: UIButton {
+class SecondaryButton: UIButton {
     //Colors
-    var primaryColor: UIColor = UIColor.primaryButtonColor
+    var primaryColor: UIColor = UIColor.primaryButtonColor.lighterColor()
     var buttonBorderColor: UIColor = UIColor.darkerGrey
     var buttonFontColor: UIColor = .white
     
@@ -42,7 +42,7 @@ class PrimaryButton: UIButton {
     }
     
     fileprivate func configure() {
-                
+        
         layer.backgroundColor = primaryColor.cgColor
         layer.borderColor = buttonBorderColor.cgColor
         layer.shadowColor = buttonBorderColor.cgColor
@@ -63,3 +63,4 @@ class PrimaryButton: UIButton {
         addTarget(self, action: #selector(unhighlight(_:)), for: .touchUpInside)
     }
 }
+

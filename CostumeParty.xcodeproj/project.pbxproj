@@ -15,6 +15,7 @@
 		F66F6CCD1FE62E580073766E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCC1FE62E580073766E /* NavigationController.swift */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
+		F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F66F6CCC1FE62E580073766E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */,
+				F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F66F6CCD1FE62E580073766E /* NavigationController.swift in Sources */,
