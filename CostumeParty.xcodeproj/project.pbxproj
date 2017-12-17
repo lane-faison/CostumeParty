@@ -12,6 +12,9 @@
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
 		F66F6CCA1FE626AC0073766E /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* LoginViewController.storyboard */; };
+		F66F6CCD1FE62E580073766E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCC1FE62E580073766E /* NavigationController.swift */; };
+		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
+		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66F6CC91FE626AC0073766E /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		F66F6CCC1FE62E580073766E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		F60F7C3A1FE6225A00073506 /* CostumeParty */ = {
 			isa = PBXGroup;
 			children = (
+				F66F6CD01FE630210073766E /* Styles */,
 				F60F7C4E1FE6236500073506 /* Reusable Components */,
 				F60F7C4D1FE6235A00073506 /* Views and Controllers */,
 				F60F7C3B1FE6225A00073506 /* AppDelegate.swift */,
@@ -67,6 +74,7 @@
 		F60F7C4D1FE6235A00073506 /* Views and Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F66F6CCB1FE62E3A0073766E /* Navigation */,
 				F60F7C531FE623F300073506 /* Login */,
 			);
 			path = "Views and Controllers";
@@ -84,6 +92,7 @@
 		F60F7C4F1FE6238600073506 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -102,6 +111,23 @@
 				F66F6CC91FE626AC0073766E /* LoginViewController.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F66F6CCB1FE62E3A0073766E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F66F6CCC1FE62E580073766E /* NavigationController.swift */,
+			);
+			name = Navigation;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F66F6CD01FE630210073766E /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F66F6CD11FE630310073766E /* AppColors.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
+				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
+				F66F6CCD1FE62E580073766E /* NavigationController.swift in Sources */,
+				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
