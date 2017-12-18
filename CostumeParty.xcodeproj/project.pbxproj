@@ -16,6 +16,9 @@
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */; };
+		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
+		F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */; };
+		F6B9FB761FE7938400DED6B4 /* RegisterMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B9FB751FE7938400DED6B4 /* RegisterMenuViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMenuViewController.swift; sourceTree = "<group>"; };
+		F6B9FB751FE7938400DED6B4 /* RegisterMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterMenuViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 		F60F7C4D1FE6235A00073506 /* Views and Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6B9FB741FE7936A00DED6B4 /* Register */,
 				F66F6CCB1FE62E3A0073766E /* Navigation */,
 				F60F7C531FE623F300073506 /* Login */,
 			);
@@ -129,8 +136,18 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CD11FE630310073766E /* AppColors.swift */,
+				F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		F6B9FB741FE7936A00DED6B4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */,
+				F6B9FB751FE7938400DED6B4 /* RegisterMenuViewController.storyboard */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66F6CCA1FE626AC0073766E /* LoginViewController.storyboard in Resources */,
+				F6B9FB761FE7938400DED6B4 /* RegisterMenuViewController.storyboard in Resources */,
 				F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */,
 				F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */,
 			);
@@ -205,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */,
 				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
+				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F66F6CCD1FE62E580073766E /* NavigationController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
