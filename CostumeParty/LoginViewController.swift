@@ -1,7 +1,7 @@
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, UINavigationControllerDelegate {
+    
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
             imageView.image = UIImage(named: "ghost")
@@ -31,14 +31,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel! {
         didSet {
             authorLabel.text = "By Lane Faison"
-            authorLabel.font = UIFont.h8
+            authorLabel.font = UIFont.h5
             authorLabel.textColor = UIColor.lighterGrey
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupCredentialsContainer()
     }
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: SecondaryButton) {
-        print("###")
+
     }
 
 }
