@@ -13,6 +13,9 @@
 		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
+		F65FE6061FF9632E00B502D0 /* AdminRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FE6051FF9632E00B502D0 /* AdminRegistrationViewController.swift */; };
+		F65FE6081FF9634600B502D0 /* GuestRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FE6071FF9634600B502D0 /* GuestRegistrationViewController.swift */; };
+		F65FE60C1FF96B0300B502D0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FE60B1FF96B0300B502D0 /* BaseViewController.swift */; };
 		F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* Main.storyboard */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
@@ -30,6 +33,9 @@
 		F60F7C421FE6225A00073506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65FE6051FF9632E00B502D0 /* AdminRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRegistrationViewController.swift; sourceTree = "<group>"; };
+		F65FE6071FF9634600B502D0 /* GuestRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestRegistrationViewController.swift; sourceTree = "<group>"; };
+		F65FE60B1FF96B0300B502D0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F66F6CC91FE626AC0073766E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CC91FE626AC0073766E /* Main.storyboard */,
+				F65FE60B1FF96B0300B502D0 /* BaseViewController.swift */,
 				F6B9FB741FE7936A00DED6B4 /* Register */,
 				F60F7C531FE623F300073506 /* Login */,
 			);
@@ -145,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */,
+				F65FE6051FF9632E00B502D0 /* AdminRegistrationViewController.swift */,
+				F65FE6071FF9634600B502D0 /* GuestRegistrationViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -226,9 +235,12 @@
 				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
+				F65FE60C1FF96B0300B502D0 /* BaseViewController.swift in Sources */,
 				F605B08D1FEB95A900896503 /* BaseViewController.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
+				F65FE6061FF9632E00B502D0 /* AdminRegistrationViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
+				F65FE6081FF9634600B502D0 /* GuestRegistrationViewController.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
