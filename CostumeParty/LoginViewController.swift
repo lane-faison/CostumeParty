@@ -54,3 +54,10 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
 
 }
+
+extension UIViewController: UITextFieldDelegate {
+    // Hide keyboard when user touches outside keyboard
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}

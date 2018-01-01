@@ -325,6 +325,9 @@
                                             <constraint firstAttribute="height" constant="60" id="OUg-RB-yv6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="LBB-bK-suF" eventType="touchUpInside" id="NwC-n4-jOz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -347,7 +350,9 @@
                         <outlet property="partyZipcodeTextField" destination="SI9-xQ-pLA" id="6BJ-3b-NbS"/>
                         <outlet property="submitButton" destination="sIa-xW-CDp" id="iv0-za-kOm"/>
                         <outlet property="yourCostumeLabel" destination="5FR-MD-3Dn" id="h3U-P1-CyY"/>
+                        <outlet property="yourCostumeTextField" destination="eX2-Nl-Oan" id="Uw7-kr-HpQ"/>
                         <outlet property="yourNameLabel" destination="VSL-sa-P2C" id="p8S-t7-uNA"/>
+                        <outlet property="yourNameTextField" destination="RmE-r1-uuU" id="Vwh-zJ-60C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rp-TG-rBx" userLabel="First Responder" sceneMemberID="firstResponder"/>

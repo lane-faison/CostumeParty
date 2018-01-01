@@ -31,7 +31,13 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         if self.text?.isEmpty ?? false {
             self.layer.borderColor = UIColor.red.cgColor
         } else {
-            self.layer.borderColor = UIColor.green.cgColor
+            self.layer.borderColor = UIColor.lighterGrey.cgColor
         }
-    }    
+    }
+    
+    // User presses Return key
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
