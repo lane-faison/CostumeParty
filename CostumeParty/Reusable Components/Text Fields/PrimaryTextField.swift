@@ -4,19 +4,23 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     let unhilightedBorderWidth: CGFloat = 1.0
     let hilightedBorderWidth: CGFloat = 2.0
+    let standardBorderColor: CGColor = UIColor.lighterGrey.cgColor
+    let errorBorderColor: CGColor = UIColor.red.cgColor
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         delegate = self
         createBorder()
+        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
     }
     required override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
         createBorder()
+        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
     }
     func createBorder(){
-        self.layer.borderColor = UIColor.lighterGrey.cgColor
+        self.layer.borderColor = standardBorderColor
         self.layer.borderWidth = unhilightedBorderWidth
         self.layer.cornerRadius = 5.0
     }
@@ -29,9 +33,20 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         self.layer.borderWidth = unhilightedBorderWidth
         
         if self.text?.isEmpty ?? false {
-            self.layer.borderColor = UIColor.red.cgColor
+            self.layer.borderColor = errorBorderColor
         } else {
-            self.layer.borderColor = UIColor.lighterGrey.cgColor
+            self.layer.borderColor = standardBorderColor
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let characterCount = textField.text?.count ?? 0
+        let doesContainText: Bool = characterCount > 0
+        print(doesContainText)
+        if doesContainText {
+            self.layer.borderColor = standardBorderColor
+        } else {
+            self.layer.borderColor = errorBorderColor
         }
     }
     

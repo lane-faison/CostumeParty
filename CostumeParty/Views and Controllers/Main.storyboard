@@ -237,7 +237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-lP-oIs">
-                                <rect key="frame" x="24" y="88" width="327" height="462"/>
+                                <rect key="frame" x="24" y="88" width="327" height="506.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uPP-YM-dAr">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="76.5"/>
@@ -329,6 +329,12 @@
                                             <action selector="submitButtonTapped:" destination="LBB-bK-suF" eventType="touchUpInside" id="NwC-n4-jOz"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2N5-Gd-GRD">
+                                        <rect key="frame" x="0.0" y="486" width="327" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="sIa-xW-CDp" firstAttribute="top" secondItem="Ele-cs-ZhR" secondAttribute="bottom" constant="24" id="CKc-y9-YMq"/>
@@ -344,6 +350,7 @@
                         <viewLayoutGuide key="safeArea" id="4IR-M2-mn7"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="2N5-Gd-GRD" id="DyW-Xr-WZC"/>
                         <outlet property="partyNameLabel" destination="SrE-3J-TrN" id="h8o-Nj-pEU"/>
                         <outlet property="partyNameTextField" destination="ELj-PF-5os" id="0h7-tv-ZO4"/>
                         <outlet property="partyZipcodeLabel" destination="bCi-W4-Nft" id="SBc-bg-R9y"/>
