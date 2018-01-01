@@ -18,6 +18,7 @@
 		F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* Main.storyboard */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
+		F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */; };
 		F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
 		F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */; };
@@ -37,6 +38,7 @@
 		F66F6CC91FE626AC0073766E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMenuViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		F60F7C4E1FE6236500073506 /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				F6847E641FFA1C4E009FEB21 /* Text Fields */,
 				F60F7C501FE6239000073506 /* Cells */,
 				F60F7C4F1FE6238600073506 /* Buttons */,
 			);
@@ -143,6 +146,14 @@
 				F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		F6847E641FFA1C4E009FEB21 /* Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */,
+			);
+			path = "Text Fields";
 			sourceTree = "<group>";
 		};
 		F6B9FB741FE7936A00DED6B4 /* Register */ = {
@@ -233,6 +244,7 @@
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F605B08D1FEB95A900896503 /* BaseViewController.swift in Sources */,
+				F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F65FE6061FF9632E00B502D0 /* AdminRegistrationViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,

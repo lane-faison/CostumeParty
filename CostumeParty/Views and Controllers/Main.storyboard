@@ -248,7 +248,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-PF-5os">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-PF-5os" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="26.5" width="327" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="8bl-GS-Tzm"/>
@@ -268,7 +268,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-xQ-pLA">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-xQ-pLA" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="26.5" width="327" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Bbo-kJ-6Iy"/>
@@ -288,7 +288,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmE-r1-uuU">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmE-r1-uuU" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="26.5" width="327" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="hKQ-IC-zYY"/>
@@ -308,7 +308,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eX2-Nl-Oan">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eX2-Nl-Oan" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="26.5" width="327" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="qJ8-R8-Z2w"/>
@@ -341,7 +341,13 @@
                         <viewLayoutGuide key="safeArea" id="4IR-M2-mn7"/>
                     </view>
                     <connections>
+                        <outlet property="partyNameLabel" destination="SrE-3J-TrN" id="h8o-Nj-pEU"/>
+                        <outlet property="partyNameTextField" destination="ELj-PF-5os" id="0h7-tv-ZO4"/>
+                        <outlet property="partyZipcodeLabel" destination="bCi-W4-Nft" id="SBc-bg-R9y"/>
+                        <outlet property="partyZipcodeTextField" destination="SI9-xQ-pLA" id="6BJ-3b-NbS"/>
                         <outlet property="submitButton" destination="sIa-xW-CDp" id="iv0-za-kOm"/>
+                        <outlet property="yourCostumeLabel" destination="5FR-MD-3Dn" id="h3U-P1-CyY"/>
+                        <outlet property="yourNameLabel" destination="VSL-sa-P2C" id="p8S-t7-uNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rp-TG-rBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
