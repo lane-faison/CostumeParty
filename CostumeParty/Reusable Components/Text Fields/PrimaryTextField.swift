@@ -11,14 +11,14 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         super.init(coder: aDecoder)!
         delegate = self
         createBorder()
-        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
     }
+    
     required override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
         createBorder()
-        self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
     }
+    
     func createBorder(){
         self.layer.borderColor = standardBorderColor
         self.layer.borderWidth = unhilightedBorderWidth
@@ -31,13 +31,6 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.layer.borderWidth = unhilightedBorderWidth
-        self.layer.borderColor = self.text?.isEmpty ?? false ? errorBorderColor : standardBorderColor
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        let characterCount = textField.text?.count ?? 0
-        let doesContainText: Bool = characterCount > 0
-        self.layer.borderColor = doesContainText ? standardBorderColor : errorBorderColor
     }
     
     // User presses Return key
