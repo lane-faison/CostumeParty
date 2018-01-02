@@ -31,23 +31,13 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.layer.borderWidth = unhilightedBorderWidth
-        
-        if self.text?.isEmpty ?? false {
-            self.layer.borderColor = errorBorderColor
-        } else {
-            self.layer.borderColor = standardBorderColor
-        }
+        self.layer.borderColor = self.text?.isEmpty ?? false ? errorBorderColor : standardBorderColor
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         let characterCount = textField.text?.count ?? 0
         let doesContainText: Bool = characterCount > 0
-        print(doesContainText)
-        if doesContainText {
-            self.layer.borderColor = standardBorderColor
-        } else {
-            self.layer.borderColor = errorBorderColor
-        }
+        self.layer.borderColor = doesContainText ? standardBorderColor : errorBorderColor
     }
     
     // User presses Return key

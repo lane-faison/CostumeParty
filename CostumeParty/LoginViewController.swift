@@ -11,7 +11,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         didSet {
             titleLabel.text = "Costume Party!"
             titleLabel.font = UIFont.h1
-            titleLabel.textColor = UIColor.darkerGrey
+            titleLabel.textColor = UIColor.primaryTextColor
         }
     }
     @IBOutlet weak var credentialsContainer: UIView!

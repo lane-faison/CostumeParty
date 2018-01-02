@@ -12,37 +12,22 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var yourCostumeLabel: UILabel!
     
     @IBOutlet weak var partyNameTextField: PrimaryTextField!
-    @IBOutlet weak var partyZipcodeTextField: PrimaryTextField! {
-        didSet {
-            partyZipcodeTextField.keyboardType = UIKeyboardType.numberPad
-        }
-    }
+    @IBOutlet weak var partyZipcodeTextField: PrimaryTextField!
     @IBOutlet weak var yourNameTextField: PrimaryTextField!
     @IBOutlet weak var yourCostumeTextField: PrimaryTextField!
 
-    @IBOutlet weak var submitButton: PrimaryButton! {
-        didSet {
-            submitButton.setTitle("Submit", for: .normal)
-        }
-    }
-    
-    @IBOutlet weak var errorLabel: UILabel! {
-        didSet {
-            errorLabel.isHidden = true
-            errorLabel.textColor = UIColor.red
-            errorLabel.font = UIFont.h3
-            errorLabel.text = standardErrorMessage
-        }
-    }
+    @IBOutlet weak var submitButton: PrimaryButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         if guestMode {
             hideAdminFields()
         }
+        
+        setupView()
     }
     
     @IBAction func submitButtonTapped(_ sender: PrimaryButton) {
-        
         view.endEditing(true)
         let readyToRegister: Bool = checkFields()
         
@@ -66,31 +51,33 @@ extension RegistrationViewController {
         partyZipcodeTextField.isHidden = true
     }
     
+    func setupView() {
+        partyNameLabel.textColor = UIColor.primaryTextColor
+        partyZipcodeLabel.textColor = UIColor.primaryTextColor
+        yourNameLabel.textColor = UIColor.primaryTextColor
+        yourCostumeLabel.textColor = UIColor.primaryTextColor
+        partyZipcodeTextField.keyboardType = UIKeyboardType.numberPad
+        
+        submitButton.setTitle("Submit", for: .normal)
+        
+        errorLabel.isHidden = true
+        errorLabel.textColor = UIColor.red
+        errorLabel.font = UIFont.h3
+        errorLabel.text = standardErrorMessage
+    }
+    
     func checkFields() -> Bool {
         
         // These fields only concern Admin registration
         if !guestMode {
-            if partyNameTextField.text?.isEmpty ?? false {
-                partyNameLabel.textColor = UIColor.red
-            }
-            if partyZipcodeTextField.text?.isEmpty ?? false || partyZipcodeTextField.text?.count != 5 {
-                partyZipcodeLabel.textColor = UIColor.red
-            }
-            
-            if partyZipcodeTextField.text?.count != 5 {
-                errorLabel.text = "Please enter a 5-digit zip code"
-            } else {
-                errorLabel.text = standardErrorMessage
-            }
+            partyNameLabel.textColor = partyNameTextField.text?.isEmpty ?? false ? UIColor.red : UIColor.primaryTextColor
+            partyZipcodeLabel.textColor = partyZipcodeTextField.text?.isEmpty ?? false || partyZipcodeTextField.text?.count != 5 ? UIColor.red : UIColor.primaryTextColor
+            errorLabel.text = partyZipcodeTextField.text?.count != 5 ? "Please enter a 5-digit zip code" : standardErrorMessage
         }
         
         // These fields concern both Guest and Admin registration
-        if yourNameTextField.text?.isEmpty ?? false {
-            yourNameLabel.textColor = UIColor.red
-        }
-        if yourCostumeTextField.text?.isEmpty ?? false {
-            yourCostumeLabel.textColor = UIColor.red
-        }
+        yourNameLabel.textColor = yourNameTextField.text?.isEmpty ?? false ? UIColor.red : UIColor.primaryTextColor
+        yourCostumeLabel.textColor = yourCostumeTextField.text?.isEmpty ?? false ? UIColor.red : UIColor.primaryTextColor
         
         // Checks for Admin mode or Guest mode
         if !guestMode {
