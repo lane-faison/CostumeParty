@@ -1,6 +1,6 @@
 import UIKit
 
-class AdminRegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController {
     
     var guestMode: Bool = false
     
@@ -42,56 +42,72 @@ class AdminRegistrationViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: PrimaryButton) {
+        
+        view.endEditing(true)
         let readyToRegister: Bool = checkFields()
         
         if readyToRegister {
             // Make call to register new admin
-            print("Submit register here")
+            errorLabel.text = "Success!"
+            errorLabel.textColor = UIColor.green
+            errorLabel.isHidden = false
         } else {
             print("Not yet ready to submit register")
         }
     }
 }
 
-extension AdminRegistrationViewController {
+extension RegistrationViewController {
+    
     func hideAdminFields() {
         partyNameLabel.isHidden = true
         partyNameTextField.isHidden = true
         partyZipcodeLabel.isHidden = true
         partyZipcodeTextField.isHidden = true
     }
+    
     func checkFields() -> Bool {
-        print("Tapped")
-        if partyNameTextField.text?.isEmpty ?? false {
-            print("Party name empty")
-            partyNameLabel.textColor = UIColor.red
+        
+        // These fields only concern Admin registration
+        if !guestMode {
+            if partyNameTextField.text?.isEmpty ?? false {
+                partyNameLabel.textColor = UIColor.red
+            }
+            if partyZipcodeTextField.text?.isEmpty ?? false || partyZipcodeTextField.text?.count != 5 {
+                partyZipcodeLabel.textColor = UIColor.red
+            }
+            
+            if partyZipcodeTextField.text?.count != 5 {
+                errorLabel.text = "Please enter a 5-digit zip code"
+            } else {
+                errorLabel.text = standardErrorMessage
+            }
         }
-        if partyZipcodeTextField.text?.isEmpty ?? false || partyZipcodeTextField.text?.count != 5 {
-            print("Party zipcode empty")
-            partyZipcodeLabel.textColor = UIColor.red
-        }
+        
+        // These fields concern both Guest and Admin registration
         if yourNameTextField.text?.isEmpty ?? false {
-            print("Your name is empty")
             yourNameLabel.textColor = UIColor.red
         }
         if yourCostumeTextField.text?.isEmpty ?? false {
-            print("Your costume is empty")
             yourCostumeLabel.textColor = UIColor.red
         }
         
-        if partyZipcodeTextField.text?.count != 5 {
-            errorLabel.text = "Please enter a 5-digit zip code"
+        // Checks for Admin mode or Guest mode
+        if !guestMode {
+            if partyNameTextField.text?.isEmpty ?? false ||
+                partyZipcodeTextField.text?.isEmpty ?? false ||
+                partyZipcodeTextField.text?.count != 5 ||
+                yourNameTextField.text?.isEmpty ?? false ||
+                yourCostumeTextField.text?.isEmpty ?? false {
+                errorLabel.isHidden = false
+                return false
+            }
         } else {
-            errorLabel.text = standardErrorMessage
-        }
-        
-        if partyNameTextField.text?.isEmpty ?? false ||
-            partyZipcodeTextField.text?.isEmpty ?? false ||
-            partyZipcodeTextField.text?.count != 5 ||
-            yourNameTextField.text?.isEmpty ?? false ||
-            yourCostumeTextField.text?.isEmpty ?? false {
-            errorLabel.isHidden = false
-            return false
+            if yourNameTextField.text?.isEmpty ?? false ||
+                yourCostumeTextField.text?.isEmpty ?? false {
+                errorLabel.isHidden = false
+                return false
+            }
         }
         
         errorLabel.isHidden = true
