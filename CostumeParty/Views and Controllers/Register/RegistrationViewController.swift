@@ -21,8 +21,7 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hideBackButtonTitle()
+        setupViewController()
         
         if guestMode {
             hideAdminFields()

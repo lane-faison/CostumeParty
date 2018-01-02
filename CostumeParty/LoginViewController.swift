@@ -38,8 +38,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewController()
         
-        hideBackButtonTitle()
         setupCredentialsContainer()
     }
     

@@ -22,8 +22,8 @@ class RegisterMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewController()
         
-        hideBackButtonTitle()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
