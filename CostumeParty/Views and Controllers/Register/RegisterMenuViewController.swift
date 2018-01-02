@@ -26,5 +26,26 @@ class RegisterMenuViewController: UIViewController {
         print("Made it to the registration menu")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! RegistrationViewController
+
+        if segue.identifier == "goToGuestRegistration" {
+            controller.guestMode = true
+        }
+        if segue.identifier == "goToAdminRegistration" {
+            controller.guestMode = false
+        }
+    }
+    
+    @IBAction func guestButtonTapped(_ sender: PrimaryButton) {
+        print("GUEST")
+        performSegue(withIdentifier: "goToGuestRegistration", sender: nil)
+    }
+    
+    @IBAction func adminButtonTapped(_ sender: PrimaryButton) {
+        print("ADMIN")
+        performSegue(withIdentifier: "goToAdminRegistration", sender: nil)
+    }
+    
 
 }
