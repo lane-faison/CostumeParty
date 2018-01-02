@@ -175,7 +175,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="aVx-jA-Bc0" kind="show" id="Yrs-Po-ZbY"/>
+                                    <action selector="guestButtonTapped:" destination="8Mw-kk-kNZ" eventType="touchUpInside" id="2h2-RC-KZU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-fT-Gha" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
@@ -185,7 +185,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="LBB-bK-suF" kind="show" id="9Yy-vR-t67"/>
+                                    <action selector="adminButtonTapped:" destination="8Mw-kk-kNZ" eventType="touchUpInside" id="o6y-L3-LrA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -207,6 +207,8 @@
                         <outlet property="registerAsAdminButton" destination="90Q-fT-Gha" id="RsJ-Wo-WA9"/>
                         <outlet property="registerAsGuestButton" destination="LVB-bT-WrA" id="70v-Ip-7kz"/>
                         <outlet property="titleLabel" destination="zPr-03-tZV" id="RB1-Wo-Wkq"/>
+                        <segue destination="LBB-bK-suF" kind="show" identifier="goToGuestRegistration" id="xGG-ku-ye9"/>
+                        <segue destination="LBB-bK-suF" kind="show" identifier="goToAdminRegistration" id="CfU-Rx-JSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDK-uq-8Ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,4 +369,7 @@
             <point key="canvasLocation" x="460" y="1366.8665667166417"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xGG-ku-ye9"/>
+    </inferredMetricsTieBreakers>
 </document>

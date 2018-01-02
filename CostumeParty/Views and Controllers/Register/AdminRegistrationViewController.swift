@@ -2,6 +2,8 @@ import UIKit
 
 class AdminRegistrationViewController: UIViewController {
     
+    var guestMode: Bool = false
+    
     let standardErrorMessage: String = "Please complete all RED fields"
     
     @IBOutlet weak var partyNameLabel: UILabel!
@@ -34,7 +36,9 @@ class AdminRegistrationViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
+        if guestMode {
+            hideAdminFields()
+        }
     }
     
     @IBAction func submitButtonTapped(_ sender: PrimaryButton) {
@@ -50,6 +54,12 @@ class AdminRegistrationViewController: UIViewController {
 }
 
 extension AdminRegistrationViewController {
+    func hideAdminFields() {
+        partyNameLabel.isHidden = true
+        partyNameTextField.isHidden = true
+        partyZipcodeLabel.isHidden = true
+        partyZipcodeTextField.isHidden = true
+    }
     func checkFields() -> Bool {
         print("Tapped")
         if partyNameTextField.text?.isEmpty ?? false {
