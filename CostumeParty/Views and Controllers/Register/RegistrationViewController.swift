@@ -20,6 +20,10 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        hideBackButtonTitle()
+        
         if guestMode {
             hideAdminFields()
         }
@@ -27,6 +31,7 @@ class RegistrationViewController: UIViewController {
         setupView()
     }
     
+    // Submit Button action
     @IBAction func submitButtonTapped(_ sender: PrimaryButton) {
         view.endEditing(true)
         let readyToRegister: Bool = checkFields()

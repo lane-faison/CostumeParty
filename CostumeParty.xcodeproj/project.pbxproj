@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F605B08A1FEB94F900896503 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605B0891FEB94F900896503 /* StoryboardHelper.swift */; };
-		F605B08D1FEB95A900896503 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605B08C1FEB95A800896503 /* BaseViewController.swift */; };
 		F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3B1FE6225A00073506 /* AppDelegate.swift */; };
 		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
@@ -18,14 +16,14 @@
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */; };
+		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
+		F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */; };
 		F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
 		F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F605B0891FEB94F900896503 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
-		F605B08C1FEB95A800896503 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F60F7C381FE6225A00073506 /* CostumeParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostumeParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60F7C3B1FE6225A00073506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F60F7C3D1FE6225A00073506 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../LoginViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +35,8 @@
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
+		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsTextField.swift; sourceTree = "<group>"; };
 		F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMenuViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +56,7 @@
 		F605B08B1FEB950A00896503 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F605B0891FEB94F900896503 /* StoryboardHelper.swift */,
-				F605B08C1FEB95A800896503 /* BaseViewController.swift */,
+				F6847E691FFB5290009FEB21 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -150,8 +149,17 @@
 			isa = PBXGroup;
 			children = (
 				F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */,
+				F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */,
 			);
 			path = "Text Fields";
+			sourceTree = "<group>";
+		};
+		F6847E691FFB5290009FEB21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F6B9FB741FE7936A00DED6B4 /* Register */ = {
@@ -235,16 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F605B08A1FEB94F900896503 /* StoryboardHelper.swift in Sources */,
 				F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */,
 				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
-				F605B08D1FEB95A900896503 /* BaseViewController.swift in Sources */,
 				F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */,
+				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F65FE6061FF9632E00B502D0 /* RegistrationViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
+				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

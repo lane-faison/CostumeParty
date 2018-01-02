@@ -16,8 +16,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
     @IBOutlet weak var credentialsContainer: UIView!
     @IBOutlet weak var credentialsStackView: UIStackView!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: CredentialsTextField!
+    @IBOutlet weak var passwordTextField: CredentialsTextField!
     @IBOutlet weak var loginButton: PrimaryButton! {
         didSet {
             loginButton.setTitle("Login", for: .normal)
@@ -38,7 +38,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        hideBackButtonTitle()
         setupCredentialsContainer()
     }
     
@@ -51,13 +52,5 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func registerButtonTapped(_ sender: SecondaryButton) {
 
-    }
-
-}
-
-extension UIViewController: UITextFieldDelegate {
-    // Hide keyboard when user touches outside keyboard
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 }
