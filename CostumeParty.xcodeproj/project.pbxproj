@@ -11,6 +11,9 @@
 		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
+		F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57601FFE01EB0078AE96 /* RegisterTableViewCell.swift */; };
+		F65B57631FFE01EB0078AE96 /* RegisterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65B57611FFE01EB0078AE96 /* RegisterTableViewCell.xib */; };
+		F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57641FFE038C0078AE96 /* RegisterViewController.swift */; };
 		F65FE6061FF9632E00B502D0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FE6051FF9632E00B502D0 /* RegistrationViewController.swift */; };
 		F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* Main.storyboard */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
@@ -30,6 +33,9 @@
 		F60F7C421FE6225A00073506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65B57601FFE01EB0078AE96 /* RegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewCell.swift; sourceTree = "<group>"; };
+		F65B57611FFE01EB0078AE96 /* RegisterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterTableViewCell.xib; sourceTree = "<group>"; };
+		F65B57641FFE038C0078AE96 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F65FE6051FF9632E00B502D0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F66F6CC91FE626AC0073766E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */,
+				F65B57641FFE038C0078AE96 /* RegisterViewController.swift */,
+				F65B57601FFE01EB0078AE96 /* RegisterTableViewCell.swift */,
+				F65B57611FFE01EB0078AE96 /* RegisterTableViewCell.xib */,
 				F65FE6051FF9632E00B502D0 /* RegistrationViewController.swift */,
 			);
 			path = Register;
@@ -232,6 +241,7 @@
 			files = (
 				F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */,
 				F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */,
+				F65B57631FFE01EB0078AE96 /* RegisterTableViewCell.xib in Resources */,
 				F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +263,8 @@
 				F65FE6061FF9632E00B502D0 /* RegistrationViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
+				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
+				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

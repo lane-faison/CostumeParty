@@ -27,13 +27,13 @@ class RegisterMenuViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! RegistrationViewController
+        let controller = segue.destination as! RegisterViewController
 
         if segue.identifier == "goToGuestRegistration" {
-            controller.guestMode = true
+            controller.adminMode = false
         }
         if segue.identifier == "goToAdminRegistration" {
-            controller.guestMode = false
+            controller.adminMode = true
         }
     }
     
