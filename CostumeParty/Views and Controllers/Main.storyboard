@@ -223,35 +223,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="96" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-7s-gQP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="495"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-7s-gQP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mve-HD-VTd" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                <rect key="frame" x="24" y="583" width="327" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="eYR-RX-P0S"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="submitButtonTapped:" destination="Jpp-Ex-HGE" eventType="touchUpInside" id="YT2-2k-TaV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mve-HD-VTd" firstAttribute="top" secondItem="NCN-7s-gQP" secondAttribute="bottom" constant="24" id="1N0-xI-x9X"/>
-                            <constraint firstItem="mve-HD-VTd" firstAttribute="leading" secondItem="Fb4-cS-2rN" secondAttribute="leading" constant="24" id="5jV-99-98k"/>
-                            <constraint firstItem="Fb4-cS-2rN" firstAttribute="trailing" secondItem="mve-HD-VTd" secondAttribute="trailing" constant="24" id="69M-mE-HiO"/>
                             <constraint firstItem="NCN-7s-gQP" firstAttribute="leading" secondItem="Fb4-cS-2rN" secondAttribute="leading" id="Paf-Z6-AO5"/>
-                            <constraint firstItem="Fb4-cS-2rN" firstAttribute="bottom" secondItem="mve-HD-VTd" secondAttribute="bottom" constant="24" id="Ug1-Od-avF"/>
                             <constraint firstItem="NCN-7s-gQP" firstAttribute="top" secondItem="Fb4-cS-2rN" secondAttribute="top" id="XPa-SI-7wt"/>
                             <constraint firstItem="NCN-7s-gQP" firstAttribute="trailing" secondItem="Fb4-cS-2rN" secondAttribute="trailing" id="Xnl-Ea-eO7"/>
+                            <constraint firstItem="Fb4-cS-2rN" firstAttribute="bottom" secondItem="NCN-7s-gQP" secondAttribute="bottom" id="n30-xm-Beb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fb4-cS-2rN"/>
                     </view>
                     <connections>
-                        <outlet property="submitButton" destination="mve-HD-VTd" id="l4K-E4-Ftc"/>
                         <outlet property="tableView" destination="NCN-7s-gQP" id="jFa-ck-kzp"/>
                     </connections>
                 </viewController>

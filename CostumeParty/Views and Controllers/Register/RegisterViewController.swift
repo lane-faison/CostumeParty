@@ -3,10 +3,9 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var submitButton: PrimaryButton!
     
     var adminMode: Bool = false
-    let standardErrorMessage: String = "Please complete all RED fields"
+    var formComplete: Bool = false
 
     var guestFields = ["Costume:", "Username:", "Password:", "Confirm password:"]
     var adminFields = ["Party name:", "Party zip code:", "Your costume:", "Username:", "Password:", "Confirm password:"]
@@ -17,45 +16,81 @@ class RegisterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "RegisterTableViewCell")
-    }
-    
-    @IBAction func submitButtonTapped(_ sender: PrimaryButton) {
-        print("SUBMIT TAPPED!")
-        view.endEditing(true)
+        // Registering the different tableView cell types
+        let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
+        let buttonNib = UINib(nibName: "ButtonTableViewCell", bundle: nil)
+        tableView.register(textFieldNib, forCellReuseIdentifier: "RegisterTableViewCell")
+        tableView.register(buttonNib, forCellReuseIdentifier: "ButtonTableViewCell")
     }
 }
 
 extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return adminMode ? 6 : 4
+        return adminMode ? 7 : 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
+        let highestIndex = adminMode ? 6 : 4
         
-        if adminMode {
-            cell.sectionLabel.text = adminFields[indexPath.row]
+        if indexPath.row < highestIndex {
+            let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             
-            // For entering the zip code
-            if indexPath.row == 1 {
-                cell.sectionTextField.keyboardType = UIKeyboardType.numberPad
+            if adminMode {
+                cell.sectionLabel.text = adminFields[indexPath.row]
+                
+                // For entering the zip code
+                if indexPath.row == 1 {
+                    cell.sectionTextField.keyboardType = UIKeyboardType.numberPad
+                }
+            } else {
+                cell.sectionLabel.text = guestFields[indexPath.row]
             }
+            
+            return cell
         } else {
-           cell.sectionLabel.text = guestFields[indexPath.row]
+            let cell: ButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
+            cell.delegate = self
+            cell.button.setTitle("Submit", for: .normal)
+            
+            return cell
         }
+    }
+}
+
+extension RegisterViewController: PrimaryButtonDelegate {
+    func buttonTapped() {
+        view.endEditing(true)
         
-        return cell
+        checkFields()
     }
 }
 
 extension RegisterViewController {
     func setupView() {
-        submitButton.setTitle("Submit", for: .normal)
+        //
     }
     
     func checkFields() {
-        //
+        if formComplete {
+            fireSuccessActionSheet()
+        } else {
+            fireErrorActionSheet()
+        }
+    }
+    
+    func fireSuccessActionSheet() {
+        let actionSheet = UIAlertController(title: "Error", message: "You must complete all fields in order to submit your registration", preferredStyle: .actionSheet)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+        actionSheet.addAction(dismiss)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func fireErrorActionSheet() {
+        let actionSheet = UIAlertController(title: "Error", message: "You must complete all fields in order to submit your registration", preferredStyle: .actionSheet)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+        actionSheet.addAction(dismiss)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
 }
