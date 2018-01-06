@@ -2,7 +2,6 @@ import UIKit
 
 class RegisterTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var sectionTextField: PrimaryTextField!
     
     class var reuseIdentifier: String {
@@ -14,6 +13,5 @@ class RegisterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        sectionLabel.textColor = UIColor.primaryTextColor
     }
 }

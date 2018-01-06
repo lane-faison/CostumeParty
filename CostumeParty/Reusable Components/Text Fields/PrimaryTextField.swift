@@ -6,23 +6,34 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     let hilightedBorderWidth: CGFloat = 2.0
     let standardBorderColor: CGColor = UIColor.lighterGrey.cgColor
     let errorBorderColor: CGColor = UIColor.red.cgColor
+    var securedField: Bool = false {
+        didSet {
+            self.isSecureTextEntry = securedField
+        }
+    }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         delegate = self
         createBorder()
+        setupKeyboard()
     }
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
         createBorder()
+        setupKeyboard()
     }
     
     func createBorder(){
         self.layer.borderColor = standardBorderColor
         self.layer.borderWidth = unhilightedBorderWidth
         self.layer.cornerRadius = 5.0
+    }
+    
+    func setupKeyboard() {
+        self.autocorrectionType = .no
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

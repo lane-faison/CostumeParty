@@ -44,6 +44,4 @@ class RegisterMenuViewController: UIViewController {
     @IBAction func adminButtonTapped(_ sender: PrimaryButton) {
         performSegue(withIdentifier: "goToAdminRegistration", sender: nil)
     }
-    
-
 }
