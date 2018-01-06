@@ -32,11 +32,11 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="f2r-Q1-w3R" customClass="LoginViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QSx-8Q-3IL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-A5-WuJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-lt-7aW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -164,6 +164,7 @@
                         <viewLayoutGuide key="safeArea" id="aRE-82-gFB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome!" id="1Uo-gU-D9J"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="authorLabel" destination="erj-Db-iX5" id="8ew-16-g3N"/>
                         <outlet property="credentialsContainer" destination="ndV-A5-TxO" id="v25-1H-gAZ"/>
