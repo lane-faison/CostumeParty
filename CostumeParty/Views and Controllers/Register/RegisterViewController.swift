@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -65,7 +66,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
 extension RegisterViewController: PrimaryButtonDelegate {
     func buttonTapped() {
         view.endEditing(true)
-        
         checkFields()
     }
 }
@@ -103,7 +103,7 @@ extension RegisterViewController {
     }
     
     func fireSuccessActionSheet() {
-        let actionSheet = UIAlertController(title: "Success!", message: "Your account has been created! Tap \"Dismiss\" to go login.", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Success!", message: "Your account has been created! Tap \"Dismiss\" to go log in.", preferredStyle: .actionSheet)
         let dismiss = UIAlertAction(title: "Dismiss", style: .default) { [weak self] _ in
             guard let strongSelf = self else { return }
             
@@ -116,7 +116,7 @@ extension RegisterViewController {
     
     
     func fireMainErrorActionSheet(emptySections count: Int) {
-        let actionSheet = UIAlertController(title: "Error", message: "There are \(count) fields that you still need to complete before registering!", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Error", message: "There are \(count) fields left for you to complete before registering!", preferredStyle: .actionSheet)
         let dismiss = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
         actionSheet.addAction(dismiss)
         
@@ -129,9 +129,5 @@ extension RegisterViewController {
         actionSheet.addAction(dismiss)
         
         present(actionSheet, animated: true, completion: nil)
-    }
-    
-    func goToLogin() {
-        print("HERE")
     }
 }
