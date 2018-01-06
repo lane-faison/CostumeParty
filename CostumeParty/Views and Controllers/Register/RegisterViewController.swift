@@ -95,14 +95,17 @@ extension RegisterViewController {
             }
         }
         
-        if errorCount == 0 {
-            fireSuccessActionSheet()
+        let emailCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as? RegisterTableViewCell
+        let passwordCell = tableView.cellForRow(at: NSIndexPath(row: 2, section: 0) as IndexPath) as? RegisterTableViewCell
+        
+        if errorCount == 0, let email = emailCell?.sectionTextField.text, let password = passwordCell?.sectionTextField.text {
+            createUser(email: email, password: password)
         } else {
             fireMainErrorActionSheet(emptySections: errorCount)
         }
     }
     
-    func fireSuccessActionSheet() {
+    private func fireSuccessActionSheet() {
         let actionSheet = UIAlertController(title: "Success!", message: "Your account has been created! Tap \"Dismiss\" to go log in.", preferredStyle: .actionSheet)
         let dismiss = UIAlertAction(title: "Dismiss", style: .default) { [weak self] _ in
             guard let strongSelf = self else { return }
@@ -115,7 +118,7 @@ extension RegisterViewController {
     }
     
     
-    func fireMainErrorActionSheet(emptySections count: Int) {
+    private func fireMainErrorActionSheet(emptySections count: Int) {
         let actionSheet = UIAlertController(title: "Error", message: "There are \(count) fields left for you to complete before registering!", preferredStyle: .actionSheet)
         let dismiss = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
         actionSheet.addAction(dismiss)
@@ -123,11 +126,25 @@ extension RegisterViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    func fireZipCodeErrorActionSheet() {
+    private func fireZipCodeErrorActionSheet() {
         let actionSheet = UIAlertController(title: "Zip code error", message: "Please enter in a proper 5-digit zip code", preferredStyle: .actionSheet)
         let dismiss = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
         actionSheet.addAction(dismiss)
         
         present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func createUser(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
+            guard let strongSelf = self else { return }
+            
+            if error != nil {
+                print("Error creating user: \(error!)")
+            } else {
+                guard let user = user else { return }
+                Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                strongSelf.fireSuccessActionSheet()
+            }
+        }
     }
 }
