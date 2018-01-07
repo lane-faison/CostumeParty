@@ -31,6 +31,7 @@
 		F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447320006B83008647A1 /* AlertHelper.swift */; };
 		F6EB4476200152BC008647A1 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */; };
 		F6EB447820016480008647A1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447720016480008647A1 /* UserType.swift */; };
+		F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F6EB447320006B83008647A1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthHelper.swift; sourceTree = "<group>"; };
 		F6EB447720016480008647A1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */,
 				F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */,
+				F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
+				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,

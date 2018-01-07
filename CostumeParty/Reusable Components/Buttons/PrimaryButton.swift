@@ -3,7 +3,6 @@ import UIKit
 class PrimaryButton: UIButton {
     //Colors
     var primaryColor: UIColor = UIColor.primaryButtonColor
-    var buttonBorderColor: UIColor = UIColor.darkerGrey
     var buttonFontColor: UIColor = .white
     
     //Font
@@ -14,7 +13,6 @@ class PrimaryButton: UIButton {
     var shadowOffset: CGSize = CGSize(width: 0.0, height: 3.0)
     
     //Size
-    var borderWidth: CGFloat = 2.0
     var buttonHeight: CGFloat = 60.0
     
     override public init(frame: CGRect) {
@@ -31,21 +29,18 @@ class PrimaryButton: UIButton {
         backgroundColor = primaryColor.darkerColor()
         layer.shadowRadius = 0.0
         layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        layer.borderWidth = borderWidth + 1.0
     }
     
     @objc open func unhighlight(_ sender: UIButton) {
         backgroundColor = primaryColor
         layer.shadowRadius = shadowRadius
         layer.shadowOffset = shadowOffset
-        layer.borderWidth = borderWidth
     }
     
     fileprivate func configure() {
                 
         layer.backgroundColor = primaryColor.cgColor
-        layer.borderColor = buttonBorderColor.cgColor
-        layer.shadowColor = buttonBorderColor.cgColor
+        layer.shadowColor = primaryColor.cgColor
         
         layer.shadowOpacity = 0.5
         layer.shadowRadius = shadowRadius
@@ -56,7 +51,6 @@ class PrimaryButton: UIButton {
         titleLabel?.font = buttonFont
         titleLabel?.adjustsFontSizeToFitWidth = true
         
-        layer.borderWidth = borderWidth
         layer.cornerRadius = CGFloat(buttonHeight/2)
         
         addTarget(self, action: #selector(highlight(_:)), for: .touchDown)

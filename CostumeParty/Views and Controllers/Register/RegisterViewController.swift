@@ -38,6 +38,8 @@ class RegisterViewController: UIViewController {
         tableView.dataSource = self
         tableView.setupTableView()
         
+        title = adminMode ? "Host Registration" : "Guest Registration"
+        
         // Host Text Fields
         let partyNameField = FieldInfo(title: "Party name...", section: .partyName, forUserType: .host)
         let partyZipCodeField = FieldInfo(title: "Zip code...", section: .partyZipCode, forUserType: .host)

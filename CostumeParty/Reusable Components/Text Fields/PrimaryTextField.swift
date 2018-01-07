@@ -38,13 +38,13 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         self.placeholder = fieldInfo.title
     }
     
-    func createBorder(){
+    private func createBorder(){
         self.layer.borderColor = standardBorderColor
         self.layer.borderWidth = unhilightedBorderWidth
         self.layer.cornerRadius = 5.0
     }
     
-    func setupKeyboard() {
+    private func setupKeyboard() {
         self.autocorrectionType = .no
     }
     
