@@ -31,11 +31,24 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         loginButton.primaryColor = .primaryButtonColor
         loginButton.setTitle("LOGIN", for: .normal)
+        loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)
         
         registerButton.setTitle("REGISTER", for: .normal)
         
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
         authorLabel.textColor = UIColor.lighterGrey
+    }
+    
+    @objc func userTappedLogin() {
+        guard let email = usernameTextField.text,
+            let password = passwordTextField.text else {
+                let message = "Please complete all fields before trying to log in!"
+                AlertHelper.fireErrorActionSheet(viewController: self, message: message)
+                return
+        }
+        
+        FirebaseAuthHelper.userLogin(email: email, password: password)
+        
     }
 }

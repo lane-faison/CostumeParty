@@ -118,7 +118,7 @@ extension RegisterViewController {
         view.applyBackgroundGradient()
     }
     
-    func checkFields() {
+    private func checkFields() {
         let numberOfRows = adminMode ? hostFields.count : guestFields.count
         var errorCount: Int = 0
         
@@ -146,7 +146,11 @@ extension RegisterViewController {
             }
             
             if let fieldInfo = cell?.sectionTextField.fieldInfo {
-                guard let cell = cell else { return }
+                guard let cell = cell else {
+                    let message = "There was an error when submitting your information. Please try again."
+                    AlertHelper.fireErrorActionSheet(viewController: self, message: message)
+                    return
+                }
                 
                 switch fieldInfo.section {
                 case .partyName:
@@ -169,16 +173,29 @@ extension RegisterViewController {
             guard let costume = costumeCell.sectionTextField.text,
                 let email = emailCell.sectionTextField.text,
                 let password = passwordCell.sectionTextField.text,
-                let confirmPassword = confirmCell.sectionTextField.text else { return }
+                let confirmPassword = confirmCell.sectionTextField.text else {
+                    let message = "There is an error within your information. Please try again."
+                    AlertHelper.fireErrorActionSheet(viewController: self, message: message)
+                    return
+            }
             
             let userType: UserType = adminMode ? .host : .guest
             let user = User(email: email, costume: costume, userType: userType)
-            let partyName = partyNameCell.sectionTextField.text ?? nil
-            let partyZipCode = partyZipCodeCell.sectionTextField.text ?? nil
             
-            let party = adminMode ? Party(name: partyName!, zipCode: Int(partyZipCode!)!, host: user) : nil
             if password == confirmPassword {
-                FirebaseAuthHelper.createUser(viewController: self, user: user, password: password, party: party)
+                if adminMode {
+                    guard let partyName = partyNameCell.sectionTextField.text,
+                        let partyZipCode = partyZipCodeCell.sectionTextField.text else {
+                            let message = "There is an error within your party's information. Please try again."
+                            AlertHelper.fireErrorActionSheet(viewController: self, message: message)
+                            return
+                    }
+                    
+                    let party = Party(name: partyName, zipCode: Int(partyZipCode)!, host: user)
+                    FirebaseAuthHelper.createUser(viewController: self, user: user, password: password, party: party)
+                } else {
+                    FirebaseAuthHelper.createUser(viewController: self, user: user, password: password)
+                }
             } else {
                 let message = "Passwords do not match. Please try again."
                 AlertHelper.fireErrorActionSheet(viewController: self, message: message)

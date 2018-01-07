@@ -152,7 +152,8 @@
                         <outlet property="registerButton" destination="pgR-6m-7eh" id="Sw3-0g-T8d"/>
                         <outlet property="titleLabel" destination="VHD-yK-J6H" id="8UB-PZ-8g7"/>
                         <outlet property="usernameTextField" destination="kHw-qb-vb2" id="Ku5-Sx-gt1"/>
-                        <segue destination="M9r-TC-jkd" kind="presentation" identifier="loggedIn" id="hxZ-ca-4l0"/>
+                        <segue destination="M9r-TC-jkd" kind="show" identifier="loggedInAsGuest" action="showDetailViewController:sender:" id="hxZ-ca-4l0"/>
+                        <segue destination="FPn-p0-KcL" kind="show" identifier="loggedInAsHost" id="rim-sH-DNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUO-fK-8af" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +174,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMp-Ox-R19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993" y="-188"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fFs-0g-m0V">
+            <objects>
+                <viewController id="FPn-p0-KcL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WKf-Nh-myw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="khG-BG-ooD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fg-tY-Mde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="-188"/>
         </scene>
         <!--Options-->
         <scene sceneID="X5F-fe-EhB">
