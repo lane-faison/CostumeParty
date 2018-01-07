@@ -40,6 +40,8 @@ class RegisterViewController: UIViewController {
         
         title = adminMode ? "Host Registration" : "Guest Registration"
         
+        setupView()
+        
         // Host Text Fields
         let partyNameField = FieldInfo(title: "Party name...", section: .partyName, forUserType: .host)
         let partyZipCodeField = FieldInfo(title: "Zip code...", section: .partyZipCode, forUserType: .host)
@@ -112,8 +114,8 @@ extension RegisterViewController: PrimaryButtonDelegate {
 }
 
 extension RegisterViewController {
-    func setupView() {
-        //
+    private func setupView() {
+        view.applyBackgroundGradient()
     }
     
     func checkFields() {

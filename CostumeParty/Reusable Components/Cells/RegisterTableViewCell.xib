@@ -29,6 +29,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="2JD-dJ-K2c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="jCK-Rk-fjr"/>
                     <constraint firstAttribute="bottom" secondItem="2JD-dJ-K2c" secondAttribute="bottom" id="pOx-dn-Q89"/>
@@ -36,6 +37,7 @@
                     <constraint firstAttribute="trailing" secondItem="2JD-dJ-K2c" secondAttribute="trailing" constant="48" id="wU0-rM-ePz"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="sectionTextField" destination="2JD-dJ-K2c" id="TZC-xY-E3M"/>

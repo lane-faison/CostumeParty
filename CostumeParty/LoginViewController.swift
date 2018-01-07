@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         view.applyBackgroundGradient()
     }
     
-    func setupView() {
+    private func setupView() {
         imageView.image = UIImage(named: "ghost")
         
         titleLabel.text = "Costume Party!"
