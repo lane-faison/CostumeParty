@@ -173,9 +173,12 @@ extension RegisterViewController {
             
             let userType: UserType = adminMode ? .host : .guest
             let user = User(email: email, costume: costume, userType: userType)
+            let partyName = partyNameCell.sectionTextField.text ?? nil
+            let partyZipCode = partyZipCodeCell.sectionTextField.text ?? nil
             
+            let party = adminMode ? Party(name: partyName!, zipCode: Int(partyZipCode!)!, host: user) : nil
             if password == confirmPassword {
-                FirebaseAuthHelper.createUser(viewController: self, user: user, password: password)
+                FirebaseAuthHelper.createUser(viewController: self, user: user, password: password, party: party)
             } else {
                 let message = "Passwords do not match. Please try again."
                 AlertHelper.fireErrorActionSheet(viewController: self, message: message)
