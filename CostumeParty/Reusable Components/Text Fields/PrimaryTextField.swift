@@ -2,6 +2,12 @@ import UIKit
 
 class PrimaryTextField: UITextField, UITextFieldDelegate {
     
+    var fieldInfo: FieldInfo? {
+        didSet {
+            setupWithFieldInfo(fieldInfo: fieldInfo)
+        }
+    }
+    
     let unhilightedBorderWidth: CGFloat = 1.0
     let hilightedBorderWidth: CGFloat = 2.0
     let standardBorderColor: CGColor = UIColor.lighterGrey.cgColor
@@ -24,6 +30,12 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         delegate = self
         createBorder()
         setupKeyboard()
+    }
+    
+    func setupWithFieldInfo(fieldInfo: FieldInfo?) {
+        guard let fieldInfo = fieldInfo else { return }
+        
+        self.placeholder = fieldInfo.title
     }
     
     func createBorder(){

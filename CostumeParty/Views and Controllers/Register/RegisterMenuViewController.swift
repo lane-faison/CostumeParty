@@ -4,19 +4,19 @@ class RegisterMenuViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = "I would like to register as a party..."
+            titleLabel.text = "I am a..."
             titleLabel.font = UIFont.h3
         }
     }
     @IBOutlet weak var registerAsGuestButton: PrimaryButton! {
         didSet {
-            registerAsGuestButton.setTitle("Guest", for: .normal)
+            registerAsGuestButton.setTitle("Party Guest!", for: .normal)
         }
     }
     
     @IBOutlet weak var registerAsAdminButton: PrimaryButton! {
         didSet {
-            registerAsAdminButton.setTitle("Admin", for: .normal)
+            registerAsAdminButton.setTitle("Party Host!", for: .normal)
         }
     }
     

@@ -16,8 +16,17 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
     @IBOutlet weak var credentialsContainer: UIView!
     @IBOutlet weak var credentialsStackView: UIStackView!
-    @IBOutlet weak var usernameTextField: CredentialsTextField!
-    @IBOutlet weak var passwordTextField: CredentialsTextField!
+    @IBOutlet weak var usernameTextField: CredentialsTextField! {
+        didSet {
+            usernameTextField.placeholder = "Email..."
+        }
+    }
+    @IBOutlet weak var passwordTextField: CredentialsTextField! {
+        didSet {
+            passwordTextField.placeholder = "Password..."
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var loginButton: PrimaryButton! {
         didSet {
             loginButton.setTitle("Login", for: .normal)

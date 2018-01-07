@@ -28,7 +28,9 @@
 		F6E59FEE1FFF1AC30041DBBE /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */; };
 		F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */; };
 		F6E59FF4200060620041DBBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FF3200060620041DBBE /* GoogleService-Info.plist */; };
-		F6EB447420006B83008647A1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447320006B83008647A1 /* Alert.swift */; };
+		F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447320006B83008647A1 /* AlertHelper.swift */; };
+		F6EB4476200152BC008647A1 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */; };
+		F6EB447820016480008647A1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447720016480008647A1 /* UserType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +59,9 @@
 		F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		F6E59FF3200060620041DBBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F6EB447320006B83008647A1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		F6EB447320006B83008647A1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthHelper.swift; sourceTree = "<group>"; };
+		F6EB447720016480008647A1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				F6847E691FFB5290009FEB21 /* Extensions */,
-				F6EB447320006B83008647A1 /* Alert.swift */,
+				F6EB447320006B83008647A1 /* AlertHelper.swift */,
+				F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */,
+				F6EB447720016480008647A1 /* UserType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,8 +351,9 @@
 				F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */,
 				F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */,
 				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
-				F6EB447420006B83008647A1 /* Alert.swift in Sources */,
+				F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
+				F6EB4476200152BC008647A1 /* FirebaseAuthHelper.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */,
 				F6E59FED1FFF1AC30041DBBE /* ButtonTableViewCell.swift in Sources */,
@@ -356,6 +363,7 @@
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
+				F6EB447820016480008647A1 /* UserType.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
