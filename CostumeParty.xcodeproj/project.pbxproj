@@ -30,8 +30,9 @@
 		F6E59FF4200060620041DBBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FF3200060620041DBBE /* GoogleService-Info.plist */; };
 		F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447320006B83008647A1 /* AlertHelper.swift */; };
 		F6EB4476200152BC008647A1 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */; };
-		F6EB447820016480008647A1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447720016480008647A1 /* UserType.swift */; };
+		F6EB447820016480008647A1 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447720016480008647A1 /* UserHelper.swift */; };
 		F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */; };
+		F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44822002A85C008647A1 /* PartyHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +63,9 @@
 		F6E59FF3200060620041DBBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6EB447320006B83008647A1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthHelper.swift; sourceTree = "<group>"; };
-		F6EB447720016480008647A1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		F6EB447720016480008647A1 /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F6EB44822002A85C008647A1 /* PartyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 				F6847E691FFB5290009FEB21 /* Extensions */,
 				F6EB447320006B83008647A1 /* AlertHelper.swift */,
 				F6EB4475200152BC008647A1 /* FirebaseAuthHelper.swift */,
-				F6EB447720016480008647A1 /* UserType.swift */,
+				F6EB447720016480008647A1 /* UserHelper.swift */,
+				F6EB44822002A85C008647A1 /* PartyHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -364,10 +367,11 @@
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
+				F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
-				F6EB447820016480008647A1 /* UserType.swift in Sources */,
+				F6EB447820016480008647A1 /* UserHelper.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

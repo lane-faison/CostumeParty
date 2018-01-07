@@ -122,6 +122,9 @@ extension RegisterViewController {
         let numberOfRows = adminMode ? hostFields.count : guestFields.count
         var errorCount: Int = 0
         
+        var partyNameCell = RegisterTableViewCell()
+        var partyZipCodeCell = RegisterTableViewCell()
+        var costumeCell = RegisterTableViewCell()
         var emailCell = RegisterTableViewCell()
         var passwordCell = RegisterTableViewCell()
         var confirmCell = RegisterTableViewCell()
@@ -146,25 +149,33 @@ extension RegisterViewController {
                 guard let cell = cell else { return }
                 
                 switch fieldInfo.section {
+                case .partyName:
+                    partyNameCell = cell
+                case .partyZipCode:
+                    partyZipCodeCell = cell
+                case .costume:
+                    costumeCell = cell
                 case .email:
                     emailCell = cell
                 case .password:
                     passwordCell = cell
                 case .confirmPassword:
                     confirmCell = cell
-                default:
-                    break
                 }
             }
         }
 
         if errorCount == 0 {
-            guard let email = emailCell.sectionTextField.text,
+            guard let costume = costumeCell.sectionTextField.text,
+                let email = emailCell.sectionTextField.text,
                 let password = passwordCell.sectionTextField.text,
                 let confirmPassword = confirmCell.sectionTextField.text else { return }
             
+            let userType: UserType = adminMode ? .host : .guest
+            let user = User(email: email, costume: costume, userType: userType)
+            
             if password == confirmPassword {
-                FirebaseAuthHelper.createUser(viewController: self, email: email, password: password)
+                FirebaseAuthHelper.createUser(viewController: self, user: user, password: password)
             } else {
                 let message = "Passwords do not match. Please try again."
                 AlertHelper.fireErrorActionSheet(viewController: self, message: message)
