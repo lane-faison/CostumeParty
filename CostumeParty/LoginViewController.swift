@@ -15,19 +15,25 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         setupViewController()
         
         setupView()
-        view.setGradientBackground(color1: UIColor.darkPrimary, color2: UIColor.accentColor)
+        view.applyBackgroundGradient()
     }
     
     func setupView() {
         imageView.image = UIImage(named: "ghost")
+        
         titleLabel.text = "Costume Party!"
         titleLabel.font = UIFont.h1
         titleLabel.textColor = UIColor.white.darkerColor()
+        
         usernameTextField.placeholder = "Email..."
         passwordTextField.placeholder = "Password..."
         passwordTextField.isSecureTextEntry = true
-        loginButton.setTitle("Login", for: .normal)
-        registerButton.setTitle("Register", for: .normal)
+        
+        loginButton.primaryColor = .primaryButtonColor
+        loginButton.setTitle("LOGIN", for: .normal)
+        
+        registerButton.setTitle("REGISTER", for: .normal)
+        
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
         authorLabel.textColor = UIColor.lighterGrey

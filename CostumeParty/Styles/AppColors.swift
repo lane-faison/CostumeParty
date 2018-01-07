@@ -25,9 +25,6 @@ extension UIColor {
     static let primaryTextColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) //#41464D
     static let darkerGrey: UIColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1) //#424242
     static let lighterGrey: UIColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#CDCDCD
-    static let orange: UIColor = #colorLiteral(red: 0.9764705882, green: 0.5960784314, blue: 0, alpha: 1) //#F99800
-    static let yellow: UIColor = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.6980392157, alpha: 1) //#FFE0B2
-    static let primaryColor: UIColor = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1) //#3F51B5
-    static let accentColor: UIColor =  #colorLiteral(red: 0, green: 0.3058823529, blue: 0.5725490196, alpha: 1) //#004E92
-    static let darkPrimary: UIColor =  #colorLiteral(red: 0, green: 0.01568627451, blue: 0.1568627451, alpha: 1) //#000428
+    static let primaryGreenColor: UIColor =  #colorLiteral(red: 0, green: 0.7490196078, blue: 0.5607843137, alpha: 1) //#00BF8F
+    static let primaryDarkColor: UIColor =  #colorLiteral(red: 0, green: 0.08235294118, blue: 0.06274509804, alpha: 1) //#001510
 }

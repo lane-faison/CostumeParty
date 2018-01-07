@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-dJ-K2c" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
-                        <rect key="frame" x="24" y="23.5" width="272" height="40"/>
+                        <rect key="frame" x="48" y="23.5" width="224" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="uBY-Uw-qeH"/>
                         </constraints>
@@ -32,8 +32,8 @@
                 <constraints>
                     <constraint firstItem="2JD-dJ-K2c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="jCK-Rk-fjr"/>
                     <constraint firstAttribute="bottom" secondItem="2JD-dJ-K2c" secondAttribute="bottom" id="pOx-dn-Q89"/>
-                    <constraint firstItem="2JD-dJ-K2c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="t40-C2-AWg"/>
-                    <constraint firstAttribute="trailing" secondItem="2JD-dJ-K2c" secondAttribute="trailing" constant="24" id="wU0-rM-ePz"/>
+                    <constraint firstItem="2JD-dJ-K2c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="t40-C2-AWg"/>
+                    <constraint firstAttribute="trailing" secondItem="2JD-dJ-K2c" secondAttribute="trailing" constant="48" id="wU0-rM-ePz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

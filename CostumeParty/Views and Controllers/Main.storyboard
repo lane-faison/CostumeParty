@@ -75,16 +75,16 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d55-Rv-SSQ" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="348.5" width="279" height="60"/>
+                                                <rect key="frame" x="48" y="348.5" width="279" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="uNM-hC-YW3"/>
+                                                    <constraint firstAttribute="height" constant="50" id="uNM-hC-YW3"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="SecondaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="420.5" width="279" height="60"/>
+                                                <rect key="frame" x="48" y="410.5" width="279" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="KhL-o8-kdh"/>
+                                                    <constraint firstAttribute="height" constant="50" id="KhL-o8-kdh"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
@@ -92,7 +92,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Db-iX5">
-                                                <rect key="frame" x="166" y="528.5" width="42" height="20.5"/>
+                                                <rect key="frame" x="166" y="508.5" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -189,9 +189,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVB-bT-WrA" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                <rect key="frame" x="48" y="133" width="279" height="60"/>
+                                <rect key="frame" x="48" y="133" width="279" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Z9a-0g-AfQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Z9a-0g-AfQ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -199,9 +199,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-fT-Gha" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                <rect key="frame" x="48" y="217" width="279" height="60"/>
+                                <rect key="frame" x="48" y="207" width="279" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="sbf-RN-YWi"/>
+                                    <constraint firstAttribute="height" constant="50" id="sbf-RN-YWi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>

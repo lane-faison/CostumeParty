@@ -4,19 +4,19 @@ class RegisterMenuViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = "I am a..."
+            titleLabel.text = "I am a party..."
             titleLabel.font = UIFont.h3
         }
     }
     @IBOutlet weak var registerAsGuestButton: PrimaryButton! {
         didSet {
-            registerAsGuestButton.setTitle("Party Guest!", for: .normal)
+            registerAsGuestButton.setTitle("GUEST", for: .normal)
         }
     }
     
     @IBOutlet weak var registerAsAdminButton: PrimaryButton! {
         didSet {
-            registerAsAdminButton.setTitle("Party Host!", for: .normal)
+            registerAsAdminButton.setTitle("HOST", for: .normal)
         }
     }
     
@@ -24,6 +24,7 @@ class RegisterMenuViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
         
+        view.applyBackgroundGradient()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

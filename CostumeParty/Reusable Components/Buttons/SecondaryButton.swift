@@ -6,14 +6,14 @@ class SecondaryButton: UIButton {
     var buttonFontColor: UIColor = .white
     
     //Font
-    let buttonFont = UIFont(name: "Arial", size: 24.0)
+    let buttonFont: UIFont = .h3
     
     //Shadow
     var shadowRadius: CGFloat = 3.0
     var shadowOffset: CGSize = CGSize(width: 0.0, height: 3.0)
     
     //Size
-    var buttonHeight: CGFloat = 60.0
+    var buttonHeight: CGFloat = 50.0
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,9 +38,10 @@ class SecondaryButton: UIButton {
     }
     
     fileprivate func configure() {
+        let cornerRadius = CGFloat(buttonHeight/2)
         
         layer.backgroundColor = primaryColor.cgColor
-        layer.shadowColor = primaryColor.cgColor
+        layer.shadowColor = primaryColor.darkerColor().darkerColor().cgColor
         
         layer.shadowOpacity = 0.5
         layer.shadowRadius = shadowRadius
@@ -51,10 +52,9 @@ class SecondaryButton: UIButton {
         titleLabel?.font = buttonFont
         titleLabel?.adjustsFontSizeToFitWidth = true
         
-        layer.cornerRadius = CGFloat(buttonHeight/2)
+        layer.cornerRadius = cornerRadius
         
         addTarget(self, action: #selector(highlight(_:)), for: .touchDown)
         addTarget(self, action: #selector(unhighlight(_:)), for: .touchUpInside)
     }
 }
-

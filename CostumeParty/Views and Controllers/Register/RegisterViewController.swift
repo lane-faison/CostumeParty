@@ -97,7 +97,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             let cell: ButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
             
             cell.delegate = self
-            cell.button.setTitle("Submit", for: .normal)
+            cell.button.setTitle("SUBMIT", for: .normal)
             
             return cell
         }
