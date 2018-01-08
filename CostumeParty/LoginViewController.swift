@@ -1,6 +1,9 @@
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UINavigationControllerDelegate {
+    
+    var loggedInUser: User? = nil
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -48,18 +51,60 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
                 return
         }
         
-        FirebaseAuthHelper.userLogin(viewController: self, email: email, password: password)
+
+        userLogin(email: email, password: password) { (success) in
+            if success {
+                guard let user = self.loggedInUser else { return }
+                
+                switch user.userType {
+                case .host:
+                    self.performSegue(withIdentifier: "loggedInAsHost", sender: nil)
+                case .guest:
+                    self.performSegue(withIdentifier: "loggedInAsGuest", sender: nil)
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         switch identifier {
         case "loggedInAsHost":
-            print("Logging In As Host")
+            let hostVC = segue.destination as! HostViewController
+            hostVC.host = loggedInUser
         case "loggedInAsGuest":
-            print("Logging In As Guest")
+            let guestVC = segue.destination as! GuestViewController
+            guestVC.guest = loggedInUser
         default:
             break
+        }
+    }
+}
+
+extension LoginViewController {
+    private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                if let error = error {
+                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
+                    return
+                }
+            } else {
+                guard let firebaseUser = user else { return }
+                Database.database().reference().child("users").child(firebaseUser.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    guard let email = value?["email"] as? String,
+                        let costume = value?["costume"] as? String,
+                        let userTypeString = value?["userType"] as? String else { return }
+                    
+                    let userType: UserType = userTypeString == "host" ? .host : .guest
+                    self.loggedInUser = User(email: email, costume: costume, userType: userType)
+                    completion(true)
+                }, withCancel: { (error) in
+                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
+                })
+            }
         }
     }
 }

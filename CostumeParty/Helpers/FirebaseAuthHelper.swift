@@ -20,33 +20,4 @@ public struct FirebaseAuthHelper {
             }
         }
     }
-    
-    public static func userLogin(viewController: UIViewController, email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                if let error = error {
-                    AlertHelper.fireErrorActionSheet(viewController: viewController, message: error.localizedDescription)
-                }
-            } else {
-                guard let firebaseUser = user else { return }
-                
-                Database.database().reference().child("users").child(firebaseUser.uid).observe(.value, with: { (snapshot) in
-                    let value = snapshot.value as? NSDictionary
-                    guard let email = value?["email"] as? String,
-                        let costume = value?["costume"] as? String,
-                        let userTypeString = value?["userType"] as? String else { return }
-                        
-                        let userType: UserType = userTypeString == "host" ? .host : .guest
-                        
-                        let loggedInUser = User(email: email, costume: costume, userType: userType)
-                        
-                        if loggedInUser.userType == .host {
-                            viewController.navigationController?.performSegue(withIdentifier: "loggedInAsHost", sender: viewController)
-                        } else {
-                            viewController.navigationController?.performSegue(withIdentifier: "loggedInAsGuest", sender: viewController)
-                        }
-                })
-            }
-        }
-    }
 }
