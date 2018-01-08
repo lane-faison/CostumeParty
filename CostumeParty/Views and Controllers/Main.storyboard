@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="-4" y="-188.45577211394306"/>
         </scene>
-        <!--View Controller-->
+        <!--Guest View Controller-->
         <scene sceneID="UzP-TZ-s41">
             <objects>
-                <viewController id="M9r-TC-jkd" sceneMemberID="viewController">
+                <viewController id="M9r-TC-jkd" customClass="GuestViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DVO-tp-QIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="993" y="-188"/>
         </scene>
-        <!--View Controller-->
+        <!--Host View Controller-->
         <scene sceneID="fFs-0g-m0V">
             <objects>
-                <viewController id="FPn-p0-KcL" sceneMemberID="viewController">
+                <viewController id="FPn-p0-KcL" customClass="HostViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKf-Nh-myw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

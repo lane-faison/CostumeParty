@@ -48,7 +48,18 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
                 return
         }
         
-        FirebaseAuthHelper.userLogin(email: email, password: password)
-        
+        FirebaseAuthHelper.userLogin(viewController: self, email: email, password: password)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        switch identifier {
+        case "loggedInAsHost":
+            print("Logging In As Host")
+        case "loggedInAsGuest":
+            print("Logging In As Guest")
+        default:
+            break
+        }
     }
 }
