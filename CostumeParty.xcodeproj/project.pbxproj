@@ -33,8 +33,7 @@
 		F6EB447820016480008647A1 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447720016480008647A1 /* UserHelper.swift */; };
 		F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */; };
 		F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44822002A85C008647A1 /* PartyHelper.swift */; };
-		F6EB44862002E165008647A1 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44852002E165008647A1 /* HostViewController.swift */; };
-		F6EB44892002E17B008647A1 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44882002E17B008647A1 /* GuestViewController.swift */; };
+		F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44882002E17B008647A1 /* LobbyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +67,7 @@
 		F6EB447720016480008647A1 /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F6EB44822002A85C008647A1 /* PartyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHelper.swift; sourceTree = "<group>"; };
-		F6EB44852002E165008647A1 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
-		F6EB44882002E17B008647A1 /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
+		F6EB44882002E17B008647A1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CC91FE626AC0073766E /* Main.storyboard */,
-				F6EB44872002E16C008647A1 /* Guest */,
-				F6EB44842002E156008647A1 /* Host */,
+				F6EB44872002E16C008647A1 /* Lobby */,
 				F6B9FB741FE7936A00DED6B4 /* Register */,
 				F60F7C531FE623F300073506 /* Login */,
 			);
@@ -234,20 +231,12 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		F6EB44842002E156008647A1 /* Host */ = {
+		F6EB44872002E16C008647A1 /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
-				F6EB44852002E165008647A1 /* HostViewController.swift */,
+				F6EB44882002E17B008647A1 /* LobbyViewController.swift */,
 			);
-			path = Host;
-			sourceTree = "<group>";
-		};
-		F6EB44872002E16C008647A1 /* Guest */ = {
-			isa = PBXGroup;
-			children = (
-				F6EB44882002E17B008647A1 /* GuestViewController.swift */,
-			);
-			path = Guest;
+			path = Lobby;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +369,7 @@
 				F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */,
 				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
 				F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */,
-				F6EB44892002E17B008647A1 /* GuestViewController.swift in Sources */,
+				F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
 				F6EB4476200152BC008647A1 /* FirebaseAuthHelper.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
@@ -393,7 +382,6 @@
 				F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
-				F6EB44862002E165008647A1 /* HostViewController.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
 				F6EB447820016480008647A1 /* UserHelper.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,

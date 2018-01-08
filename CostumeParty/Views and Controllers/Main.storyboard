@@ -152,25 +152,29 @@
                         <outlet property="registerButton" destination="pgR-6m-7eh" id="Sw3-0g-T8d"/>
                         <outlet property="titleLabel" destination="VHD-yK-J6H" id="8UB-PZ-8g7"/>
                         <outlet property="usernameTextField" destination="kHw-qb-vb2" id="Ku5-Sx-gt1"/>
-                        <segue destination="M9r-TC-jkd" kind="show" identifier="loggedInAsGuest" action="showDetailViewController:sender:" id="hxZ-ca-4l0"/>
-                        <segue destination="FPn-p0-KcL" kind="show" identifier="loggedInAsHost" id="rim-sH-DNB"/>
+                        <segue destination="WOD-hd-Tyg" kind="showDetail" identifier="toLobby" id="Axv-LA-M0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUO-fK-8af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4" y="-188.45577211394306"/>
         </scene>
-        <!--Guest View Controller-->
-        <scene sceneID="UzP-TZ-s41">
+        <!--Lobby View Controller-->
+        <scene sceneID="tdQ-PW-1jG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bMp-Ox-R19" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="M9r-TC-jkd" customClass="GuestViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DVO-tp-QIH">
+                <viewController id="WOD-hd-Tyg" customClass="LobbyViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cL-kv-kDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pti-OX-xZC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti8-mf-Mi8">
                                 <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RH3-8U-t7b">
+                                <rect key="frame" x="166" y="381" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,44 +182,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Pti-OX-xZC" firstAttribute="centerX" secondItem="DVO-tp-QIH" secondAttribute="centerX" id="Cls-qn-8bk"/>
-                            <constraint firstItem="Pti-OX-xZC" firstAttribute="centerY" secondItem="DVO-tp-QIH" secondAttribute="centerY" id="Mvl-Fn-7vk"/>
+                            <constraint firstItem="RH3-8U-t7b" firstAttribute="centerX" secondItem="Ti8-mf-Mi8" secondAttribute="centerX" id="7mI-rP-kMH"/>
+                            <constraint firstItem="Ti8-mf-Mi8" firstAttribute="centerX" secondItem="6cL-kv-kDg" secondAttribute="centerX" id="DwU-GR-RBv"/>
+                            <constraint firstItem="RH3-8U-t7b" firstAttribute="top" secondItem="Ti8-mf-Mi8" secondAttribute="bottom" constant="37" id="QEC-Oh-KYG"/>
+                            <constraint firstItem="Ti8-mf-Mi8" firstAttribute="centerY" secondItem="6cL-kv-kDg" secondAttribute="centerY" id="sEI-Le-3bo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oDu-fU-62M"/>
+                        <viewLayoutGuide key="safeArea" id="2k4-ZJ-yFk"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="Pti-OX-xZC" id="Cd3-25-Sy9"/>
+                        <outlet property="label" destination="Ti8-mf-Mi8" id="Xu2-n2-t7l"/>
+                        <outlet property="label2" destination="RH3-8U-t7b" id="p3v-mH-VhZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-sD-mDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-188"/>
-        </scene>
-        <!--Host View Controller-->
-        <scene sceneID="fFs-0g-m0V">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6fg-tY-Mde" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="FPn-p0-KcL" customClass="HostViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WKf-Nh-myw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-QR-TCx">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="DdK-QR-TCx" firstAttribute="centerX" secondItem="WKf-Nh-myw" secondAttribute="centerX" id="6go-ic-Oxc"/>
-                            <constraint firstItem="DdK-QR-TCx" firstAttribute="centerY" secondItem="WKf-Nh-myw" secondAttribute="centerY" id="xpc-W4-2te"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="khG-BG-ooD"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1998" y="-188"/>
+            <point key="canvasLocation" x="1024.8" y="-188.45577211394306"/>
         </scene>
         <!--Options-->
         <scene sceneID="X5F-fe-EhB">

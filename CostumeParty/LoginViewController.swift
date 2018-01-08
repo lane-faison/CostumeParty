@@ -54,29 +54,17 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
 
         userLogin(email: email, password: password) { (success) in
             if success {
-                guard let user = self.loggedInUser else { return }
-                
-                switch user.userType {
-                case .host:
-                    self.performSegue(withIdentifier: "loggedInAsHost", sender: nil)
-                case .guest:
-                    self.performSegue(withIdentifier: "loggedInAsGuest", sender: nil)
-                }
+                self.performSegue(withIdentifier: "toLobby", sender: nil)
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
-        switch identifier {
-        case "loggedInAsHost":
-            let hostVC = segue.destination as! HostViewController
-            hostVC.host = loggedInUser
-        case "loggedInAsGuest":
-            let guestVC = segue.destination as! GuestViewController
-            guestVC.guest = loggedInUser
-        default:
-            break
+        
+        if identifier == "toLobby" {
+            guard let lobbyVC = segue.destination as? LobbyViewController else { return }
+            lobbyVC.user = loggedInUser
         }
     }
 }
