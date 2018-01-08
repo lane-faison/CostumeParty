@@ -26,13 +26,12 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         titleLabel.text = "Costume Party!"
         titleLabel.font = UIFont.h1
-        titleLabel.textColor = UIColor.white.darkerColor()
+        titleLabel.textColor = UIColor.primaryTextColor
         
         usernameTextField.placeholder = "Email..."
         passwordTextField.placeholder = "Password..."
         passwordTextField.isSecureTextEntry = true
         
-        loginButton.primaryColor = .primaryButtonColor
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)
         
@@ -40,7 +39,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
-        authorLabel.textColor = UIColor.lighterGrey
+        authorLabel.textColor = UIColor.primaryTextColor
     }
     
     @objc func userTappedLogin() {

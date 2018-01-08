@@ -10,7 +10,7 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     let unhilightedBorderWidth: CGFloat = 1.0
     let hilightedBorderWidth: CGFloat = 2.0
-    let standardBorderColor: CGColor = UIColor.lighterGrey.cgColor
+    let standardBorderColor: CGColor = UIColor.primaryLightColor.cgColor
     let errorBorderColor: CGColor = UIColor.red.cgColor
     var securedField: Bool = false {
         didSet {

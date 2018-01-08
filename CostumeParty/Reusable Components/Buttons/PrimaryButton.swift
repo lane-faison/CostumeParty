@@ -2,8 +2,8 @@ import UIKit
 
 class PrimaryButton: UIButton {
     //Colors
-    var primaryColor: UIColor = UIColor.primaryButtonColor
-    var buttonFontColor: UIColor = .white
+    var primaryColor: UIColor = UIColor.secondaryColor
+    var buttonFontColor: UIColor = UIColor.secondaryTextColor
     
     //Font
     let buttonFont: UIFont = .h3

@@ -3,7 +3,7 @@ import UIKit
 extension UIView {
     
     func applyBackgroundGradient() {
-        setGradientBackground(color1: UIColor.white.darkerColor(), color2: UIColor.white)
+        setGradientBackground(color1: UIColor.primaryColor, color2: UIColor.primaryLightColor)
     }
     
     private func setGradientBackground(color1: UIColor, color2: UIColor) {

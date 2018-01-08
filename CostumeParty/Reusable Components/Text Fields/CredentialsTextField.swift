@@ -19,7 +19,8 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
-        backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        backgroundColor = UIColor.white.darkerColor()
+        
         layer.cornerRadius = 5.0
         clipsToBounds = true
     }
@@ -29,11 +30,11 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        backgroundColor = UIColor.white
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        backgroundColor = UIColor.white.darkerColor()
     }
     
     // User presses Return key

@@ -20,11 +20,12 @@ extension UIColor {
         return UIColor(hue: h, saturation: s, brightness: b * 1.6, alpha: a)
     }
     
-    static let primaryButtonColor: UIColor = #colorLiteral(red: 0, green: 0.4666666667, blue: 0.7098039216, alpha: 1) //#0077B5
-    static let secondaryButtonColor: UIColor = #colorLiteral(red: 0.3019607843, green: 0.6509803922, blue: 0.3058823529, alpha: 1) //#4DA64E
-    static let primaryTextColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) //#41464D
-    static let darkerGrey: UIColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1) //#424242
-    static let lighterGrey: UIColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#CDCDCD
-    static let primaryGreenColor: UIColor =  #colorLiteral(red: 0, green: 0.7490196078, blue: 0.5607843137, alpha: 1) //#00BF8F
-    static let primaryDarkColor: UIColor =  #colorLiteral(red: 0, green: 0.08235294118, blue: 0.06274509804, alpha: 1) //#001510
+    static let primaryColor = UIColor(red: 0.27, green: 0.35, blue: 0.39, alpha: 1.0)
+    static let primaryLightColor = UIColor(red: 0.44, green: 0.53, blue: 0.57, alpha: 1.0)
+    static let primaryDarkColor = UIColor(red: 0.11, green: 0.19, blue: 0.23, alpha: 1.0)
+    static let primaryTextColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.0)
+    static let secondaryColor = UIColor(red: 0.00, green: 0.90, blue: 0.46, alpha: 1.0)
+    static let secondaryLightColor = UIColor(red: 0.40, green: 1.00, blue: 0.65, alpha: 1.0)
+    static let secondaryDarkColor = UIColor(red: 0.00, green: 0.70, blue: 0.28, alpha: 1.0)
+    static let secondaryTextColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.0)
 }

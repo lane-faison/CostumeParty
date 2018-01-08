@@ -166,9 +166,48 @@
                     <view key="view" contentMode="scaleToFill" id="6cL-kv-kDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84d-52-P8Y" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                <rect key="frame" x="48" y="112" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LrH-kd-mLF"/>
+                                </constraints>
+                                <state key="normal" title="Current Party"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iD-O5-BLx" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                <rect key="frame" x="48" y="186" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kVp-EH-wla"/>
+                                </constraints>
+                                <state key="normal" title="Find The Party"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-ph-I6q" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                <rect key="frame" x="48" y="260" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ACQ-NZ-6vU"/>
+                                </constraints>
+                                <state key="normal" title="Host Settings"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="84d-52-P8Y" firstAttribute="top" secondItem="2k4-ZJ-yFk" secondAttribute="top" constant="48" id="2Ls-5V-zpi"/>
+                            <constraint firstItem="84d-52-P8Y" firstAttribute="leading" secondItem="2k4-ZJ-yFk" secondAttribute="leading" constant="48" id="2MZ-o7-1qQ"/>
+                            <constraint firstItem="8iD-O5-BLx" firstAttribute="centerX" secondItem="84d-52-P8Y" secondAttribute="centerX" id="4aO-b2-gxr"/>
+                            <constraint firstItem="8iD-O5-BLx" firstAttribute="width" secondItem="84d-52-P8Y" secondAttribute="width" id="98i-Nc-biJ"/>
+                            <constraint firstItem="2k4-ZJ-yFk" firstAttribute="trailing" secondItem="84d-52-P8Y" secondAttribute="trailing" constant="48" id="Dxl-ym-7mJ"/>
+                            <constraint firstItem="HOJ-ph-I6q" firstAttribute="top" secondItem="8iD-O5-BLx" secondAttribute="bottom" constant="24" id="Xm9-dm-AW0"/>
+                            <constraint firstItem="HOJ-ph-I6q" firstAttribute="centerX" secondItem="8iD-O5-BLx" secondAttribute="centerX" id="jAN-Et-hfo"/>
+                            <constraint firstItem="8iD-O5-BLx" firstAttribute="top" secondItem="84d-52-P8Y" secondAttribute="bottom" constant="24" id="pHl-1V-v0x"/>
+                            <constraint firstItem="HOJ-ph-I6q" firstAttribute="width" secondItem="8iD-O5-BLx" secondAttribute="width" id="sbQ-VN-pGH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2k4-ZJ-yFk"/>
                     </view>
+                    <connections>
+                        <outlet property="currentPartyButton" destination="84d-52-P8Y" id="TlN-R0-uqQ"/>
+                        <outlet property="findPartyButton" destination="8iD-O5-BLx" id="ADd-H9-cfz"/>
+                        <outlet property="hostSettingsButton" destination="HOJ-ph-I6q" id="KPf-Xu-EWE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-sD-mDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
