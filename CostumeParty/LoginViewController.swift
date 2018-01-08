@@ -54,17 +54,10 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
 
         userLogin(email: email, password: password) { (success) in
             if success {
-                self.performSegue(withIdentifier: "toLobby", sender: nil)
+                guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
+                lobbyVC.user = self.loggedInUser
+                self.navigationController?.pushViewController(lobbyVC, animated: true)
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        
-        if identifier == "toLobby" {
-            guard let lobbyVC = segue.destination as? LobbyViewController else { return }
-            lobbyVC.user = loggedInUser
         }
     }
 }

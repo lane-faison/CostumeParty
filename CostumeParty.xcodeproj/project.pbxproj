@@ -136,8 +136,8 @@
 				F66F6CD01FE630210073766E /* Styles */,
 				F60F7C4E1FE6236500073506 /* Reusable Components */,
 				F60F7C4D1FE6235A00073506 /* Views and Controllers */,
-				F60F7C3B1FE6225A00073506 /* AppDelegate.swift */,
 				F60F7C421FE6225A00073506 /* Assets.xcassets */,
+				F60F7C3B1FE6225A00073506 /* AppDelegate.swift */,
 				F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */,
 				F60F7C471FE6225A00073506 /* Info.plist */,
 				F6E59FF3200060620041DBBE /* GoogleService-Info.plist */,
@@ -149,9 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CC91FE626AC0073766E /* Main.storyboard */,
-				F6EB44872002E16C008647A1 /* Lobby */,
-				F6B9FB741FE7936A00DED6B4 /* Register */,
 				F60F7C531FE623F300073506 /* Login */,
+				F6B9FB741FE7936A00DED6B4 /* Register */,
+				F6EB44872002E16C008647A1 /* Lobby */,
 			);
 			path = "Views and Controllers";
 			sourceTree = "<group>";
