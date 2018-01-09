@@ -20,4 +20,14 @@ public struct FirebaseAuthHelper {
             }
         }
     }
+    
+    public static func logout(viewController: UIViewController, user: User) {
+        do {
+            try Auth.auth().signOut()
+            viewController.navigationController?.popToRootViewController(animated: true)
+        } catch let error {
+            AlertHelper.fireErrorActionSheet(viewController: viewController, message: error.localizedDescription)
+        }
+
+    }
 }

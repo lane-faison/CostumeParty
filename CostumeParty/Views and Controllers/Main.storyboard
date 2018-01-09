@@ -275,16 +275,33 @@
             </objects>
             <point key="canvasLocation" x="-4" y="750"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="UOQ-oC-joK">
             <objects>
-                <viewController id="B5I-Ci-Uwk" sceneMemberID="viewController">
+                <viewController id="B5I-Ci-Uwk" customClass="SettingsViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lU-rQ-0lW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLo-ge-A24" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                <rect key="frame" x="48" y="593" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Id7-cx-mo5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dVd-55-Bdi" firstAttribute="trailing" secondItem="uLo-ge-A24" secondAttribute="trailing" constant="48" id="By1-Hu-h3i"/>
+                            <constraint firstItem="uLo-ge-A24" firstAttribute="leading" secondItem="dVd-55-Bdi" secondAttribute="leading" constant="48" id="feT-WB-ARm"/>
+                            <constraint firstItem="dVd-55-Bdi" firstAttribute="bottom" secondItem="uLo-ge-A24" secondAttribute="bottom" constant="24" id="vtc-PC-nAI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dVd-55-Bdi"/>
                     </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="uLo-ge-A24" id="qF9-qU-OML"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhP-kC-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

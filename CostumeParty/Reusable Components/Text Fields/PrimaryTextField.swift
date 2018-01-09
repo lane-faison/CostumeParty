@@ -8,10 +8,6 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         }
     }
     
-    let unhilightedBorderWidth: CGFloat = 1.0
-    let hilightedBorderWidth: CGFloat = 2.0
-    let standardBorderColor: CGColor = UIColor.primaryLightColor.cgColor
-    let errorBorderColor: CGColor = UIColor.red.cgColor
     var securedField: Bool = false {
         didSet {
             self.isSecureTextEntry = securedField
@@ -21,15 +17,15 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         delegate = self
-        createBorder()
-        setupKeyboard()
+        
+        setupTextField()
     }
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
-        createBorder()
-        setupKeyboard()
+        
+        setupTextField()
     }
     
     func setupWithFieldInfo(fieldInfo: FieldInfo?) {
@@ -38,22 +34,18 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         self.placeholder = fieldInfo.title
     }
     
-    private func createBorder(){
-        self.layer.borderColor = standardBorderColor
-        self.layer.borderWidth = unhilightedBorderWidth
+    private func setupTextField(){
         self.layer.cornerRadius = 5.0
-    }
-    
-    private func setupKeyboard() {
+        backgroundColor = UIColor.white.darkerColor()
         self.autocorrectionType = .no
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.layer.borderWidth = hilightedBorderWidth
+        backgroundColor = UIColor.white
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.layer.borderWidth = unhilightedBorderWidth
+        backgroundColor = UIColor.white.darkerColor()
     }
     
     // User presses Return key
