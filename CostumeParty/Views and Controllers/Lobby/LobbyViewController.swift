@@ -12,6 +12,7 @@ class LobbyViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        view.applyBackgroundGradient()
     }
     
     private func setupView() {
@@ -19,11 +20,32 @@ class LobbyViewController: UIViewController {
         title = "Lobby"
         
         currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
+        currentPartyButton.primaryColor = .secondaryLightColor
+
         findPartyButton.setTitle("FIND PARTY", for: .normal)
-        hostSettingsButton.setTitle("HOST SETTINGS", for: .normal)
+        findPartyButton.primaryColor = .secondaryColor
+
+        let settingsTitle = user?.userType == .host ? "HOST SETTINGS" : "GUEST SETTINGS"
+        hostSettingsButton.setTitle(settingsTitle, for: .normal)
+        hostSettingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
+        hostSettingsButton.primaryColor = .secondaryDarkColor
+    }
+}
+
+extension LobbyViewController {
+    @objc func goToSettings() {
+        performSegue(withIdentifier: "toSettings", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }  
         
-        if user?.userType != .host {
-            hostSettingsButton.removeFromSuperview()
+        switch identifier {
+        case "toSettings":
+            guard let destination = segue.destination as? SettingsViewController else { return }
+            destination.user = user
+        default:
+            break
         }
     }
 }

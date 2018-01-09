@@ -10,7 +10,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var usernameTextField: CredentialsTextField!
     @IBOutlet weak var passwordTextField: CredentialsTextField!
     @IBOutlet weak var loginButton: PrimaryButton!
-    @IBOutlet weak var registerButton: SecondaryButton!
+    @IBOutlet weak var registerButton: PrimaryButton!
     @IBOutlet weak var authorLabel: UILabel!
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         titleLabel.text = "Costume Party!"
         titleLabel.font = UIFont.h1
-        titleLabel.textColor = UIColor.primaryTextColor
+        titleLabel.textColor = .primaryTextColor
         
         usernameTextField.placeholder = "Email..."
         passwordTextField.placeholder = "Password..."
@@ -34,12 +34,14 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)
+        loginButton.primaryColor = .secondaryLightColor
         
         registerButton.setTitle("REGISTER", for: .normal)
+        registerButton.primaryColor = .secondaryColor
         
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
-        authorLabel.textColor = UIColor.primaryTextColor
+        authorLabel.textColor = .primaryTextColor
     }
     
     @objc func userTappedLogin() {

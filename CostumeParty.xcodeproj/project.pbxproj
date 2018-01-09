@@ -21,7 +21,6 @@
 		F6847E661FFA1C63009FEB21 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */; };
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
 		F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */; };
-		F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
 		F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */; };
 		F6E59FED1FFF1AC30041DBBE /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */; };
@@ -34,6 +33,7 @@
 		F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */; };
 		F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44822002A85C008647A1 /* PartyHelper.swift */; };
 		F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44882002E17B008647A1 /* LobbyViewController.swift */; };
+		F6EB448C20046E07008647A1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB448B20046E07008647A1 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,6 @@
 		F6847E651FFA1C63009FEB21 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsTextField.swift; sourceTree = "<group>"; };
-		F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		F6B9FB721FE7936500DED6B4 /* RegisterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMenuViewController.swift; sourceTree = "<group>"; };
 		F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F6EB44822002A85C008647A1 /* PartyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHelper.swift; sourceTree = "<group>"; };
 		F6EB44882002E17B008647A1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		F6EB448B20046E07008647A1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +152,7 @@
 				F60F7C531FE623F300073506 /* Login */,
 				F6B9FB741FE7936A00DED6B4 /* Register */,
 				F6EB44872002E16C008647A1 /* Lobby */,
+				F6EB448A20046DF0008647A1 /* Settings */,
 			);
 			path = "Views and Controllers";
 			sourceTree = "<group>";
@@ -170,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */,
-				F6B9FB6E1FE6DA3600DED6B4 /* SecondaryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -237,6 +237,14 @@
 				F6EB44882002E17B008647A1 /* LobbyViewController.swift */,
 			);
 			path = Lobby;
+			sourceTree = "<group>";
+		};
+		F6EB448A20046DF0008647A1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB448B20046E07008647A1 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +375,7 @@
 			files = (
 				F6B9FB731FE7936500DED6B4 /* RegisterMenuViewController.swift in Sources */,
 				F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */,
-				F6B9FB6F1FE6DA3600DED6B4 /* SecondaryButton.swift in Sources */,
+				F6EB448C20046E07008647A1 /* SettingsViewController.swift in Sources */,
 				F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */,
 				F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */,
 				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,

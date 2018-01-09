@@ -2,9 +2,12 @@ import UIKit
 
 class PrimaryButton: UIButton {
     //Colors
-    var primaryColor: UIColor = UIColor.secondaryColor
-    var buttonFontColor: UIColor = UIColor.secondaryTextColor
-    
+    var buttonFontColor: UIColor = .secondaryTextColor
+    var primaryColor: UIColor = .secondaryColor {
+        didSet {
+            configure()
+        }
+    }
     //Font
     let buttonFont: UIFont = .h3
     

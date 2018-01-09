@@ -81,7 +81,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="SecondaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="410.5" width="279" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KhL-o8-kdh"/>
@@ -207,6 +207,7 @@
                         <outlet property="currentPartyButton" destination="84d-52-P8Y" id="TlN-R0-uqQ"/>
                         <outlet property="findPartyButton" destination="8iD-O5-BLx" id="ADd-H9-cfz"/>
                         <outlet property="hostSettingsButton" destination="HOJ-ph-I6q" id="KPf-Xu-EWE"/>
+                        <segue destination="B5I-Ci-Uwk" kind="show" identifier="toSettings" id="1RJ-4F-gmP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-sD-mDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,6 +274,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDK-uq-8Ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4" y="750"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UOQ-oC-joK">
+            <objects>
+                <viewController id="B5I-Ci-Uwk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lU-rQ-0lW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dVd-55-Bdi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhP-kC-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="750"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="SLx-vG-eoA">
