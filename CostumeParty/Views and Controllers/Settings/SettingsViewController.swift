@@ -1,9 +1,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    
-    var user: User?
-    
+        
     @IBOutlet weak var logoutButton: PrimaryButton!
     
     override func viewDidLoad() {
@@ -22,7 +20,6 @@ extension SettingsViewController {
     }
     
     @objc private func logout() {
-        guard let user = user else { return }
-        FirebaseAuthHelper.logout(viewController: self, user: user)
+        FirebaseService.logout(viewController: self)
     }
 }

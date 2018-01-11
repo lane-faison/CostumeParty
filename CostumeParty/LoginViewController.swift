@@ -3,8 +3,6 @@ import Firebase
 
 class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
-    var loggedInUser: User? = nil
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var usernameTextField: CredentialsTextField!
@@ -37,6 +35,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         loginButton.primaryColor = .secondaryLightColor
         
         registerButton.setTitle("REGISTER", for: .normal)
+        registerButton.addTarget(self, action: #selector(userTappedRegister), for: .touchUpInside)
         registerButton.primaryColor = .secondaryColor
         
         authorLabel.text = "By Lane Faison"
@@ -52,14 +51,16 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
                 return
         }
         
-
         userLogin(email: email, password: password) { (success) in
             if success {
                 guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
-                lobbyVC.user = self.loggedInUser
                 self.navigationController?.pushViewController(lobbyVC, animated: true)
             }
         }
+    }
+    
+    @objc func userTappedRegister() {
+        performSegue(withIdentifier: "toRegistration", sender: self)
     }
 }
 
@@ -73,19 +74,7 @@ extension LoginViewController {
                     return
                 }
             } else {
-                guard let firebaseUser = user else { return }
-                Database.database().reference().child("users").child(firebaseUser.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                    let value = snapshot.value as? NSDictionary
-                    guard let email = value?["email"] as? String,
-                        let costume = value?["costume"] as? String,
-                        let userTypeString = value?["userType"] as? String else { return }
-                    
-                    let userType: UserType = userTypeString == "host" ? .host : .guest
-                    self.loggedInUser = User(email: email, costume: costume, userType: userType)
-                    completion(true)
-                }, withCancel: { (error) in
-                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
-                })
+                completion(true)
             }
         }
     }

@@ -87,9 +87,6 @@
                                                     <constraint firstAttribute="height" constant="50" id="KhL-o8-kdh"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <segue destination="8Mw-kk-kNZ" kind="show" id="wyZ-nh-zYx"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Db-iX5">
                                                 <rect key="frame" x="166" y="508.5" width="42" height="20.5"/>
@@ -153,6 +150,7 @@
                         <outlet property="titleLabel" destination="VHD-yK-J6H" id="8UB-PZ-8g7"/>
                         <outlet property="usernameTextField" destination="kHw-qb-vb2" id="Ku5-Sx-gt1"/>
                         <segue destination="WOD-hd-Tyg" kind="show" identifier="toLobby" action="showDetailViewController:sender:" id="Axv-LA-M0d"/>
+                        <segue destination="Jpp-Ex-HGE" kind="show" identifier="toRegistration" id="S8X-8v-Ymw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUO-fK-8af" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,67 +212,6 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="-188.45577211394306"/>
         </scene>
-        <!--Options-->
-        <scene sceneID="X5F-fe-EhB">
-            <objects>
-                <viewController title="Options" id="8Mw-kk-kNZ" customClass="RegisterMenuViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6x3-Cp-0Zb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPr-03-tZV">
-                                <rect key="frame" x="24" y="88" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVB-bT-WrA" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                <rect key="frame" x="48" y="133" width="279" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Z9a-0g-AfQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="guestButtonTapped:" destination="8Mw-kk-kNZ" eventType="touchUpInside" id="2h2-RC-KZU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-fT-Gha" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                <rect key="frame" x="48" y="195" width="279" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sbf-RN-YWi"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="adminButtonTapped:" destination="8Mw-kk-kNZ" eventType="touchUpInside" id="o6y-L3-LrA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="sED-xB-1Aq" firstAttribute="trailing" secondItem="90Q-fT-Gha" secondAttribute="trailing" constant="48" id="0hV-qE-Noh"/>
-                            <constraint firstItem="zPr-03-tZV" firstAttribute="top" secondItem="sED-xB-1Aq" secondAttribute="top" constant="24" id="LYe-cG-JlR"/>
-                            <constraint firstItem="zPr-03-tZV" firstAttribute="leading" secondItem="sED-xB-1Aq" secondAttribute="leading" constant="24" id="OcB-vQ-n4t"/>
-                            <constraint firstItem="90Q-fT-Gha" firstAttribute="top" secondItem="LVB-bT-WrA" secondAttribute="bottom" constant="12" id="R8l-kK-KKp"/>
-                            <constraint firstItem="LVB-bT-WrA" firstAttribute="top" secondItem="zPr-03-tZV" secondAttribute="bottom" constant="24" id="WBX-Uj-hwR"/>
-                            <constraint firstItem="90Q-fT-Gha" firstAttribute="leading" secondItem="sED-xB-1Aq" secondAttribute="leading" constant="48" id="hZ8-MR-5RI"/>
-                            <constraint firstItem="sED-xB-1Aq" firstAttribute="trailing" secondItem="zPr-03-tZV" secondAttribute="trailing" constant="24" id="hgw-cP-H4m"/>
-                            <constraint firstItem="LVB-bT-WrA" firstAttribute="leading" secondItem="sED-xB-1Aq" secondAttribute="leading" constant="48" id="iSJ-bw-Pz0"/>
-                            <constraint firstItem="sED-xB-1Aq" firstAttribute="trailing" secondItem="LVB-bT-WrA" secondAttribute="trailing" constant="48" id="m2M-oH-b3c"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="sED-xB-1Aq"/>
-                    </view>
-                    <connections>
-                        <outlet property="registerAsAdminButton" destination="90Q-fT-Gha" id="RsJ-Wo-WA9"/>
-                        <outlet property="registerAsGuestButton" destination="LVB-bT-WrA" id="70v-Ip-7kz"/>
-                        <outlet property="titleLabel" destination="zPr-03-tZV" id="RB1-Wo-Wkq"/>
-                        <segue destination="Jpp-Ex-HGE" kind="show" identifier="goToGuestRegistration" id="cfA-RN-yW9"/>
-                        <segue destination="Jpp-Ex-HGE" kind="show" identifier="goToAdminRegistration" id="FHu-Bw-tYB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dDK-uq-8Ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4" y="750"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="UOQ-oC-joK">
             <objects>
@@ -335,10 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ac-Jm-7Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="1602"/>
+            <point key="canvasLocation" x="-4" y="750"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="cfA-RN-yW9"/>
-    </inferredMetricsTieBreakers>
 </document>
