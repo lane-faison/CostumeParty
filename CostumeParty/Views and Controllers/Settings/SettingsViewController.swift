@@ -7,6 +7,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let user = FirebaseService.firebaseUser() else { return }
+        
         view.applyBackgroundGradient()
         setupView()
     }

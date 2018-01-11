@@ -1,9 +1,9 @@
 import UIKit
+import Firebase
 
 class LobbyViewController: UIViewController {
     
-    let user = FirebaseService.firebaseUser()
-    
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var currentPartyButton: PrimaryButton!
     @IBOutlet weak var findPartyButton: PrimaryButton!
     @IBOutlet weak var hostSettingsButton: PrimaryButton!
@@ -11,13 +11,24 @@ class LobbyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        guard let user = FirebaseService.firebaseUser() else { return }
+        
+        setupView(user: user)
         view.applyBackgroundGradient()
     }
     
-    private func setupView() {
+    private func setupView(user: User) {
         navigationItem.hidesBackButton = true
         title = "Lobby"
+        
+        let name = user.displayName ?? user.email
+        if let name = name {
+            welcomeLabel.text = "Welcome, \(name)!"
+            welcomeLabel.font = .h2
+            welcomeLabel.textColor = .primaryTextColor
+        } else {
+            welcomeLabel.text = ""
+        }
         
         currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
         currentPartyButton.primaryColor = .secondaryLightColor
