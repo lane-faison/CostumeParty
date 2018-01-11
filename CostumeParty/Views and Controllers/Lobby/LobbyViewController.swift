@@ -6,7 +6,8 @@ class LobbyViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var currentPartyButton: PrimaryButton!
     @IBOutlet weak var findPartyButton: PrimaryButton!
-    @IBOutlet weak var hostSettingsButton: PrimaryButton!
+    @IBOutlet weak var hostPartyButton: PrimaryButton!
+    @IBOutlet weak var settingsButton: PrimaryButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +37,12 @@ class LobbyViewController: UIViewController {
         findPartyButton.setTitle("FIND A PARTY", for: .normal)
         findPartyButton.primaryColor = .secondaryColor
         
-        hostSettingsButton.setTitle("SETTINGS", for: .normal)
-        hostSettingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
-        hostSettingsButton.primaryColor = .secondaryDarkColor
+        hostPartyButton.setTitle("HOST A PARTY", for: .normal)
+        hostPartyButton.primaryColor = UIColor.secondaryColor.darkerColor()
+        
+        settingsButton.setTitle("SETTINGS", for: .normal)
+        settingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
+        settingsButton.primaryColor = .secondaryDarkColor
     }
 }
 
