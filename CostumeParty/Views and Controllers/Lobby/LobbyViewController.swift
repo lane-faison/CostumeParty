@@ -10,11 +10,11 @@ class LobbyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         guard let user = FirebaseService.firebaseUser() else { return }
         
         setupView(user: user)
-        view.applyBackgroundGradient()
+        view.applyPrimaryBackgroundGradient()
     }
     
     private func setupView(user: User) {
@@ -33,7 +33,7 @@ class LobbyViewController: UIViewController {
         currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
         currentPartyButton.primaryColor = .secondaryLightColor
 
-        findPartyButton.setTitle("FIND PARTY", for: .normal)
+        findPartyButton.setTitle("FIND A PARTY", for: .normal)
         findPartyButton.primaryColor = .secondaryColor
         
         hostSettingsButton.setTitle("SETTINGS", for: .normal)

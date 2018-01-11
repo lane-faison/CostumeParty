@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         tableView.setupTableView()
@@ -91,7 +91,7 @@ extension RegisterViewController: PrimaryButtonDelegate {
 
 extension RegisterViewController {
     private func setupView() {
-        view.applyBackgroundGradient()
+        view.applyPrimaryBackgroundGradient()
     }
     
     private func checkFields() {

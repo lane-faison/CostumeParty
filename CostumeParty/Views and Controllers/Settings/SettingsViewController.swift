@@ -6,10 +6,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let user = FirebaseService.firebaseUser() else { return }
-        
-        view.applyBackgroundGradient()
+                
+        view.applyPrimaryBackgroundGradient()
         setupView()
     }
 }
@@ -18,6 +16,7 @@ extension SettingsViewController {
     private func setupView() {
         logoutButton.primaryColor = .secondaryColor
         logoutButton.setTitle("LOG OUT", for: .normal)
+        logoutButton.setTitleColor(.primaryTextColor, for: .normal)
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     

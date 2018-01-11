@@ -19,8 +19,8 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
-        backgroundColor = UIColor.white.darkerColor()
-        
+        backgroundColor = UIColor.secondaryDarkColor.darkerColor().darkerColor()
+
         layer.cornerRadius = 5.0
         clipsToBounds = true
     }
@@ -30,16 +30,24 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.secondaryDarkColor.darkerColor()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.white.darkerColor()
+        backgroundColor = UIColor.secondaryDarkColor.darkerColor().darkerColor()
     }
     
     // User presses Return key
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func setPlaceholderText(_ placeholderTxt: String) {
+        
+        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.primaryTextColor.darkerColor()])
+        textColor = .primaryTextColor
+        
+        layoutSubviews()
     }
 }

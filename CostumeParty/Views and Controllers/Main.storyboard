@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-967" y="-188"/>
         </scene>
-        <!--Welcome!-->
+        <!--Login View Controller-->
         <scene sceneID="lkO-AE-Auw">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="f2r-Q1-w3R" customClass="LoginViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aRE-82-gFB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome!" id="1Uo-gU-D9J"/>
+                    <navigationItem key="navigationItem" id="1Uo-gU-D9J"/>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="authorLabel" destination="erj-Db-iX5" id="8ew-16-g3N"/>
