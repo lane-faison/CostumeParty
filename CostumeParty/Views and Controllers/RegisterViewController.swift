@@ -1,16 +1,5 @@
 import UIKit
 
-public enum FormSection {
-    case email
-    case password
-    case confirmPassword
-}
-
-public struct FieldInfo {
-    var title: String
-    var section: FormSection
-}
-
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +20,7 @@ class RegisterViewController: UIViewController {
         setupView()
         
         // User Text Fields
-        let emailField = FieldInfo(title: "Email...", section: .email)
+        let emailField = FieldInfo(title: "Email...", section: .defaultField)
         let passwordField = FieldInfo(title: "Password...", section: .password)
         let confirmField = FieldInfo(title: "Confirm password...", section: .confirmPassword)
         
@@ -112,12 +101,12 @@ extension RegisterViewController {
                 }
                 
                 switch fieldInfo.section {
-                case .email:
-                    emailCell = cell
                 case .password:
                     passwordCell = cell
                 case .confirmPassword:
                     confirmCell = cell
+                default:
+                    emailCell = cell
                 }
             }
         }

@@ -10,6 +10,7 @@ public struct FirebaseService {
         return Auth.auth().currentUser
     }
     
+    // AUTHENTICATION
     public static func createUser(viewController: UIViewController, email: String, password: String) {
         FireAuth.createUser(withEmail: email, password: password) { (firebaseUser, error) in
             
@@ -31,4 +32,10 @@ public struct FirebaseService {
             AlertHelper.fireErrorActionSheet(viewController: viewController, message: error.localizedDescription)
         }
     }
+    
+    // DATABASE
+    public static func createParty(viewController: UIViewController, party: Party) {
+        FireDatabase.child("parties").child(party.hostId).setValue(["name": party.name, "zipcode": party.zipCode])
+    }
+    
 }

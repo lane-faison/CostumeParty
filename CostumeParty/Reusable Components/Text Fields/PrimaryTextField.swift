@@ -1,5 +1,16 @@
 import UIKit
 
+public enum FormSection: String {
+    case defaultField
+    case password
+    case confirmPassword
+}
+
+public struct FieldInfo {
+    var title: String
+    var section: FormSection
+}
+
 class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     var fieldInfo: FieldInfo? {
