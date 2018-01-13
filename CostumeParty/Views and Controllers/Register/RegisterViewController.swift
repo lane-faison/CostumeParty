@@ -76,6 +76,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.delegate = self
             cell.button.setTitle("SUBMIT", for: .normal)
+            cell.button.setTitleColor(.secondaryTextColor, for: .normal)
             
             return cell
         }
