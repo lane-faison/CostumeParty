@@ -12,6 +12,7 @@
 		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
+		F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */; };
 		F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57601FFE01EB0078AE96 /* RegisterTableViewCell.swift */; };
 		F65B57631FFE01EB0078AE96 /* RegisterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65B57611FFE01EB0078AE96 /* RegisterTableViewCell.xib */; };
 		F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57641FFE038C0078AE96 /* RegisterViewController.swift */; };
@@ -47,6 +48,7 @@
 		F60F7C421FE6225A00073506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPartyFormViewController.swift; sourceTree = "<group>"; };
 		F65B57601FFE01EB0078AE96 /* RegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewCell.swift; sourceTree = "<group>"; };
 		F65B57611FFE01EB0078AE96 /* RegisterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterTableViewCell.xib; sourceTree = "<group>"; };
 		F65B57641FFE038C0078AE96 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CC91FE626AC0073766E /* Main.storyboard */,
+				F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */,
 				F6EB44882002E17B008647A1 /* LobbyViewController.swift */,
 				F60F7C3D1FE6225A00073506 /* LoginViewController.swift */,
 				F6EB44912009DCD3008647A1 /* PartyListViewController.swift */,
@@ -364,6 +367,7 @@
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
 				F6EB448F2009D4EB008647A1 /* PartyTableViewCell.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
+				F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

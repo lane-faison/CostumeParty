@@ -1,6 +1,6 @@
 import UIKit
 
-enum FormSection {
+public enum FormSection {
     case email
     case password
     case confirmPassword
@@ -9,11 +9,6 @@ enum FormSection {
 public struct FieldInfo {
     var title: String
     var section: FormSection
-    
-    init(title: String, section: FormSection) {
-        self.title = title
-        self.section = section
-    }
 }
 
 class RegisterViewController: UIViewController {

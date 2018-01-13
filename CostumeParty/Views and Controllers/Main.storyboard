@@ -261,16 +261,31 @@
             </objects>
             <point key="canvasLocation" x="1945" y="-188"/>
         </scene>
-        <!--View Controller-->
+        <!--Host Party Form View Controller-->
         <scene sceneID="6yU-vm-ZN4">
             <objects>
-                <viewController id="H9z-bf-xpZ" sceneMemberID="viewController">
+                <viewController id="H9z-bf-xpZ" customClass="HostPartyFormViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpz-i8-NHu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-xO-e25">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P1F-xO-e25" firstAttribute="top" secondItem="1us-Ze-1Vk" secondAttribute="top" id="C0f-k8-rP2"/>
+                            <constraint firstItem="1us-Ze-1Vk" firstAttribute="bottom" secondItem="P1F-xO-e25" secondAttribute="bottom" id="FT1-35-BFR"/>
+                            <constraint firstItem="P1F-xO-e25" firstAttribute="leading" secondItem="1us-Ze-1Vk" secondAttribute="leading" id="OFj-vo-dEg"/>
+                            <constraint firstItem="1us-Ze-1Vk" firstAttribute="trailing" secondItem="P1F-xO-e25" secondAttribute="trailing" id="jDn-RR-WXb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1us-Ze-1Vk"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="P1F-xO-e25" id="ZXv-TS-WvN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkG-xA-aNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
