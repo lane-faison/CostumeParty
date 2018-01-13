@@ -62,9 +62,16 @@ extension HostPartyFormViewController: PrimaryButtonDelegate {
         print("SUBMIT TAPPED")
         guard let user = user else { return }
         
-        let party = Party(name: "TESTING", zipCode: 80023, hostId: user.uid)
+        let nameCell = tableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? RegisterTableViewCell
+        let zipcodeCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as? RegisterTableViewCell
         
-        FirebaseService.createParty(viewController: self, party: party)
+        guard let name = nameCell?.sectionTextField.text, let zipcodeString = zipcodeCell?.sectionTextField.text else { return }
+        
+        if let zipcode = Int(zipcodeString) {
+            let party = Party(name: name, zipCode: zipcode, hostId: user.uid)
+            
+            FirebaseService.createParty(viewController: self, party: party)
+        }
     }
     
     
