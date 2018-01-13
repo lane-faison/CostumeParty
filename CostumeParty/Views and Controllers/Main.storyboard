@@ -223,11 +223,58 @@
                         <outlet property="settingsButton" destination="HOJ-ph-I6q" id="g1v-8t-UBF"/>
                         <outlet property="welcomeLabel" destination="Mcd-25-QlL" id="gE1-tQ-Jvs"/>
                         <segue destination="B5I-Ci-Uwk" kind="show" identifier="toSettings" id="1RJ-4F-gmP"/>
+                        <segue destination="S5h-nB-clh" kind="show" identifier="toPartyList" id="bD3-eC-FXk"/>
+                        <segue destination="H9z-bf-xpZ" kind="show" identifier="toHostParty" id="jnn-Pq-SA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-sD-mDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024.8" y="-188.45577211394306"/>
+        </scene>
+        <!--Party List View Controller-->
+        <scene sceneID="ezc-4e-H4j">
+            <objects>
+                <viewController id="S5h-nB-clh" customClass="PartyListViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G9K-t3-hi8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1RM-e6-99T">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CWL-QF-xfI" firstAttribute="bottom" secondItem="1RM-e6-99T" secondAttribute="bottom" id="8Nm-Uj-Rfi"/>
+                            <constraint firstItem="CWL-QF-xfI" firstAttribute="trailing" secondItem="1RM-e6-99T" secondAttribute="trailing" id="DVO-en-fZM"/>
+                            <constraint firstItem="1RM-e6-99T" firstAttribute="leading" secondItem="CWL-QF-xfI" secondAttribute="leading" id="FM0-aD-5gH"/>
+                            <constraint firstItem="1RM-e6-99T" firstAttribute="top" secondItem="CWL-QF-xfI" secondAttribute="top" id="clW-8D-UzS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CWL-QF-xfI"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="1RM-e6-99T" id="qCi-fZ-TVf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMk-vU-Chg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="-188"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6yU-vm-ZN4">
+            <objects>
+                <viewController id="H9z-bf-xpZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tpz-i8-NHu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1us-Ze-1Vk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkG-xA-aNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2895" y="-188"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="UOQ-oC-joK">

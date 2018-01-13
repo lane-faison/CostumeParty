@@ -4,14 +4,14 @@ protocol PrimaryButtonDelegate: class {
     func buttonTapped()
 }
 class ButtonTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var button: PrimaryButton!
     
     class var reuseIdentifier: String {
         get {
             return "ButtonTableViewCell"
         }
     }
+    
+    @IBOutlet weak var button: PrimaryButton!
     
     weak var delegate: PrimaryButtonDelegate?
     

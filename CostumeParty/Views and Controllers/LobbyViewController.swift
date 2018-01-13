@@ -35,6 +35,7 @@ class LobbyViewController: UIViewController {
         currentPartyButton.primaryColor = .secondaryLightColor
 
         findPartyButton.setTitle("FIND A PARTY", for: .normal)
+        findPartyButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
         findPartyButton.primaryColor = .secondaryColor
         
         hostPartyButton.setTitle("HOST A PARTY", for: .normal)
@@ -47,6 +48,11 @@ class LobbyViewController: UIViewController {
 }
 
 extension LobbyViewController {
+    
+    @objc func goToPartyList() {
+        performSegue(withIdentifier: "toPartyList", sender: self)
+    }
+    
     @objc func goToSettings() {
         performSegue(withIdentifier: "toSettings", sender: self)
     }
