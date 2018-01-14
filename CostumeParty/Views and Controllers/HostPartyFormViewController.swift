@@ -43,6 +43,7 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             
             cell.sectionTextField.fieldInfo = hostFields[indexPath.row]
+            cell.tag = indexPath.row
             
             return cell
         } else {
@@ -51,6 +52,7 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
             cell.delegate = self
             cell.button.setTitle("NEXT", for: .normal)
             cell.button.setTitleColor(.secondaryTextColor, for: .normal)
+            cell.tag = indexPath.row
             
             return cell
         }
@@ -59,20 +61,24 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension HostPartyFormViewController: PrimaryButtonDelegate {
     func buttonTapped() {
-        print("SUBMIT TAPPED")
-        guard let user = user else { return }
-        
-        let nameCell = tableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? RegisterTableViewCell
-        let zipcodeCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as? RegisterTableViewCell
-        
-        guard let name = nameCell?.sectionTextField.text, let zipcodeString = zipcodeCell?.sectionTextField.text else { return }
-        
-        if let zipcode = Int(zipcodeString) {
-            let party = Party(name: name, zipCode: zipcode, hostId: user.uid)
-            
-            FirebaseService.createParty(viewController: self, party: party)
-        }
+        performSegue(withIdentifier: "toCategories", sender: self)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCategories" {
+            if let destination = segue.destination as? CategoriesViewController {
+                
+                let nameCell = tableView.cellForRow(at: NSIndexPath(item: 0, section: 0) as IndexPath) as! RegisterTableViewCell
+                let zipcodeCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as! RegisterTableViewCell
+                
+                guard let partyName = nameCell.sectionTextField.text,
+                    let partyZipcodeString = zipcodeCell.sectionTextField.text,
+                    let zipcode = Int(partyZipcodeString),
+                    let id = user?.uid else { return }
+                
+                let party = Party(name: partyName, zipCode: zipcode, hostId: id)
+                destination.party = party
+            }
+        }
+    }
 }

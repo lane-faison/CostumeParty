@@ -23,6 +23,7 @@
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
 		F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
+		F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */; };
 		F6E59FED1FFF1AC30041DBBE /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */; };
 		F6E59FEE1FFF1AC30041DBBE /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */; };
 		F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */; };
@@ -59,6 +60,7 @@
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsTextField.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CC91FE626AC0073766E /* Main.storyboard */,
+				F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */,
 				F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */,
 				F6EB44882002E17B008647A1 /* LobbyViewController.swift */,
 				F60F7C3D1FE6225A00073506 /* LoginViewController.swift */,
@@ -360,6 +363,7 @@
 				F6E59FED1FFF1AC30041DBBE /* ButtonTableViewCell.swift in Sources */,
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
+				F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
 				F6EB44832002A85C008647A1 /* PartyHelper.swift in Sources */,
