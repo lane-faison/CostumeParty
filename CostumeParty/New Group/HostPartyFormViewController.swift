@@ -14,7 +14,7 @@ class HostPartyFormViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        hostFields = ["Party name...", "Party zip code..."]
+        hostFields = ["Party name...", "Party ZIP Code..."]
         
         let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
         let buttonNib = UINib(nibName: "ButtonTableViewCell", bundle: nil)
@@ -41,6 +41,10 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
             cell.sectionTextField.placeholder = hostFields[indexPath.row]
             cell.tag = indexPath.row
             
+            if cell.tag == 1 {
+                cell.sectionTextField.keyboardType = UIKeyboardType.numberPad
+            }
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
@@ -57,7 +61,27 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension HostPartyFormViewController: PrimaryButtonDelegate {
     func buttonTapped() {
-        performSegue(withIdentifier: "toCategories", sender: self)
+        let nameCell = tableView.cellForRow(at: NSIndexPath(item: 0, section: 0) as IndexPath) as! RegisterTableViewCell
+        let zipcodeCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as! RegisterTableViewCell
+        
+        guard let name = nameCell.sectionTextField.text,
+            let zipcode = zipcodeCell.sectionTextField.text else { return }
+        
+        if zipcode.count != 5 {
+            let alert = UIAlertController(title: "ZIP Code error", message: "Please enter a valid 5-digit ZIP Code", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okay)
+            
+            present(alert, animated: true, completion: nil)
+        } else if !name.isEmpty && !zipcode.isEmpty {
+            performSegue(withIdentifier: "toCategories", sender: self)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "You must complete the form before proceeding.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okay)
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
