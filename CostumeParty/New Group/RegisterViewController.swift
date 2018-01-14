@@ -4,8 +4,6 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var formComplete: Bool = true
-    
     fileprivate var userFields = [String]()
     
     override func viewDidLoad() {
@@ -16,9 +14,6 @@ class RegisterViewController: UIViewController {
         tableView.setupTableView()
         
         title = "Registration"
-        
-        setupView()
-        
         userFields = ["Email...", "Password...", "Confirm password..."]
         
         // Registering the different tableView cell types
@@ -26,6 +21,8 @@ class RegisterViewController: UIViewController {
         let buttonNib = UINib(nibName: "ButtonTableViewCell", bundle: nil)
         tableView.register(textFieldNib, forCellReuseIdentifier: RegisterTableViewCell.reuseIdentifier)
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
+        
+        setupView()
     }
 }
 
@@ -39,7 +36,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row < lastIndex {
             let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
-            
             cell.sectionTextField.placeholder = userFields[indexPath.row]
             cell.tag = indexPath.row
             
@@ -50,7 +46,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell: ButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
-            
             cell.delegate = self
             cell.button.setTitle("SUBMIT", for: .normal)
             cell.button.setTitleColor(.secondaryTextColor, for: .normal)
