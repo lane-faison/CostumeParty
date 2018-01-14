@@ -6,11 +6,11 @@ class RegisterViewController: UIViewController {
     
     var formComplete: Bool = true
     
-    fileprivate var userFields = [FieldInfo]()
+    fileprivate var userFields = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.setupTableView()
@@ -19,13 +19,7 @@ class RegisterViewController: UIViewController {
         
         setupView()
         
-        // User Text Fields
-        let emailField = FieldInfo(title: "Email...", section: .defaultField)
-        let passwordField = FieldInfo(title: "Password...", section: .password)
-        let confirmField = FieldInfo(title: "Confirm password...", section: .confirmPassword)
-        
-        // Text Field Arrays
-        userFields = [emailField, passwordField, confirmField]
+        userFields = ["Email...", "Password...", "Confirm password..."]
         
         // Registering the different tableView cell types
         let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
@@ -46,12 +40,11 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < lastIndex {
             let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             
-            cell.sectionTextField.fieldInfo = userFields[indexPath.row]
+            cell.sectionTextField.placeholder = userFields[indexPath.row]
+            cell.tag = indexPath.row
             
-            if let fieldInfo = cell.sectionTextField.fieldInfo {
-                if fieldInfo.section == .password || fieldInfo.section == .confirmPassword {
-                    cell.sectionTextField.isSecureTextEntry = true
-                }
+            if cell.tag == 1 || cell.tag == 2 {
+                cell.sectionTextField.isSecureTextEntry = true
             }
             
             return cell
@@ -83,38 +76,21 @@ extension RegisterViewController {
         let numberOfRows = userFields.count
         var errorCount: Int = 0
         
-        var emailCell = RegisterTableViewCell()
-        var passwordCell = RegisterTableViewCell()
-        var confirmCell = RegisterTableViewCell()
-        
         for row in 0 ..< numberOfRows {
             let cell = tableView.cellForRow(at: NSIndexPath(row: row, section: 0) as IndexPath) as? RegisterTableViewCell
             if cell?.sectionTextField.text?.isEmpty ?? false {
                 errorCount += 1
             }
-            
-            if let fieldInfo = cell?.sectionTextField.fieldInfo {
-                guard let cell = cell else {
-                    let message = "There was an error when submitting your information. Please try again."
-                    AlertHelper.fireErrorActionSheet(viewController: self, message: message)
-                    return
-                }
-                
-                switch fieldInfo.section {
-                case .password:
-                    passwordCell = cell
-                case .confirmPassword:
-                    confirmCell = cell
-                default:
-                    emailCell = cell
-                }
-            }
         }
-
+        
         if errorCount == 0 {
+            let emailCell = tableView.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as! RegisterTableViewCell
+            let passwordCell = tableView.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath) as! RegisterTableViewCell
+            let confirmPasswordCell = tableView.cellForRow(at: NSIndexPath(row: 2, section: 0) as IndexPath) as! RegisterTableViewCell
+            
             guard let email = emailCell.sectionTextField.text,
                 let password = passwordCell.sectionTextField.text,
-                let confirmPassword = confirmCell.sectionTextField.text else {
+                let confirmPassword = confirmPasswordCell.sectionTextField.text else {
                     let message = "There is an error within your information. Please try again."
                     AlertHelper.fireErrorActionSheet(viewController: self, message: message)
                     return

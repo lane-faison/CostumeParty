@@ -1,23 +1,6 @@
 import UIKit
 
-public enum FormSection: String {
-    case defaultField
-    case password
-    case confirmPassword
-}
-
-public struct FieldInfo {
-    var title: String
-    var section: FormSection
-}
-
 class PrimaryTextField: UITextField, UITextFieldDelegate {
-    
-    var fieldInfo: FieldInfo? {
-        didSet {
-            setupWithFieldInfo(fieldInfo: fieldInfo)
-        }
-    }
     
     var securedField: Bool = false {
         didSet {
@@ -37,12 +20,6 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         delegate = self
         
         setupTextField()
-    }
-    
-    func setupWithFieldInfo(fieldInfo: FieldInfo?) {
-        guard let fieldInfo = fieldInfo else { return }
-        
-        self.placeholder = fieldInfo.title
     }
     
     private func setupTextField(){

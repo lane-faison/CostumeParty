@@ -6,7 +6,7 @@ class HostPartyFormViewController: UIViewController {
     
     let user = FirebaseService.firebaseUser()
     
-    fileprivate var hostFields = [FieldInfo]()
+    fileprivate var hostFields = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,11 +14,7 @@ class HostPartyFormViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Default fields
-        let partyNameField = FieldInfo(title: "Party name...", section: .defaultField)
-        let partyZipCodeField = FieldInfo(title: "Party zip code...", section: .defaultField)
-        
-        hostFields = [partyNameField, partyZipCodeField]
+        hostFields = ["Party name...", "Party zip code..."]
         
         let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
         let buttonNib = UINib(nibName: "ButtonTableViewCell", bundle: nil)
@@ -42,7 +38,7 @@ extension HostPartyFormViewController: UITableViewDelegate, UITableViewDataSourc
         if indexPath.row < hostFields.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             
-            cell.sectionTextField.fieldInfo = hostFields[indexPath.row]
+            cell.sectionTextField.placeholder = hostFields[indexPath.row]
             cell.tag = indexPath.row
             
             return cell
