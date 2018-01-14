@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = .primaryDarkColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.primaryTextColor]
         UIBarButtonItem.appearance().tintColor = .primaryTextColor
-        
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
