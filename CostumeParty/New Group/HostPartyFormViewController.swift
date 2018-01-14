@@ -2,6 +2,7 @@ import UIKit
 
 class HostPartyFormViewController: UIViewController {
     
+    @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     let user = FirebaseService.firebaseUser()
@@ -22,6 +23,7 @@ class HostPartyFormViewController: UIViewController {
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
         view.applyPrimaryBackgroundGradient()
+        setupView()
     }
 }
 
@@ -100,5 +102,13 @@ extension HostPartyFormViewController: PrimaryButtonDelegate {
                 destination.party = party
             }
         }
+    }
+}
+
+extension HostPartyFormViewController {
+    private func setupView() {
+        headingLabel.font = .h2
+        headingLabel.text = "First, enter in some basic information about your party to help your guests find it!"
+        headingLabel.textColor = .primaryTextColor
     }
 }

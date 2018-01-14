@@ -2,16 +2,25 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
+    @IBOutlet weak var headingLabel: UILabel!
+    
     var party: Party?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.applyPrimaryBackgroundGradient()
+        setupView()
     }
 }
 
 extension CategoriesViewController {
+    private func setupView() {
+        headingLabel.font = .h2
+        headingLabel.text = "Next, add some costume categories for your party!"
+        headingLabel.textColor = .primaryTextColor
+    }
+    
     private func submitTapped() {
         //    guard let user = user else { return }
         //    
