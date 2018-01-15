@@ -8,6 +8,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
                 
         view.applyPrimaryBackgroundGradient()
+        setupViewController()
         setupView()
     }
 }

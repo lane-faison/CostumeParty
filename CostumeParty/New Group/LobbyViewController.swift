@@ -15,6 +15,7 @@ class LobbyViewController: UIViewController {
         guard let user = FirebaseService.firebaseUser() else { return }
         
         setupView(user: user)
+        setupViewController()
         view.applyPrimaryBackgroundGradient()
     }
     

@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
         tableView.register(textFieldNib, forCellReuseIdentifier: RegisterTableViewCell.reuseIdentifier)
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
+        setupViewController()
         setupView()
     }
 }

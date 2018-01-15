@@ -20,7 +20,6 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     
     private func setupDisplay() {
         backgroundColor = UIColor.secondaryDarkColor.darkerColor().darkerColor()
-
         layer.cornerRadius = 5.0
         clipsToBounds = true
     }

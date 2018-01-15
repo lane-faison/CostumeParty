@@ -15,6 +15,7 @@ class PartyListViewController: UIViewController {
         let cell = UINib(nibName: "PartyTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: PartyTableViewCell.reuseIdentifier)
         
+        setupViewController()
         loadTestData()
     }
 }
