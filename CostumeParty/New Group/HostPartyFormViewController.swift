@@ -27,7 +27,10 @@ extension HostPartyFormViewController: PrimaryButtonDelegate {
         guard let name = partyNameField.text,
             let zipcode = zipcodeField.text else { return }
         
-        if zipcode.count != 5 {
+        // Returns a string of only numbers
+        let zipNumbersOnly = zipcode.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+        
+        if zipcode.count != 5 || zipcode.count != zipNumbersOnly.count {
             let alert = UIAlertController(title: "ZIP Code error", message: "Please enter a valid 5-digit ZIP Code", preferredStyle: .alert)
             let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alert.addAction(okay)
