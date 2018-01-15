@@ -3,7 +3,6 @@ import UIKit
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCategoryButton: PrimaryButton!
     @IBOutlet weak var submitButton: PrimaryButton!
     
@@ -13,15 +12,6 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // Registering the different tableView cell types
-        let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
-        let buttonNib = UINib(nibName: "ButtonTableViewCell", bundle: nil)
-        tableView.register(textFieldNib, forCellReuseIdentifier: RegisterTableViewCell.reuseIdentifier)
-        tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
         view.applyPrimaryBackgroundGradient()
         setupView()
@@ -33,22 +23,6 @@ class CategoriesViewController: UIViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
         submitTapped()
-    }
-}
-
-extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
-        cell.sectionTextField.placeholder = categories[indexPath.row]
-        return cell
     }
 }
 
@@ -66,13 +40,7 @@ extension CategoriesViewController {
     }
     
     private func addCategoryTapped() {
-        print("Category tapped")
-        tableView.beginUpdates()
-        let lastIndexPath: IndexPath = IndexPath(row: categories.count, section: 0)
-        tableView.insertRows(at: [lastIndexPath], with: .top)
-        categories.append("ex. Best Costume")
-        tableView.endUpdates()
-        tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
+
     }
     
     private func submitTapped() {

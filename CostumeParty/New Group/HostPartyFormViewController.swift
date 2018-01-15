@@ -108,7 +108,7 @@ extension HostPartyFormViewController: PrimaryButtonDelegate {
 extension HostPartyFormViewController {
     private func setupView() {
         headingLabel.font = .h2
-        headingLabel.text = "First, enter in some basic information about your party to help your guests find it!"
+        headingLabel.text = "First, enter in some basic information about your party to better help your guests find it!"
         headingLabel.textColor = .primaryTextColor
     }
 }
