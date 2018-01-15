@@ -24,6 +24,8 @@
 		F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
 		F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */; };
+		F6D4ACE3200C74AB0078816C /* NewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4ACE2200C74AB0078816C /* NewCategoryView.swift */; };
+		F6D4ACE5200C74D40078816C /* NewCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6D4ACE4200C74D40078816C /* NewCategoryView.xib */; };
 		F6E59FED1FFF1AC30041DBBE /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */; };
 		F6E59FEE1FFF1AC30041DBBE /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */; };
 		F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */; };
@@ -61,6 +63,8 @@
 		F6847E6C1FFB5918009FEB21 /* CredentialsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsTextField.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		F6D4ACE2200C74AB0078816C /* NewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryView.swift; sourceTree = "<group>"; };
+		F6D4ACE4200C74D40078816C /* NewCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCategoryView.xib; sourceTree = "<group>"; };
 		F6E59FEB1FFF1AC30041DBBE /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		F6E59FEC1FFF1AC30041DBBE /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		F60F7C4E1FE6236500073506 /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				F6D4ACE1200C74820078816C /* Views */,
 				F6847E641FFA1C4E009FEB21 /* Text Fields */,
 				F60F7C501FE6239000073506 /* Cells */,
 				F60F7C4F1FE6238600073506 /* Buttons */,
@@ -233,6 +238,15 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		F6D4ACE1200C74820078816C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F6D4ACE2200C74AB0078816C /* NewCategoryView.swift */,
+				F6D4ACE4200C74D40078816C /* NewCategoryView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,6 +316,7 @@
 				F65B57631FFE01EB0078AE96 /* RegisterTableViewCell.xib in Resources */,
 				F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */,
 				F6E59FF4200060620041DBBE /* GoogleService-Info.plist in Resources */,
+				F6D4ACE5200C74D40078816C /* NewCategoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +394,7 @@
 				F6847E6D1FFB5918009FEB21 /* CredentialsTextField.swift in Sources */,
 				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
 				F6EB448F2009D4EB008647A1 /* PartyTableViewCell.swift in Sources */,
+				F6D4ACE3200C74AB0078816C /* NewCategoryView.swift in Sources */,
 				F65B57621FFE01EB0078AE96 /* RegisterTableViewCell.swift in Sources */,
 				F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
