@@ -16,38 +16,50 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Ze-5VK">
-                    <rect key="frame" x="24" y="24" width="30" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-ly-g5l">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Ze-5VK">
+                            <rect key="frame" x="24" y="24" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="W3v-OJ-vgi"/>
+                                <constraint firstAttribute="height" constant="30" id="YNX-NC-yCa"/>
+                            </constraints>
+                            <state key="normal" title="+"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSV-ax-0DG">
+                            <rect key="frame" x="78" y="28" width="273" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-ku-zm9" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
+                            <rect key="frame" x="78" y="24" width="273" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="W3v-OJ-vgi"/>
-                        <constraint firstAttribute="height" constant="30" id="YNX-NC-yCa"/>
+                        <constraint firstAttribute="bottom" secondItem="5Dq-Ze-5VK" secondAttribute="bottom" constant="24" id="2ff-0e-n4a"/>
+                        <constraint firstItem="5Dq-Ze-5VK" firstAttribute="leading" secondItem="oh0-ly-g5l" secondAttribute="leading" constant="24" id="EuO-QC-wtd"/>
+                        <constraint firstItem="WSV-ax-0DG" firstAttribute="leading" secondItem="5Dq-Ze-5VK" secondAttribute="trailing" constant="24" id="YFQ-5L-Thc"/>
+                        <constraint firstItem="WSV-ax-0DG" firstAttribute="centerY" secondItem="5Dq-Ze-5VK" secondAttribute="centerY" id="d8h-iF-eU2"/>
+                        <constraint firstItem="5Dq-Ze-5VK" firstAttribute="top" secondItem="oh0-ly-g5l" secondAttribute="top" constant="24" id="gXU-H3-UU6"/>
+                        <constraint firstItem="OqM-ku-zm9" firstAttribute="centerX" secondItem="WSV-ax-0DG" secondAttribute="centerX" id="hP2-eq-RFA"/>
+                        <constraint firstItem="OqM-ku-zm9" firstAttribute="width" secondItem="WSV-ax-0DG" secondAttribute="width" id="jhf-WB-8c9"/>
+                        <constraint firstItem="OqM-ku-zm9" firstAttribute="centerY" secondItem="WSV-ax-0DG" secondAttribute="centerY" id="oDU-Mc-BBT"/>
+                        <constraint firstAttribute="trailing" secondItem="WSV-ax-0DG" secondAttribute="trailing" constant="24" id="tkR-Sn-UeG"/>
                     </constraints>
-                    <state key="normal" title="+"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSV-ax-0DG">
-                    <rect key="frame" x="78" y="28.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-ku-zm9" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
-                    <rect key="frame" x="78" y="24" width="273" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WSV-ax-0DG" secondAttribute="trailing" constant="24" id="2k5-p1-yJv"/>
-                <constraint firstItem="5Dq-Ze-5VK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="3Ee-gF-553"/>
-                <constraint firstItem="WSV-ax-0DG" firstAttribute="centerY" secondItem="5Dq-Ze-5VK" secondAttribute="centerY" id="Hvf-Vs-Ant"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5Dq-Ze-5VK" secondAttribute="bottom" constant="24" id="KnV-aV-atJ"/>
-                <constraint firstItem="OqM-ku-zm9" firstAttribute="leading" secondItem="5Dq-Ze-5VK" secondAttribute="trailing" constant="24" id="MEa-gi-0T9"/>
-                <constraint firstItem="5Dq-Ze-5VK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="cml-FO-83w"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OqM-ku-zm9" secondAttribute="trailing" constant="24" id="g8a-IN-KLG"/>
-                <constraint firstItem="WSV-ax-0DG" firstAttribute="leading" secondItem="5Dq-Ze-5VK" secondAttribute="trailing" constant="24" id="hw1-cU-uO7"/>
-                <constraint firstItem="OqM-ku-zm9" firstAttribute="centerY" secondItem="5Dq-Ze-5VK" secondAttribute="centerY" id="zu0-dJ-Hnx"/>
+                <constraint firstItem="oh0-ly-g5l" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="39B-VK-1dm"/>
+                <constraint firstItem="oh0-ly-g5l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ks2-h1-7qy"/>
+                <constraint firstItem="oh0-ly-g5l" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Q4e-fl-wM7"/>
+                <constraint firstItem="oh0-ly-g5l" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="e0K-q7-Z6S"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
