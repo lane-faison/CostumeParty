@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         imageView.image = UIImage(named: "ghost")
         
         titleLabel.text = "Costume Party!"
-        titleLabel.font = UIFont.h1
+        titleLabel.font = UIFont.h2
         titleLabel.textColor = .primaryTextColor
         
         usernameTextField.setPlaceholderText("Email...")

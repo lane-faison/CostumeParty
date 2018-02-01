@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="QMB-Yq-oK9">
@@ -49,13 +54,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHD-yK-J6H">
-                                                <rect key="frame" x="166" y="168" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="166" y="168" width="42" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-qb-vb2" customClass="CredentialsTextField" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="212.5" width="279" height="50"/>
+                                                <rect key="frame" x="48" y="212" width="279" height="50"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Gex-e9-S0s"/>
@@ -65,7 +70,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h87-Jx-Dqh" customClass="CredentialsTextField" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="274.5" width="279" height="50"/>
+                                                <rect key="frame" x="48" y="274" width="279" height="50"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="JvF-9v-nzs"/>
@@ -75,21 +80,21 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d55-Rv-SSQ" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="348.5" width="279" height="50"/>
+                                                <rect key="frame" x="48" y="348" width="279" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="uNM-hC-YW3"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-6m-7eh" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="410.5" width="279" height="50"/>
+                                                <rect key="frame" x="48" y="410" width="279" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KhL-o8-kdh"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Db-iX5">
-                                                <rect key="frame" x="166" y="508.5" width="42" height="20.5"/>
+                                                <rect key="frame" x="166" y="508" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

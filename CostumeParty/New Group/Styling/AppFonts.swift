@@ -1,11 +1,9 @@
 import UIKit
 
 extension UIFont {
-    static let h1: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 36.0)!
-    static let h2: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 24.0)!
-    static let h3: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 18.0)!
-    static let h4: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 14.0)!
-    static let h5: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 12.0)!
-    static let h6: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 10.0)!
-    static let h7: UIFont = UIFont(name: "AvenirNextCondensed-Bold", size: 8.0)!
+    static let h1: UIFont = systemFont(ofSize: 64, weight: UIFont.Weight.ultraLight)
+    static let h2: UIFont = systemFont(ofSize: 48, weight: UIFont.Weight.thin)
+    static let h3: UIFont = systemFont(ofSize: 32, weight: UIFont.Weight.light)
+    static let h4: UIFont = systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+    static let h5: UIFont = systemFont(ofSize: 16, weight: UIFont.Weight.regular)
 }
