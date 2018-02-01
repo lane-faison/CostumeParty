@@ -2,6 +2,7 @@ import UIKit
 
 class PrimaryTextField: UITextField, UITextFieldDelegate {
     
+    private let textFieldBackgroundColor: UIColor = .lightTextColor
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
@@ -18,16 +19,16 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     private func setupTextField(){
         self.layer.cornerRadius = 5.0
-        backgroundColor = UIColor.white.darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
         self.autocorrectionType = .default
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.white
+        backgroundColor = textFieldBackgroundColor.darkerColor()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.white.darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
     }
     
     // User presses Return key
