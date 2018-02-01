@@ -16,7 +16,6 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         setupViewController()
         setupView()
-        view.applySecondaryBackgroundGradient()
     }
     
     private func setupView() {
@@ -24,7 +23,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         titleLabel.text = "Costume Party!"
         titleLabel.font = UIFont.h2
-        titleLabel.textColor = .primaryTextColor
+        titleLabel.textColor = .darkTextColor
         
         usernameTextField.setPlaceholderText("Email...")
         passwordTextField.setPlaceholderText("Password...")
@@ -32,17 +31,17 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)
-        loginButton.primaryColor = .primaryTextColor
-        loginButton.setTitleColor(.secondaryDarkColor, for: .normal)
+        loginButton.primaryColor = .linkColor
+        loginButton.setTitleColor(.lightTextColor, for: .normal)
         
         registerButton.setTitle("REGISTER", for: .normal)
         registerButton.addTarget(self, action: #selector(userTappedRegister), for: .touchUpInside)
-        registerButton.primaryColor = .primaryTextColor
-        registerButton.setTitleColor(.secondaryDarkColor, for: .normal)
+        registerButton.primaryColor = .linkColor
+        registerButton.setTitleColor(.lightTextColor, for: .normal)
         
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
-        authorLabel.textColor = .primaryTextColor
+        authorLabel.textColor = .darkTextColor
     }
     
     @objc func userTappedLogin() {

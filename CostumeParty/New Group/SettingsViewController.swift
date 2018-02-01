@@ -6,8 +6,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        view.applyPrimaryBackgroundGradient()
+        
         setupViewController()
         setupView()
     }
@@ -15,9 +14,9 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func setupView() {
-        logoutButton.primaryColor = .secondaryColor
+        logoutButton.primaryColor = .linkColor
         logoutButton.setTitle("LOG OUT", for: .normal)
-        logoutButton.setTitleColor(.secondaryTextColor, for: .normal)
+        logoutButton.setTitleColor(.white, for: .normal)
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     

@@ -3,11 +3,11 @@ import UIKit
 extension UIView {
     
     func applyPrimaryBackgroundGradient() {
-        setGradientBackground(color1: UIColor.primaryDarkColor.darkerColor(), color2: .primaryColor)
+        setGradientBackground(color1: UIColor.lightTextColor.darkerColor(), color2: .lightTextColor)
     }
     
     func applySecondaryBackgroundGradient() {
-        setGradientBackground(color1: UIColor.secondaryDarkColor.darkerColor(), color2: .secondaryColor)
+        setGradientBackground(color1: UIColor.lightTextColor.darkerColor(), color2: .lightTextColor)
     }
     
     private func setGradientBackground(color1: UIColor, color2: UIColor) {

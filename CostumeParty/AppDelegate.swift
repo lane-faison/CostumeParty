@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        UINavigationBar.appearance().barTintColor = .primaryDarkColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.primaryTextColor]
-        UIBarButtonItem.appearance().tintColor = .primaryTextColor
+        UINavigationBar.appearance().barTintColor = .darkTextColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightTextColor]
+        UIBarButtonItem.appearance().tintColor = .lightTextColor
         UIApplication.shared.statusBarStyle = .lightContent
         return true
     }

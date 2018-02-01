@@ -2,6 +2,8 @@ import UIKit
 
 class CredentialsTextField: UITextField, UITextFieldDelegate {
     
+    private let textFieldBackgroundColor: UIColor = .lightTextColor
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
@@ -19,7 +21,7 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
-        backgroundColor = UIColor.secondaryDarkColor.darkerColor().darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
         layer.cornerRadius = 5.0
         clipsToBounds = true
     }
@@ -29,11 +31,11 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.secondaryDarkColor.darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        backgroundColor = UIColor.secondaryDarkColor.darkerColor().darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
     }
     
     // User presses Return key
@@ -44,8 +46,8 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     
     func setPlaceholderText(_ placeholderTxt: String) {
         
-        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.primaryTextColor.darkerColor()])
-        textColor = .primaryTextColor
+        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkTextColor.darkerColor()])
+        textColor = .darkTextColor
         
         layoutSubviews()
     }

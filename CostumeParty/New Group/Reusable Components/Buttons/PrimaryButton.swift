@@ -2,14 +2,14 @@ import UIKit
 
 class PrimaryButton: UIButton {
     //Colors
-    var buttonFontColor: UIColor = .secondaryTextColor
-    var primaryColor: UIColor = .secondaryColor {
+    var buttonFontColor: UIColor = .white
+    var primaryColor: UIColor = .linkColor {
         didSet {
             configure()
         }
     }
     //Font
-    let buttonFont: UIFont = .h3
+    let buttonFont: UIFont = .h4
     
     //Shadow
     var shadowRadius: CGFloat = 3.0

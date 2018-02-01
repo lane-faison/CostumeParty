@@ -16,7 +16,6 @@ class HostPartyFormViewController: UIViewController {
         
         hostFields = ["Party name...", "Party ZIP Code..."]
         
-        view.applyPrimaryBackgroundGradient()
         setupViewController()
         setupView()
     }
@@ -65,9 +64,9 @@ extension HostPartyFormViewController: PrimaryButtonDelegate {
 
 extension HostPartyFormViewController {
     private func setupView() {
-        headingLabel.font = .h2
+        headingLabel.font = .h4
         headingLabel.text = "First, enter in some basic information about your party to better help your guests find it!"
-        headingLabel.textColor = .primaryTextColor
+        headingLabel.textColor = .darkTextColor
         
         partyNameField.placeholder = "Party's name..."
         
@@ -75,7 +74,7 @@ extension HostPartyFormViewController {
         zipcodeField.placeholder = "Party location's ZIP Code..."
         
         nextButton.setTitle("NEXT", for: .normal)
-        nextButton.setTitleColor(.secondaryTextColor, for: .normal)
+        nextButton.setTitleColor(.lightTextColor, for: .normal)
         nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
 }

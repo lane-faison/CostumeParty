@@ -8,7 +8,7 @@ class NewCategoryView: UIView {
     
     private var isSelected = false {
         didSet {
-            plusButton.setTitleColor(.white, for: .normal)
+            plusButton.setTitleColor(.lightTextColor, for: .normal)
             plusButton.layer.cornerRadius = 15
             
             if isSelected {

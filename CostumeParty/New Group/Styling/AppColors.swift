@@ -20,12 +20,11 @@ extension UIColor {
         return UIColor(hue: h, saturation: s, brightness: b * 1.6, alpha: a)
     }
     
-    static let primaryColor = UIColor(red: 0.27, green: 0.35, blue: 0.39, alpha: 1.0)
-    static let primaryLightColor = UIColor(red: 0.44, green: 0.53, blue: 0.57, alpha: 1.0)
-    static let primaryDarkColor = UIColor(red: 0.11, green: 0.19, blue: 0.23, alpha: 1.0)
-    static let primaryTextColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.0)
-    static let secondaryColor = UIColor(red: 0.00, green: 0.90, blue: 0.46, alpha: 1.0)
-    static let secondaryLightColor = UIColor(red: 0.40, green: 1.00, blue: 0.65, alpha: 1.0)
-    static let secondaryDarkColor = UIColor(red: 0.00, green: 0.70, blue: 0.28, alpha: 1.0)
-    static let secondaryTextColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.0)
+    static let primaryColor = UIColor(red:0.25, green:0.32, blue:0.71, alpha:1.0)
+    static let destructiveColor = UIColor(red:0.93, green:0.30, blue:0.24, alpha:1.0)
+    static let linkColor = UIColor(red:0.18, green:0.49, blue:0.96, alpha:1.0)
+    static let affirmativeColor = UIColor(red:0.47, green:0.84, blue:0.45, alpha:1.0)
+    static let inactiveColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1.0)
+    static let darkTextColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
+    static let lightTextColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
 }

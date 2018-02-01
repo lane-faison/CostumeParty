@@ -34,7 +34,6 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.applyPrimaryBackgroundGradient()
         setupViewController()
         setupView()
     }
@@ -46,9 +45,9 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController {
     private func setupView() {
-        headingLabel.font = .h2
+        headingLabel.font = .h4
         headingLabel.text = "Next, add some costume categories for your party!\n(Maximum of 10)"
-        headingLabel.textColor = .primaryTextColor
+        headingLabel.textColor = .darkTextColor
         
         category1.text = "Best Costume"
         category2.text = "Funniest Costume"
@@ -65,8 +64,8 @@ extension CategoriesViewController {
         switch9.isOn = false
         switch10.isOn = false
         
-        submitButton.setTitle("SUBMIT", for: .normal)
-        submitButton.primaryColor = .secondaryColor
+        submitButton.setTitle("FINISHED", for: .normal)
+        submitButton.primaryColor = .affirmativeColor
     }
     
     private func submitTapped() {

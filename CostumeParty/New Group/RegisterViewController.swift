@@ -23,7 +23,6 @@ class RegisterViewController: UIViewController {
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
         setupViewController()
-        setupView()
     }
 }
 
@@ -49,7 +48,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             let cell: ButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
             cell.delegate = self
             cell.button.setTitle("SUBMIT", for: .normal)
-            cell.button.setTitleColor(.secondaryTextColor, for: .normal)
+            cell.button.setTitleColor(.lightTextColor, for: .normal)
             
             return cell
         }
@@ -64,10 +63,6 @@ extension RegisterViewController: PrimaryButtonDelegate {
 }
 
 extension RegisterViewController {
-    private func setupView() {
-        view.applyPrimaryBackgroundGradient()
-    }
-    
     private func checkFields() {
         let numberOfRows = userFields.count
         var errorCount: Int = 0

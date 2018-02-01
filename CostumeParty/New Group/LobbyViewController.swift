@@ -16,7 +16,6 @@ class LobbyViewController: UIViewController {
         
         setupView(user: user)
         setupViewController()
-        view.applyPrimaryBackgroundGradient()
     }
     
     private func setupView(user: User) {
@@ -26,26 +25,26 @@ class LobbyViewController: UIViewController {
         let name = user.displayName ?? user.email
         if let name = name {
             welcomeLabel.text = "Welcome, \(name)!"
-            welcomeLabel.font = .h2
-            welcomeLabel.textColor = .primaryTextColor
+            welcomeLabel.font = .h3
+            welcomeLabel.textColor = .darkTextColor
         } else {
             welcomeLabel.text = ""
         }
         
         currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
-        currentPartyButton.primaryColor = .secondaryLightColor
+        currentPartyButton.primaryColor = .linkColor
 
         findPartyButton.setTitle("FIND A PARTY", for: .normal)
         findPartyButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
-        findPartyButton.primaryColor = .secondaryColor
+        findPartyButton.primaryColor = .linkColor
         
         hostPartyButton.setTitle("HOST A PARTY", for: .normal)
         hostPartyButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
-        hostPartyButton.primaryColor = UIColor.secondaryColor.darkerColor()
+        hostPartyButton.primaryColor = UIColor.linkColor
         
         settingsButton.setTitle("SETTINGS", for: .normal)
         settingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
-        settingsButton.primaryColor = .secondaryDarkColor
+        settingsButton.primaryColor = .linkColor
     }
 }
 
