@@ -21,7 +21,7 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
-        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
+        backgroundColor = textFieldBackgroundColor.darkerColor()
         layer.cornerRadius = 5.0
         clipsToBounds = true
     }
@@ -31,11 +31,28 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        backgroundColor = textFieldBackgroundColor.darkerColor()
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        textField.backgroundColor = self.textFieldBackgroundColor
+                        textField.layer.borderWidth = 1.0
+                        textField.layer.borderColor = UIColor.darkTextColor.cgColor
+        },
+                       completion: { Void in()  }
+        )
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        backgroundColor = textFieldBackgroundColor.darkerColor().darkerColor()
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        textField.backgroundColor = self.textFieldBackgroundColor.darkerColor()
+                        textField.layer.borderWidth = 0.0
+        },
+                       completion: { Void in()  }
+        )
     }
     
     // User presses Return key

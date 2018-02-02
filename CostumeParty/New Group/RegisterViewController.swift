@@ -47,7 +47,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell: ButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.reuseIdentifier) as! ButtonTableViewCell
             cell.delegate = self
-            cell.button.setTitle("SUBMIT", for: .normal)
+            cell.button.primaryColor = .affirmativeColor
+            cell.button.setTitle("SIGN UP!", for: .normal)
             cell.button.setTitleColor(.lightTextColor, for: .normal)
             
             return cell

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         loginButton.primaryColor = .linkColor
         loginButton.setTitleColor(.lightTextColor, for: .normal)
         
-        registerButton.setTitle("REGISTER", for: .normal)
+        registerButton.setTitle("SIGN UP", for: .normal)
         registerButton.addTarget(self, action: #selector(userTappedRegister), for: .touchUpInside)
         registerButton.primaryColor = .linkColor
         registerButton.setTitleColor(.lightTextColor, for: .normal)

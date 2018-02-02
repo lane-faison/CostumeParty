@@ -14,9 +14,9 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func setupView() {
-        logoutButton.primaryColor = .destructiveColor
+        logoutButton.primaryColor = .inactiveColor
         logoutButton.setTitle("LOG OUT", for: .normal)
-        logoutButton.setTitleColor(.white, for: .normal)
+        logoutButton.setTitleColor(.darkTextColor, for: .normal)
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     

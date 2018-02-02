@@ -40,6 +40,19 @@ class PrimaryButton: UIButton {
         layer.shadowOffset = shadowOffset
     }
     
+    @objc open func animateTap(_ sender: UIButton) {
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+    }
+    
     fileprivate func configure() {
         let cornerRadius = CGFloat(buttonHeight/2)
         
@@ -58,6 +71,7 @@ class PrimaryButton: UIButton {
         layer.cornerRadius = cornerRadius
         
         addTarget(self, action: #selector(highlight(_:)), for: .touchDown)
+        addTarget(self, action: #selector(animateTap(_:)), for: .touchUpInside)
         addTarget(self, action: #selector(unhighlight(_:)), for: .touchUpInside)
     }
 }
