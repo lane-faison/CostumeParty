@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-dJ-K2c" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-dJ-K2c" customClass="CredentialsTextField" customModule="CostumeParty" customModuleProvider="target">
                         <rect key="frame" x="48" y="23.5" width="224" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="uBY-Uw-qeH"/>

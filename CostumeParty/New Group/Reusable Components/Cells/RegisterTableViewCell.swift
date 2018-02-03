@@ -8,7 +8,7 @@ class RegisterTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var sectionTextField: PrimaryTextField!
+    @IBOutlet weak var sectionTextField: CredentialsTextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -71,7 +71,6 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
 
 extension LoginViewController {
     private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
-        
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
                 if let error = error {

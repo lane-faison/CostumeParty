@@ -36,6 +36,8 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
+        self.font = UIFont.h4
+        
         self.addSubview(fieldLabel)
         fieldLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         fieldLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -71,13 +73,13 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
         return true
     }
     
-    func setPlaceholderText(_ placeholderTxt: String) {
-        
-        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkTextColor.darkerColor()])
-        textColor = .darkTextColor
-        
-        layoutSubviews()
-    }
+//    func setPlaceholderText(_ placeholderTxt: String) {
+//
+//        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkTextColor.darkerColor()])
+//        textColor = .darkTextColor
+//
+//        layoutSubviews()
+//    }
     
     func animateWhenActive(_ sender: UILabel) {
         let scaleRatio: CGFloat = 0.6

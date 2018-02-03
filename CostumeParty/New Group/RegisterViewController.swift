@@ -36,7 +36,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row < lastIndex {
             let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
-            cell.sectionTextField.placeholder = userFields[indexPath.row]
+            cell.sectionTextField.fieldLabel.text = userFields[indexPath.row]
             cell.tag = indexPath.row
             
             if cell.tag == 1 || cell.tag == 2 {
@@ -88,7 +88,10 @@ extension RegisterViewController {
                     return
             }
             
-            if password == confirmPassword {
+            if password.count < 6  {
+                AlertHelper.fireErrorActionSheet(viewController: self, message: "Password must be at least 6 characters long.")
+                return
+            } else if password == confirmPassword {
                 FirebaseService.createUser(viewController: self, email: email, password: password)
             } else {
                 let message = "Passwords do not match. Please try again."
