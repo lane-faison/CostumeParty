@@ -1,5 +1,7 @@
 import UIKit
 import Firebase
+import AVFoundation
+import AudioToolbox
 
 class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -54,6 +56,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         userLogin(email: email, password: password) { (success) in
             if success {
+                AudioServicesPlayAlertSound(SystemSoundID(1103))
+                
                 guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
                 self.navigationController?.pushViewController(lobbyVC, animated: true)
             }
