@@ -25,13 +25,13 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         titleLabel.font = UIFont.h2
         titleLabel.textColor = .darkTextColor
         
-        usernameTextField.setPlaceholderText("Email...")
-        passwordTextField.setPlaceholderText("Password...")
+        usernameTextField.fieldLabel.text = "Email"
+        passwordTextField.fieldLabel.text = "Password"
         passwordTextField.isSecureTextEntry = true
         
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)
-        loginButton.primaryColor = .linkColor
+        loginButton.primaryColor = .affirmativeColor
         loginButton.setTitleColor(.lightTextColor, for: .normal)
         
         registerButton.setTitle("SIGN UP", for: .normal)
