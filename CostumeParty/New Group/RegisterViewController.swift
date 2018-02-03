@@ -14,7 +14,7 @@ class RegisterViewController: UIViewController {
         tableView.setupTableView()
         
         title = "Registration"
-        userFields = ["Email...", "Password...", "Confirm password..."]
+        userFields = ["Email", "Password", "Confirm password"]
         
         // Registering the different tableView cell types
         let textFieldNib = UINib(nibName: "RegisterTableViewCell", bundle: nil)
@@ -37,6 +37,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < lastIndex {
             let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             cell.sectionTextField.fieldLabel.text = userFields[indexPath.row]
+            cell.sectionTextField.contentVerticalAlignment = .bottom
             cell.tag = indexPath.row
             
             if cell.tag == 1 || cell.tag == 2 {
