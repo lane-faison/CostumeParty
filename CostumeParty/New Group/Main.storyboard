@@ -398,36 +398,22 @@
                                                     <constraint firstAttribute="height" constant="2" id="bf2-HW-Ps6"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-ba-PUZ">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-ba-PUZ">
                                                 <rect key="frame" x="0.0" y="752" width="375" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="c16-wW-FAC"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwU-eW-qjO" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="48" y="802" width="279" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="CsM-o6-mzk"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="submitButtonTapped:" destination="ZJN-8z-K3X" eventType="touchUpInside" id="6ig-MO-PC4"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="SUx-XS-3Yc" firstAttribute="top" secondItem="CBc-DC-zFU" secondAttribute="bottom" constant="24" id="0Pj-NO-ICJ"/>
                                             <constraint firstItem="SUx-XS-3Yc" firstAttribute="leading" secondItem="aID-gD-nDe" secondAttribute="leading" id="823-ZE-V7a"/>
-                                            <constraint firstItem="UwU-eW-qjO" firstAttribute="leading" secondItem="aID-gD-nDe" secondAttribute="leading" constant="48" id="FK1-wX-Ai9"/>
-                                            <constraint firstAttribute="trailing" secondItem="UwU-eW-qjO" secondAttribute="trailing" constant="48" id="TPH-st-xMg"/>
                                             <constraint firstAttribute="trailing" secondItem="cNw-ba-PUZ" secondAttribute="trailing" id="aXr-J7-uiI"/>
                                             <constraint firstItem="CBc-DC-zFU" firstAttribute="top" secondItem="aID-gD-nDe" secondAttribute="top" constant="24" id="bK4-zl-CvB"/>
                                             <constraint firstAttribute="trailing" secondItem="SUx-XS-3Yc" secondAttribute="trailing" id="bb6-32-nHc"/>
                                             <constraint firstAttribute="trailing" secondItem="CBc-DC-zFU" secondAttribute="trailing" constant="24" id="jSz-Ee-DJD"/>
-                                            <constraint firstAttribute="bottom" secondItem="UwU-eW-qjO" secondAttribute="bottom" constant="48" id="n65-zz-vKb"/>
-                                            <constraint firstItem="UwU-eW-qjO" firstAttribute="top" secondItem="cNw-ba-PUZ" secondAttribute="bottom" constant="48" id="nyq-DZ-cYy"/>
                                             <constraint firstItem="cNw-ba-PUZ" firstAttribute="leading" secondItem="aID-gD-nDe" secondAttribute="leading" id="pra-gW-gWp"/>
                                             <constraint firstItem="CBc-DC-zFU" firstAttribute="leading" secondItem="aID-gD-nDe" secondAttribute="leading" constant="24" id="rry-HW-IZt"/>
                                             <constraint firstAttribute="height" constant="900" id="tdE-i2-mvy"/>
@@ -456,7 +442,6 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="headingLabel" destination="CBc-DC-zFU" id="ZbA-94-y1m"/>
-                        <outlet property="submitButton" destination="UwU-eW-qjO" id="2yX-qq-T28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8Q-Fh-Uh2" userLabel="First Responder" sceneMemberID="firstResponder"/>

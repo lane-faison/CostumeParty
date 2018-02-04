@@ -3,7 +3,6 @@ import UIKit
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var submitButton: PrimaryButton!
     
     var party: Party?
     
@@ -15,10 +14,6 @@ class CategoriesViewController: UIViewController {
         setupViewController()
         setupView()
     }
-    
-    @IBAction func submitButtonTapped(_ sender: Any) {
-        submitTapped()
-    }
 }
 
 extension CategoriesViewController {
@@ -27,11 +22,13 @@ extension CategoriesViewController {
         headingLabel.text = "Next, add some costume categories for your party!\n(Maximum of 10)"
         headingLabel.textColor = .darkTextColor
         
-        submitButton.setTitle("FINISHED", for: .normal)
-        submitButton.primaryColor = .affirmativeColor
+        let finishedButton = UIBarButtonItem(title: "Finished", style: .plain, target: self, action: #selector(submitTapped))
+        navigationItem.rightBarButtonItem = finishedButton
     }
     
-    private func submitTapped() {
+    @objc private func submitTapped() {
         print("SUBMIT TAPPED")
+        guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
+        navigationController?.popToViewController(lobby, animated: true)
     }
 }
