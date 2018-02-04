@@ -2,6 +2,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var headingLabel: UILabel!
     
     var party: Party?
@@ -13,6 +14,7 @@ class CategoriesViewController: UIViewController {
         
         setupViewController()
         setupView()
+        setupStackView()
     }
 }
 
@@ -34,5 +36,26 @@ extension CategoriesViewController {
         
         let finishedButton = UIBarButtonItem(title: "Finished", style: .plain, target: self, action: #selector(submitTapped))
         navigationItem.rightBarButtonItem = finishedButton
+    }
+    
+    private func setupStackView() {
+        let categoryTextField = PrimaryTextField()
+        categoryTextField.fieldLabel.text = "New category name"
+        categoryTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.alignment = .fill
+        stack.spacing = 24.0
+        
+        stack.addArrangedSubview(categoryTextField)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        mainView.addSubview(stack)
+        
+        stack.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 48.0).isActive = true
+        stack.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
+        stack.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
     }
 }
