@@ -20,10 +20,50 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         
         setupViewController()
         setupView()
-        
-        view.addSubview(activityIndicator)
-        activityIndicator.center = view.center
     }
+    
+    @objc func userTappedLogin() {
+        activityIndicator.startAnimating()
+        
+        guard let email = usernameTextField.text,
+            let password = passwordTextField.text else { return }
+        
+        userLogin(email: email, password: password) { [weak self] success in
+            guard let strongSelf = self else { return }
+            
+            defer { strongSelf.activityIndicator.stopAnimating() }
+            
+            if success {
+//                AudioServicesPlayAlertSound(SystemSoundID(1103))
+                
+                guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
+                strongSelf.navigationController?.pushViewController(lobbyVC, animated: true)
+            }
+        }
+    }
+    
+    @objc func userTappedRegister() {
+        performSegue(withIdentifier: "toRegistration", sender: self)
+    }
+}
+
+extension LoginViewController {
+    private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                if let error = error {
+                    self.activityIndicator.stopAnimating()
+                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
+                    return
+                }
+            } else {
+                completion(true)
+            }
+        }
+    }
+}
+
+extension LoginViewController {
     
     private func setupView() {
         imageView.image = UIImage(named: "ghost")
@@ -49,44 +89,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         authorLabel.text = "By Lane Faison"
         authorLabel.font = UIFont.h5
         authorLabel.textColor = .darkTextColor
-    }
-    
-    @objc func userTappedLogin() {
-        activityIndicator.startAnimating()
         
-        guard let email = usernameTextField.text,
-            let password = passwordTextField.text else { return }
-        
-        userLogin(email: email, password: password) { (success) in
-            
-            defer { self.activityIndicator.stopAnimating() }
-            
-            if success {
-//                AudioServicesPlayAlertSound(SystemSoundID(1103))
-                
-                guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
-                self.navigationController?.pushViewController(lobbyVC, animated: true)
-            }
-        }
-    }
-    
-    @objc func userTappedRegister() {
-        performSegue(withIdentifier: "toRegistration", sender: self)
-    }
-}
-
-extension LoginViewController {
-    private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                if let error = error {
-                    self.activityIndicator.stopAnimating()
-                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
-                    return
-                }
-            } else {
-                completion(true)
-            }
-        }
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
 }

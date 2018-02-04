@@ -13,12 +13,6 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController {
-    private func setupView() {
-        logoutButton.primaryColor = .inactiveColor
-        logoutButton.setTitle("LOG OUT", for: .normal)
-        logoutButton.setTitleColor(.darkTextColor, for: .normal)
-        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-    }
     
     @objc private func logout() {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
@@ -30,5 +24,14 @@ extension SettingsViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension SettingsViewController {
+    private func setupView() {
+        logoutButton.primaryColor = .inactiveColor
+        logoutButton.setTitle("LOG OUT", for: .normal)
+        logoutButton.setTitleColor(.darkTextColor, for: .normal)
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
 }

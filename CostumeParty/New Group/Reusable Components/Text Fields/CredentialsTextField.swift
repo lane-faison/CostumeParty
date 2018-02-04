@@ -36,36 +36,36 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setupDisplay() {
-        self.font = UIFont.h4
-        self.contentVerticalAlignment = .bottom
+        font = UIFont.h4
+        contentVerticalAlignment = .bottom
         
-        self.addSubview(fieldLabel)
-        fieldLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        fieldLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        addSubview(fieldLabel)
+        fieldLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        fieldLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
-        self.addSubview(bottomBorder)
+        addSubview(bottomBorder)
         bottomBorder.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
-        bottomBorder.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.0).isActive = true
-        bottomBorder.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        bottomBorder.centerYAnchor.constraint(equalTo: self.bottomAnchor, constant: 2.0).isActive = true
+        bottomBorder.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
+        bottomBorder.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        bottomBorder.centerYAnchor.constraint(equalTo: bottomAnchor, constant: 2.0).isActive = true
     }
     
     private func setupKeyboard() {
-        self.autocorrectionType = .no
+        autocorrectionType = .no
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? false {
             animateWhenActive(fieldLabel)
         }
-        self.bottomBorder.backgroundColor = .darkTextColor
+        bottomBorder.backgroundColor = .darkTextColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? false {
             animateWhenInactive(fieldLabel)
         }
-        self.bottomBorder.backgroundColor = .inactiveColor
+        bottomBorder.backgroundColor = .inactiveColor
     }
     
     // User presses Return key
@@ -74,18 +74,10 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
         return true
     }
     
-//    func setPlaceholderText(_ placeholderTxt: String) {
-//
-//        attributedPlaceholder = NSAttributedString(string: placeholderTxt, attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkTextColor.darkerColor()])
-//        textColor = .darkTextColor
-//
-//        layoutSubviews()
-//    }
-    
     func animateWhenActive(_ sender: UILabel) {
         let scaleRatio: CGFloat = 0.6
-        let labelDistanceToLeft = -1 * (self.frame.width - sender.frame.width * scaleRatio)/2
-        let labelDistanceToTop = -0.4 * (self.frame.height)
+        let labelDistanceToLeft = -1 * (frame.width - sender.frame.width * scaleRatio)/2
+        let labelDistanceToTop = -0.4 * (frame.height)
         
         UIView.animate(withDuration: 0.3,
                        delay: 0,

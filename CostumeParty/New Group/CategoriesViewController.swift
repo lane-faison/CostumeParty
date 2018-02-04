@@ -17,6 +17,16 @@ class CategoriesViewController: UIViewController {
 }
 
 extension CategoriesViewController {
+    
+    @objc private func submitTapped() {
+        print("SUBMIT TAPPED")
+        guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
+        navigationController?.popToViewController(lobby, animated: true)
+    }
+}
+
+extension CategoriesViewController {
+    
     private func setupView() {
         headingLabel.font = .h4
         headingLabel.text = "Next, add some costume categories for your party!\n(Maximum of 10)"
@@ -24,11 +34,5 @@ extension CategoriesViewController {
         
         let finishedButton = UIBarButtonItem(title: "Finished", style: .plain, target: self, action: #selector(submitTapped))
         navigationItem.rightBarButtonItem = finishedButton
-    }
-    
-    @objc private func submitTapped() {
-        print("SUBMIT TAPPED")
-        guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
-        navigationController?.popToViewController(lobby, animated: true)
     }
 }

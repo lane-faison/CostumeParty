@@ -25,9 +25,7 @@ class RegisterViewController: UIViewController {
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
         setupViewController()
-        
-        view.addSubview(activityIndicator)
-        activityIndicator.center = view.center
+        setupView()
     }
 }
 
@@ -109,5 +107,12 @@ extension RegisterViewController {
             let message = "You have \(errorCount) section(s) left to complete!"
             AlertHelper.fireErrorActionSheet(viewController: self, message: message)
         }
+    }
+}
+
+extension RegisterViewController {
+    private func setupView() {
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
 }

@@ -17,6 +17,24 @@ class LobbyViewController: UIViewController {
         setupView(user: user)
         setupViewController()
     }
+}
+
+extension LobbyViewController {
+    
+    @objc func goToPartyList() {
+        performSegue(withIdentifier: "toPartyList", sender: self)
+    }
+    
+    @objc func goToHostParty() {
+        performSegue(withIdentifier: "toHostParty", sender: self)
+    }
+    
+    @objc func goToSettings() {
+        performSegue(withIdentifier: "toSettings", sender: self)
+    }
+}
+
+extension LobbyViewController {
     
     private func setupView(user: User) {
         navigationItem.hidesBackButton = true
@@ -33,7 +51,7 @@ class LobbyViewController: UIViewController {
         
         currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
         currentPartyButton.primaryColor = .linkColor
-
+        
         findPartyButton.setTitle("FIND A PARTY", for: .normal)
         findPartyButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
         findPartyButton.primaryColor = .linkColor
@@ -45,20 +63,5 @@ class LobbyViewController: UIViewController {
         settingsButton.setTitle("SETTINGS", for: .normal)
         settingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
         settingsButton.primaryColor = .linkColor
-    }
-}
-
-extension LobbyViewController {
-    
-    @objc func goToPartyList() {
-        performSegue(withIdentifier: "toPartyList", sender: self)
-    }
-    
-    @objc func goToHostParty() {
-        performSegue(withIdentifier: "toHostParty", sender: self)
-    }
-    
-    @objc func goToSettings() {
-        performSegue(withIdentifier: "toSettings", sender: self)
     }
 }
