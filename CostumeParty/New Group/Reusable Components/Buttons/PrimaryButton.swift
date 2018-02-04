@@ -9,10 +9,17 @@ class PrimaryButton: UIButton {
         }
     }
     //Font
-    let buttonFont: UIFont = .h4
-    
+    var buttonFont: UIFont = .h4 {
+        didSet {
+            configure()
+        }
+    }
     //Size
-    var buttonHeight: CGFloat = 50.0
+    var buttonHeight: CGFloat = 50.0 {
+        didSet {
+            configure()
+        }
+    }
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,6 +59,7 @@ class PrimaryButton: UIButton {
         setTitleColor(buttonFontColor, for: .disabled)
         titleLabel?.font = buttonFont
         titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.baselineAdjustment = .none
         
         addTarget(self, action: #selector(highlight(_:)), for: .touchDown)
         addTarget(self, action: #selector(unhighlight(_:)), for: .touchUpInside)

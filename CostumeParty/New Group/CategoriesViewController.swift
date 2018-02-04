@@ -31,7 +31,7 @@ extension CategoriesViewController {
     
     private func setupView() {
         headingLabel.font = .h4
-        headingLabel.text = "Next, add some costume categories for your party!\n(Maximum of 10)"
+        headingLabel.text = "Next, let's add some categories for your event."
         headingLabel.textColor = .darkTextColor
         
         let finishedButton = UIBarButtonItem(title: "Finished", style: .plain, target: self, action: #selector(submitTapped))
@@ -57,5 +57,17 @@ extension CategoriesViewController {
         stack.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 48.0).isActive = true
         stack.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
         stack.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        
+        let addButton = PrimaryButton()
+        addButton.primaryColor = .affirmativeColor
+        addButton.setTitle("ADD", for: .normal)
+        addButton.titleLabel?.textColor = .lightTextColor
+        addButton.buttonHeight = 80.0
+        mainView.addSubview(addButton)
+        addButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        addButton.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 100).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
+        addButton.translatesAutoresizingMaskIntoConstraints = false
     }
 }
