@@ -125,13 +125,12 @@
 		F60F7C3A1FE6225A00073506 /* CostumeParty */ = {
 			isa = PBXGroup;
 			children = (
+				F60F7C3B1FE6225A00073506 /* AppDelegate.swift */,
+				F60F7C471FE6225A00073506 /* Info.plist */,
+				F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */,
+				F694C79720276739000AB9BC /* Resources */,
 				F6D4ACDF200BC78F0078816C /* Models */,
 				F6D4ACE0200BC7980078816C /* Views and Controllers */,
-				F60F7C421FE6225A00073506 /* Assets.xcassets */,
-				F60F7C3B1FE6225A00073506 /* AppDelegate.swift */,
-				F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */,
-				F60F7C471FE6225A00073506 /* Info.plist */,
-				F6E59FF3200060620041DBBE /* GoogleService-Info.plist */,
 			);
 			path = CostumeParty;
 			sourceTree = "<group>";
@@ -139,10 +138,10 @@
 		F60F7C4E1FE6236500073506 /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
-				F6D4ACE1200C74820078816C /* Views */,
-				F6847E641FFA1C4E009FEB21 /* Text Fields */,
-				F60F7C501FE6239000073506 /* Cells */,
 				F60F7C4F1FE6238600073506 /* Buttons */,
+				F60F7C501FE6239000073506 /* Cells */,
+				F6847E641FFA1C4E009FEB21 /* Text Fields */,
+				F6D4ACE1200C74820078816C /* Views */,
 			);
 			path = "Reusable Components";
 			sourceTree = "<group>";
@@ -189,6 +188,15 @@
 				F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F694C79720276739000AB9BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F60F7C421FE6225A00073506 /* Assets.xcassets */,
+				F6E59FF3200060620041DBBE /* GoogleService-Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F6D4ACDF200BC78F0078816C /* Models */ = {
