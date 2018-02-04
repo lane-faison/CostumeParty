@@ -13,11 +13,16 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var registerButton: PrimaryButton!
     @IBOutlet weak var authorLabel: UILabel!
     
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewController()
         setupView()
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
     
     private func setupView() {
@@ -47,16 +52,17 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc func userTappedLogin() {
+        activityIndicator.startAnimating()
+        
         guard let email = usernameTextField.text,
-            let password = passwordTextField.text else {
-                let message = "Please complete all fields before trying to log in!"
-                AlertHelper.fireErrorActionSheet(viewController: self, message: message)
-                return
-        }
+            let password = passwordTextField.text else { return }
         
         userLogin(email: email, password: password) { (success) in
+            
+            defer { self.activityIndicator.stopAnimating() }
+            
             if success {
-                AudioServicesPlayAlertSound(SystemSoundID(1103))
+//                AudioServicesPlayAlertSound(SystemSoundID(1103))
                 
                 guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
                 self.navigationController?.pushViewController(lobbyVC, animated: true)
@@ -74,6 +80,7 @@ extension LoginViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
                 if let error = error {
+                    self.activityIndicator.stopAnimating()
                     AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
                     return
                 }

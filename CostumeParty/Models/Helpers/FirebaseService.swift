@@ -11,8 +11,10 @@ public struct FirebaseService {
     }
     
     // AUTHENTICATION
-    public static func createUser(viewController: UIViewController, email: String, password: String) {
+    public static func createUser(viewController: UIViewController, email: String, password: String, completion: (() -> Void)?) {
         FireAuth.createUser(withEmail: email, password: password) { (firebaseUser, error) in
+            
+            defer { completion?() }
             
             if error != nil {
                 guard let error = error else { return }

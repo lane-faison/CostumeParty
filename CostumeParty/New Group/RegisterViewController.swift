@@ -4,6 +4,8 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    
     fileprivate var userFields = [String]()
     
     override func viewDidLoad() {
@@ -23,6 +25,9 @@ class RegisterViewController: UIViewController {
         tableView.register(buttonNib, forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier)
         
         setupViewController()
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
 }
 
@@ -92,7 +97,10 @@ extension RegisterViewController {
                 AlertHelper.fireErrorActionSheet(viewController: self, message: "Password must be at least 6 characters long.")
                 return
             } else if password == confirmPassword {
-                FirebaseService.createUser(viewController: self, email: email, password: password)
+                activityIndicator.startAnimating()
+                FirebaseService.createUser(viewController: self, email: email, password: password) {
+                    self.activityIndicator.stopAnimating()
+                }
             } else {
                 let message = "Passwords do not match. Please try again."
                 AlertHelper.fireErrorActionSheet(viewController: self, message: message)
