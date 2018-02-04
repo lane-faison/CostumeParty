@@ -3,18 +3,14 @@ import UIKit
 class HostPartyFormViewController: UIViewController {
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var partyNameField: PrimaryTextField!
-    @IBOutlet weak var zipcodeField: PrimaryTextField!
+    @IBOutlet weak var partyNameField: CredentialsTextField!
+    @IBOutlet weak var zipcodeField: CredentialsTextField!
     @IBOutlet weak var nextButton: PrimaryButton!
     
     let user = FirebaseService.firebaseUser()
     
-    fileprivate var hostFields = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hostFields = ["Party name...", "Party ZIP Code..."]
         
         setupViewController()
         setupView()
@@ -68,10 +64,9 @@ extension HostPartyFormViewController {
         headingLabel.text = "First, enter in some basic information about your party to better help your guests find it!"
         headingLabel.textColor = .darkTextColor
         
-        partyNameField.placeholder = "Party's name..."
-        
+        partyNameField.fieldLabel.text = "Party name"
+        zipcodeField.fieldLabel.text = "Party zip code"
         zipcodeField.keyboardType = .numberPad
-        zipcodeField.placeholder = "Party location's ZIP Code..."
         
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitleColor(.lightTextColor, for: .normal)

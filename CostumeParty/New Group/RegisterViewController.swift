@@ -37,7 +37,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < lastIndex {
             let cell: RegisterTableViewCell = tableView.dequeueReusableCell(withIdentifier: RegisterTableViewCell.reuseIdentifier) as! RegisterTableViewCell
             cell.sectionTextField.fieldLabel.text = userFields[indexPath.row]
-            cell.sectionTextField.contentVerticalAlignment = .bottom
             cell.tag = indexPath.row
             
             if cell.tag == 1 || cell.tag == 2 {

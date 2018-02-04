@@ -293,7 +293,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="hc3-5F-wQ2"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsC-ta-iJZ" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsC-ta-iJZ" customClass="CredentialsTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="83" width="279" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="O4r-HF-Z2U"/>
@@ -302,7 +302,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vsj-L7-vv8" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vsj-L7-vv8" customClass="CredentialsTextField" customModule="CostumeParty" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="147" width="279" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HUk-uF-fae"/>

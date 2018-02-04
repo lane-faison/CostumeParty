@@ -37,6 +37,7 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     
     private func setupDisplay() {
         self.font = UIFont.h4
+        self.contentVerticalAlignment = .bottom
         
         self.addSubview(fieldLabel)
         fieldLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
