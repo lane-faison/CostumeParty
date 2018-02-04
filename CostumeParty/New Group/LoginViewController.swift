@@ -7,8 +7,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var usernameTextField: CredentialsTextField!
-    @IBOutlet weak var passwordTextField: CredentialsTextField!
+    @IBOutlet weak var usernameTextField: PrimaryTextField!
+    @IBOutlet weak var passwordTextField: PrimaryTextField!
     @IBOutlet weak var loginButton: PrimaryButton!
     @IBOutlet weak var registerButton: PrimaryButton!
     @IBOutlet weak var authorLabel: UILabel!
@@ -73,8 +73,13 @@ extension LoginViewController {
         titleLabel.textColor = .darkTextColor
         
         usernameTextField.fieldLabel.text = "Email"
+        usernameTextField.returnKeyType = .next
+        usernameTextField.tag = 0
+        
         passwordTextField.fieldLabel.text = "Password"
+        passwordTextField.returnKeyType = .done
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.tag = 1
         
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.addTarget(self, action: #selector(userTappedLogin), for: .touchUpInside)

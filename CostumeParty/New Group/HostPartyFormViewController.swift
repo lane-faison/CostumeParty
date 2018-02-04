@@ -3,8 +3,8 @@ import UIKit
 class HostPartyFormViewController: UIViewController {
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var partyNameField: CredentialsTextField!
-    @IBOutlet weak var zipcodeField: CredentialsTextField!
+    @IBOutlet weak var partyNameField: PrimaryTextField!
+    @IBOutlet weak var zipcodeField: PrimaryTextField!
     @IBOutlet weak var nextButton: PrimaryButton!
     
     let user = FirebaseService.firebaseUser()
@@ -17,7 +17,7 @@ class HostPartyFormViewController: UIViewController {
     }
 }
 
-extension HostPartyFormViewController: PrimaryButtonDelegate {
+extension HostPartyFormViewController {
     @objc func buttonTapped() {
         guard let name = partyNameField.text,
             let zipcode = zipcodeField.text else { return }
@@ -65,8 +65,12 @@ extension HostPartyFormViewController {
         headingLabel.textColor = .darkTextColor
         
         partyNameField.fieldLabel.text = "Party name"
+        partyNameField.returnKeyType = .next
+        partyNameField.tag = 0
+        
         zipcodeField.fieldLabel.text = "Party zip code"
         zipcodeField.keyboardType = .numberPad
+        zipcodeField.tag = 1
         
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitleColor(.lightTextColor, for: .normal)

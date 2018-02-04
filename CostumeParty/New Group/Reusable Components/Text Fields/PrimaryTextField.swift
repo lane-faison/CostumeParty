@@ -1,6 +1,6 @@
 import UIKit
 
-class CredentialsTextField: UITextField, UITextFieldDelegate {
+class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     private let bottomBorder: UIView = {
         let view = UIView()
@@ -70,8 +70,12 @@ class CredentialsTextField: UITextField, UITextFieldDelegate {
     
     // User presses Return key
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
     func animateWhenActive(_ sender: UILabel) {
