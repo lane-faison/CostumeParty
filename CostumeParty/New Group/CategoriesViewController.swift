@@ -2,10 +2,14 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
     var party: Party?
+    
+    let stack = UIStackView()
     
     private var categories: [String] = ["ex. Best Costume"]
     
@@ -40,10 +44,9 @@ extension CategoriesViewController {
     
     private func setupStackView() {
         let categoryTextField = PrimaryTextField()
-        categoryTextField.fieldLabel.text = "New category name"
+        categoryTextField.fieldLabel.text = "Category"
         categoryTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
-        let stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .equalSpacing
         stack.alignment = .fill
@@ -63,11 +66,29 @@ extension CategoriesViewController {
         addButton.setTitle("ADD", for: .normal)
         addButton.titleLabel?.textColor = .lightTextColor
         addButton.buttonHeight = 80.0
+        addButton.addTarget(self, action: #selector(addCategoryField), for: .touchUpInside)
         mainView.addSubview(addButton)
-        addButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
-        addButton.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 100).isActive = true
+        addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -48).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
         addButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    @objc private func addCategoryField() {
+        let categoryTextField = PrimaryTextField()
+        categoryTextField.fieldLabel.text = "Category"
+        categoryTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        stack.addArrangedSubview(categoryTextField)
+        
+        var contentRect = CGRect.zero
+        
+        for view in stack.subviews {
+            contentRect = contentRect.union(view.frame)
+        }
+        viewHeight.constant = contentRect.size.height
+        
+        scrollView.layoutIfNeeded()
+        scrollView.layoutSubviews()
     }
 }

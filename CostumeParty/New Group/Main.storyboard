@@ -376,14 +376,14 @@
             <objects>
                 <viewController id="ZJN-8z-K3X" customClass="CategoriesViewController" customModule="CostumeParty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZR-oo-dBq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auK-xF-mhV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="836"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aID-gD-nDe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBc-DC-zFU">
                                                 <rect key="frame" x="24" y="24" width="327" height="20.5"/>
@@ -397,15 +397,15 @@
                                             <constraint firstItem="CBc-DC-zFU" firstAttribute="top" secondItem="aID-gD-nDe" secondAttribute="top" constant="24" id="bK4-zl-CvB"/>
                                             <constraint firstAttribute="trailing" secondItem="CBc-DC-zFU" secondAttribute="trailing" constant="24" id="jSz-Ee-DJD"/>
                                             <constraint firstItem="CBc-DC-zFU" firstAttribute="leading" secondItem="aID-gD-nDe" secondAttribute="leading" constant="24" id="rry-HW-IZt"/>
-                                            <constraint firstAttribute="height" constant="900" id="tdE-i2-mvy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aID-gD-nDe" secondAttribute="trailing" id="4vr-xV-m7A"/>
-                                    <constraint firstAttribute="bottom" secondItem="aID-gD-nDe" secondAttribute="bottom" id="bII-a0-CDz"/>
+                                    <constraint firstAttribute="bottom" secondItem="aID-gD-nDe" secondAttribute="bottom" id="5yM-ml-z6C"/>
                                     <constraint firstItem="aID-gD-nDe" firstAttribute="leading" secondItem="auK-xF-mhV" secondAttribute="leading" id="bvh-M0-iO0"/>
+                                    <constraint firstItem="aID-gD-nDe" firstAttribute="height" secondItem="auK-xF-mhV" secondAttribute="height" id="vHz-Gs-0xZ"/>
                                     <constraint firstItem="aID-gD-nDe" firstAttribute="top" secondItem="auK-xF-mhV" secondAttribute="top" id="xX8-bv-Vmp"/>
                                 </constraints>
                             </scrollView>
@@ -420,15 +420,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="An4-W6-stc"/>
                     </view>
-                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="headingLabel" destination="CBc-DC-zFU" id="ZbA-94-y1m"/>
                         <outlet property="mainView" destination="aID-gD-nDe" id="cfg-XI-Rau"/>
+                        <outlet property="scrollView" destination="auK-xF-mhV" id="57F-mB-7D4"/>
+                        <outlet property="viewHeight" destination="vHz-Gs-0xZ" id="MMp-Md-GK4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8Q-Fh-Uh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3821.5999999999999" y="-189.80509745127438"/>
+            <point key="canvasLocation" x="3821.5999999999999" y="-190.25487256371815"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="UOQ-oC-joK">
