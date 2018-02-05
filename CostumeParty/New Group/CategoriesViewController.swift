@@ -28,21 +28,23 @@ class CategoriesViewController: UIViewController {
 extension CategoriesViewController {
     
     @objc private func submitTapped() {
-        print("SUBMIT TAPPED")
-        guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
-        navigationController?.popToViewController(lobby, animated: true)
-        grabInputs()
+        grabInputs {
+            guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
+            self.navigationController?.popToViewController(lobby, animated: true)
+        }
     }
     
-    func grabInputs() {
+    func grabInputs(completion: (() -> Void)?) {
         let textFields = stack.subviews.filter { $0 is PrimaryTextField }
         for field in textFields {
-            if let textField = field as? PrimaryTextField, let category = textField.text {
-                if category != "" || !category.isEmpty {
-                    categories.append(category)
-                }
-            }
-            print(categories)
+            guard let textField = field as? PrimaryTextField,
+                let category = textField.text,
+                !category.isEmpty,
+                category != " " else { continue }
+            categories.append(category)
+        }
+        if categories.count > 0 {
+            completion?()
         }
     }
 }
