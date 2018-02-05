@@ -10,11 +10,14 @@ class CategoriesViewController: UIViewController {
     var party: Party?
     
     let stack = UIStackView()
+    let addButton = PrimaryButton()
     
     private var categories: [String] = ["ex. Best Costume"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.delegate = self
         
         setupViewController()
         setupView()
@@ -61,7 +64,6 @@ extension CategoriesViewController {
         stack.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
         stack.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         
-        let addButton = PrimaryButton()
         addButton.primaryColor = .affirmativeColor
         addButton.setTitle("ADD", for: .normal)
         addButton.titleLabel?.textColor = .lightTextColor
@@ -90,5 +92,35 @@ extension CategoriesViewController {
         
         scrollView.layoutIfNeeded()
         scrollView.layoutSubviews()
+    }
+}
+
+extension CategoriesViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollViewHeight = scrollView.frame.size.height
+        let scrollContentSizeHeight = scrollView.contentSize.height
+        let scrollOffset = scrollView.contentOffset.y
+        
+        if scrollOffset + scrollViewHeight + 200 >= scrollContentSizeHeight {
+            fadeAddButtonIn(addButton)
+        } else {
+            fadeAddButtonOut(addButton)
+        }
+    }
+}
+
+extension CategoriesViewController {
+    private func fadeAddButtonOut(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.alpha = 0.1
+            sender.isEnabled = false
+        }
+    }
+    
+    private func fadeAddButtonIn(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.alpha = 1.0
+            sender.isEnabled = true
+        }
     }
 }
