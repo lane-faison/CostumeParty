@@ -12,7 +12,7 @@ class CategoriesViewController: UIViewController {
     let stack = UIStackView()
     let addButton = PrimaryButton()
     
-    private var categories: [String] = ["ex. Best Costume"]
+    private var categories: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,19 @@ extension CategoriesViewController {
         print("SUBMIT TAPPED")
         guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
         navigationController?.popToViewController(lobby, animated: true)
+        grabInputs()
+    }
+    
+    func grabInputs() {
+        let textFields = stack.subviews.filter { $0 is PrimaryTextField }
+        for field in textFields {
+            if let textField = field as? PrimaryTextField, let category = textField.text {
+                if category != "" || !category.isEmpty {
+                    categories.append(category)
+                }
+            }
+            print(categories)
+        }
     }
 }
 
