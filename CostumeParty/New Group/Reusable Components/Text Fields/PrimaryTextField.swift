@@ -82,26 +82,25 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         let scaleRatio: CGFloat = 0.6
         let labelDistanceToLeft = -1 * (frame.width - sender.frame.width * scaleRatio)/2
         let labelDistanceToTop = -0.4 * (frame.height)
-        
-        UIView.animate(withDuration: 0.2,
+        UIView.animate(withDuration: 0.3,
                        delay: 0,
-                       options: UIViewAnimationOptions.allowUserInteraction,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseIn,
                        animations: {
-                        self.fieldLabel.transform = CGAffineTransform(translationX: labelDistanceToLeft, y: labelDistanceToTop)
+                        sender.transform = CGAffineTransform(translationX: labelDistanceToLeft, y: labelDistanceToTop)
                             .scaledBy(x: scaleRatio, y: scaleRatio)
-        },
-                       completion: { Void in()  }
-        )
+        }) { Void in() }
     }
     
     func animateWhenInactive(_ sender: UILabel) {
-        UIView.animate(withDuration: 0.2,
+        UIView.animate(withDuration: 0.3,
                        delay: 0,
-                       options: UIViewAnimationOptions.allowUserInteraction,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseIn,
                        animations: {
                         sender.transform = CGAffineTransform.identity
-        },
-                       completion: { Void in()  }
-        )
+        }) { Void in() }
     }
 }
