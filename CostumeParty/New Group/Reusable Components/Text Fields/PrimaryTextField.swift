@@ -83,7 +83,7 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         let labelDistanceToLeft = -1 * (frame.width - sender.frame.width * scaleRatio)/2
         let labelDistanceToTop = -0.4 * (frame.height)
         
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: 0.2,
                        delay: 0,
                        options: UIViewAnimationOptions.allowUserInteraction,
                        animations: {
@@ -95,11 +95,11 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     }
     
     func animateWhenInactive(_ sender: UILabel) {
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: 0.2,
                        delay: 0,
                        options: UIViewAnimationOptions.allowUserInteraction,
                        animations: {
-                        self.fieldLabel.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+                        sender.transform = CGAffineTransform.identity
         },
                        completion: { Void in()  }
         )
