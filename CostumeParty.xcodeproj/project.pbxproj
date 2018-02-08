@@ -12,6 +12,7 @@
 		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
+		F6216079202C1AC80023A45A /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6216078202C1AC80023A45A /* SquareButton.swift */; };
 		F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */; };
 		F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57641FFE038C0078AE96 /* RegisterViewController.swift */; };
 		F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		F60F7C421FE6225A00073506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6216078202C1AC80023A45A /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 		F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPartyFormViewController.swift; sourceTree = "<group>"; };
 		F65B57641FFE038C0078AE96 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F66F6CC91FE626AC0073766E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */,
+				F6216078202C1AC80023A45A /* SquareButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
+				F6216079202C1AC80023A45A /* SquareButton.swift in Sources */,
 				F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,

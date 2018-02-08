@@ -10,7 +10,7 @@ class CategoriesViewController: UIViewController {
     var party: Party?
     
     let stack = UIStackView()
-    let addButton = PrimaryButton()
+    let addButton = SquareButton()
     
     private var categories: [String] = []
     
@@ -80,15 +80,15 @@ extension CategoriesViewController {
         stack.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         
         addButton.primaryColor = .affirmativeColor
-        addButton.setTitle("ADD", for: .normal)
+        addButton.setTitle("NEW CATEGORY", for: .normal)
         addButton.titleLabel?.textColor = .lightTextColor
         addButton.buttonHeight = 80.0
         addButton.addTarget(self, action: #selector(addCategoryField), for: .touchUpInside)
         mainView.addSubview(addButton)
         addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -48).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
-        addButton.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
+        addButton.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         addButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
