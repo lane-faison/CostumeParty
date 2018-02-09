@@ -38,6 +38,7 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     private func setupDisplay() {
         font = UIFont.h4
         contentVerticalAlignment = .bottom
+        textColor = .darkTextColor
         
         addSubview(fieldLabel)
         fieldLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -55,6 +56,8 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        fadeColors(self, toColor: .darkTextColor)
+        
         if textField.text?.isEmpty ?? false {
             animateWhenActive(fieldLabel)
         }
@@ -62,6 +65,8 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        fadeColors(self, toColor: .inactiveColor)
+        
         if textField.text?.isEmpty ?? false {
             animateWhenInactive(fieldLabel)
         }
@@ -70,6 +75,8 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
     
     // User presses Return key
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fadeColors(self, toColor: .inactiveColor)
+        
         if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextTextField.becomeFirstResponder()
         } else {
@@ -78,11 +85,12 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         return false
     }
     
-    func animateWhenActive(_ sender: UILabel) {
+    private func animateWhenActive(_ sender: UILabel) {
         let scaleRatio: CGFloat = 0.6
         let labelDistanceToLeft = -1 * (frame.width - sender.frame.width * scaleRatio)/2
         let labelDistanceToTop = -0.4 * (frame.height)
-        UIView.animate(withDuration: 0.3,
+        
+        UIView.animate(withDuration: 0.4,
                        delay: 0,
                        usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 0,
@@ -93,14 +101,21 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         }) { Void in() }
     }
     
-    func animateWhenInactive(_ sender: UILabel) {
-        UIView.animate(withDuration: 0.3,
+    private func animateWhenInactive(_ sender: UILabel) {
+        UIView.animate(withDuration: 0.4,
                        delay: 0,
                        usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 0,
                        options: .curveEaseIn,
                        animations: {
                         sender.transform = CGAffineTransform.identity
+        }) { Void in() }
+    }
+    
+    private func fadeColors(_ sender: PrimaryTextField, toColor: UIColor) {
+        UIView.transition(with: self, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            sender.fieldLabel.textColor = toColor
+            sender.bottomBorder.backgroundColor = toColor
         }) { Void in() }
     }
 }
