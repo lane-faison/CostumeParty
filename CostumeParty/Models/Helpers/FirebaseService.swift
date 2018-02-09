@@ -37,7 +37,7 @@ public struct FirebaseService {
     
     // DATABASE
     public static func createParty(viewController: UIViewController, party: Party) {
-        FireDatabase.child("parties").child(party.name).setValue(["hostId": party.hostId, "zipcode": party.zipCode])
+        FireDatabase.child("parties").child(party.name).setValue(["hostId": party.hostId, "zipcode": party.zipCode, "categories": party.categories ?? []])
     }
     
 }

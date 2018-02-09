@@ -29,6 +29,12 @@ extension CategoriesViewController {
     
     @objc private func submitTapped() {
         grabInputs {
+            guard var party = self.party else { return }
+            
+            party.categories = self.categories
+            
+            FirebaseService.createParty(viewController: self, party: party)
+            
             guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
             self.navigationController?.popToViewController(lobby, animated: true)
         }
