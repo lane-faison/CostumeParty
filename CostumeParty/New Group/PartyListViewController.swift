@@ -4,10 +4,16 @@ class PartyListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var parties: [Party] = []
+    fileprivate var parties: [Party] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presentSearch()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -16,7 +22,6 @@ class PartyListViewController: UIViewController {
         tableView.register(cell, forCellReuseIdentifier: PartyTableViewCell.reuseIdentifier)
         
         setupViewController()
-        loadTestData()
     }
 }
 
@@ -43,20 +48,28 @@ extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PartyListViewController {
-    func loadTestData() {
-        let party1 = Party(name: "Lane's Party", zipCode: 80023, hostId: "test")
-        let party2 = Party(name: "Amanda's Party", zipCode: 80023, hostId: "test")
-        let party3 = Party(name: "Kevin's Party", zipCode: 80023, hostId: "test")
-        let party4 = Party(name: "Casey's Party", zipCode: 80302, hostId: "test")
-        let party5 = Party(name: "Courtney's Party", zipCode: 80302, hostId: "test")
-        let party6 = Party(name: "Ann's Party", zipCode: 80024, hostId: "test")
-        let party7 = Party(name: "Sandy's Party", zipCode: 80024, hostId: "test")
-        let party8 = Party(name: "Will's Party", zipCode: 80111, hostId: "test")
-        let party9 = Party(name: "Katelyn's Party", zipCode: 80021, hostId: "test")
-        let party10 = Party(name: "Sandy's Party", zipCode: 80023, hostId: "test")
-        let party11 = Party(name: "Ben's Party", zipCode: 80302, hostId: "test")
-
-        parties = [party1, party2, party3, party4, party5, party6, party7, party8, party9, party10, party11]
-        tableView.reloadData()
+    
+    private func presentSearch() {
+        let alert = UIAlertController(title: "Event Location", message: "Please enter the 5-digit ZIP Code of the event you are attending", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Search", style: .default) { [weak self] alertAction in
+            guard let strongSelf = self else { return }
+            
+            let textField = alert.textFields![0] as UITextField
+            
+            guard let zipcodeString = textField.text else { return }
+            guard let zipcode = Int(zipcodeString) else { return }
+            
+            FirebaseService.fetchPartiesByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
+                strongSelf.parties = result
+            }
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "(required)"
+            textField.keyboardType = .numberPad
+        }
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
