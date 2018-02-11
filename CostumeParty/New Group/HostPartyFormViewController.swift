@@ -5,15 +5,26 @@ class HostPartyFormViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var partyNameField: PrimaryTextField!
     @IBOutlet weak var zipcodeField: PrimaryTextField!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateSlider: UISlider!
     @IBOutlet weak var nextButton: PrimaryButton!
     
     let user = FirebaseService.firebaseUser()
+    
+    var partyDate: Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewController()
         setupView()
+    }
+    
+    @IBAction func sliderDidChange(_ sender: UISlider) {
+        let addedDays: Int = Int(sender.value.rounded())
+        guard let date = Calendar.current.date(byAdding: .day, value: addedDays, to: Date()) else { return }
+        partyDate = date
+        dateLabel.text = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
     }
 }
 
@@ -51,7 +62,7 @@ extension HostPartyFormViewController {
                     let zipcode = Int(partyZipcodeString),
                     let id = user?.uid else { return }
                 
-                let party = Party(name: partyName, zipCode: zipcode, hostId: id)
+                let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: partyDate)
                 destination.party = party
             }
         }
@@ -61,7 +72,7 @@ extension HostPartyFormViewController {
 extension HostPartyFormViewController {
     private func setupView() {
         headingLabel.font = .h4
-        headingLabel.text = "First, enter in some basic information about your party to better help your guests find it!"
+        headingLabel.text = "First, enter in some basic information to better help your guests find your party!"
         headingLabel.textColor = .darkTextColor
         
         partyNameField.fieldLabel.text = "Party name"
@@ -71,6 +82,12 @@ extension HostPartyFormViewController {
         zipcodeField.fieldLabel.text = "Party zip code"
         zipcodeField.keyboardType = .numberPad
         zipcodeField.tag = 1
+        
+        dateLabel.font = .h4
+        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
+        
+        dateSlider.minimumValue = 0
+        dateSlider.maximumValue = 60
         
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitleColor(.lightTextColor, for: .normal)

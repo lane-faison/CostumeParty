@@ -37,9 +37,12 @@ public struct FirebaseService {
     
     // DATABASE
     public static func createParty(viewController: UIViewController, party: Party) {
+        guard let date = DateHelper.convertDateToString(date: party.date) else { return }
+        
         FireDatabase.child("parties").childByAutoId().setValue(["name": party.name,
                                                                 "hostId": party.hostId,
                                                                 "zipcode": party.zipCode,
+                                                                "date": date,
                                                                 "categories": party.categories ?? []])
     }
     
@@ -54,10 +57,12 @@ public struct FirebaseService {
                 guard let name = json["name"] as? String,
                     let hostId = json["hostId"] as? String,
                     let partyZipcode = json["zipcode"] as? Int,
+                    let dateString = json["date"] as? String,
+                    let date = DateHelper.convertStringToDate(string: dateString),
                     let categories = json["categories"] as? [String] else { continue }
                 
                 if zipcode == partyZipcode {
-                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: nil, categories: categories)
+                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: date, categories: categories)
                     parties.append(party)
                 }
             }
