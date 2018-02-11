@@ -53,12 +53,13 @@ public struct FirebaseService {
                 
                 guard let name = json["name"] as? String,
                     let hostId = json["hostId"] as? String,
-                    let zipcode = json["zipcode"] as? Int,
+                    let partyZipcode = json["zipcode"] as? Int,
                     let categories = json["categories"] as? [String] else { continue }
                 
-                let party = Party.init(name: name, zipCode: zipcode, hostId: hostId, date: nil, categories: categories)
-                
-                parties.append(party)
+                if zipcode == partyZipcode {
+                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: nil, categories: categories)
+                    parties.append(party)
+                }
             }
             completion(parties)
         }
