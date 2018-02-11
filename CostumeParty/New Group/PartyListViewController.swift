@@ -4,9 +4,12 @@ class PartyListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    
     fileprivate var parties: [Party] = [] {
         didSet {
             tableView.reloadData()
+            activityIndicator.stopAnimating()
         }
     }
     
@@ -22,6 +25,7 @@ class PartyListViewController: UIViewController {
         tableView.register(cell, forCellReuseIdentifier: PartyTableViewCell.reuseIdentifier)
         
         setupViewController()
+        setupView()
     }
 }
 
@@ -48,11 +52,17 @@ extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PartyListViewController {
+    private func setupView() {
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+    }
     
     private func presentSearch() {
         let alert = UIAlertController(title: "Event Location", message: "Please enter the 5-digit ZIP Code of the event you are attending", preferredStyle: .alert)
         let action = UIAlertAction(title: "Search", style: .default) { [weak self] alertAction in
             guard let strongSelf = self else { return }
+            
+            strongSelf.activityIndicator.startAnimating()
             
             let textField = alert.textFields![0] as UITextField
             
