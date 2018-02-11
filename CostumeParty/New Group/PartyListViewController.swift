@@ -55,6 +55,9 @@ extension PartyListViewController {
     private func setupView() {
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
+        
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
+        navigationItem.rightBarButtonItem = searchButton
     }
     
     private func presentSearch() {
@@ -81,5 +84,9 @@ extension PartyListViewController {
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func searchTapped() {
+        presentSearch()
     }
 }
