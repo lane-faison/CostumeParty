@@ -282,7 +282,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etR-BG-4Gq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-rl-rzt">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-rl-rzt">
                                                 <rect key="frame" x="24" y="24" width="327" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -313,21 +313,30 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjN-Cd-DQE">
-                                                <rect key="frame" x="47.5" y="235" width="279" height="21"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LoW-7b-vc9" customClass="PrimaryTextField" customModule="CostumeParty" customModuleProvider="target">
+                                                <rect key="frame" x="48" y="211" width="279" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="3rk-Tn-xIA"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjN-Cd-DQE">
+                                                <rect key="frame" x="47.5" y="299" width="279" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-xm-ypX" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                                <rect key="frame" x="47" y="358" width="279" height="50"/>
+                                                <rect key="frame" x="47" y="422" width="279" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="UFd-Df-JqS"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-am-Oxz">
-                                                <rect key="frame" x="45.5" y="280" width="283" height="31"/>
+                                                <rect key="frame" x="45.5" y="344" width="283" height="31"/>
                                                 <connections>
                                                     <action selector="sliderDidChange:" destination="H9z-bf-xpZ" eventType="valueChanged" id="wy0-DY-zyd"/>
                                                 </connections>
@@ -338,9 +347,11 @@
                                             <constraint firstItem="l0I-rl-rzt" firstAttribute="top" secondItem="etR-BG-4Gq" secondAttribute="top" constant="24" id="21K-ZI-jS2"/>
                                             <constraint firstAttribute="trailing" secondItem="l0I-rl-rzt" secondAttribute="trailing" constant="24" id="36I-wk-NYn"/>
                                             <constraint firstAttribute="trailing" secondItem="HsC-ta-iJZ" secondAttribute="trailing" constant="48" id="4cu-dt-pfj"/>
+                                            <constraint firstItem="LoW-7b-vc9" firstAttribute="width" secondItem="Vsj-L7-vv8" secondAttribute="width" id="CFk-ef-iFU"/>
                                             <constraint firstItem="MjN-Cd-DQE" firstAttribute="width" secondItem="Vsj-L7-vv8" secondAttribute="width" id="D3F-tG-yzO"/>
                                             <constraint firstAttribute="trailing" secondItem="3f2-P2-Df8" secondAttribute="trailing" id="EGh-BF-UfB"/>
                                             <constraint firstItem="Ms6-xm-ypX" firstAttribute="centerX" secondItem="YIq-am-Oxz" secondAttribute="centerX" id="NxX-MF-zVn"/>
+                                            <constraint firstItem="LoW-7b-vc9" firstAttribute="top" secondItem="Vsj-L7-vv8" secondAttribute="bottom" constant="24" id="RNo-mc-lIv"/>
                                             <constraint firstItem="HsC-ta-iJZ" firstAttribute="leading" secondItem="etR-BG-4Gq" secondAttribute="leading" constant="48" id="RrH-nT-obO"/>
                                             <constraint firstItem="HsC-ta-iJZ" firstAttribute="top" secondItem="3f2-P2-Df8" secondAttribute="bottom" constant="24" id="Ver-L2-Bfj"/>
                                             <constraint firstItem="Vsj-L7-vv8" firstAttribute="centerX" secondItem="HsC-ta-iJZ" secondAttribute="centerX" id="Vkc-lZ-TDI"/>
@@ -349,12 +360,13 @@
                                             <constraint firstItem="Ms6-xm-ypX" firstAttribute="top" secondItem="YIq-am-Oxz" secondAttribute="bottom" constant="48" id="igh-sw-Edg"/>
                                             <constraint firstItem="Vsj-L7-vv8" firstAttribute="width" secondItem="HsC-ta-iJZ" secondAttribute="width" id="kJm-sj-Tss"/>
                                             <constraint firstItem="l0I-rl-rzt" firstAttribute="leading" secondItem="etR-BG-4Gq" secondAttribute="leading" constant="24" id="kPm-r5-wII"/>
-                                            <constraint firstItem="MjN-Cd-DQE" firstAttribute="top" secondItem="Vsj-L7-vv8" secondAttribute="bottom" constant="48" id="nsj-H0-eFz"/>
                                             <constraint firstItem="3f2-P2-Df8" firstAttribute="leading" secondItem="etR-BG-4Gq" secondAttribute="leading" id="oxU-IC-DLb"/>
                                             <constraint firstItem="YIq-am-Oxz" firstAttribute="centerX" secondItem="MjN-Cd-DQE" secondAttribute="centerX" id="p9f-Ez-XRb"/>
+                                            <constraint firstItem="MjN-Cd-DQE" firstAttribute="top" secondItem="LoW-7b-vc9" secondAttribute="bottom" constant="48" id="qco-qj-Imu"/>
                                             <constraint firstItem="MjN-Cd-DQE" firstAttribute="centerX" secondItem="Vsj-L7-vv8" secondAttribute="centerX" id="tlS-NN-Tlc"/>
                                             <constraint firstItem="Vsj-L7-vv8" firstAttribute="top" secondItem="HsC-ta-iJZ" secondAttribute="bottom" constant="24" id="u0I-Bv-wUY"/>
                                             <constraint firstItem="3f2-P2-Df8" firstAttribute="top" secondItem="l0I-rl-rzt" secondAttribute="bottom" constant="12" id="vIO-94-e0C"/>
+                                            <constraint firstItem="LoW-7b-vc9" firstAttribute="centerX" secondItem="Vsj-L7-vv8" secondAttribute="centerX" id="xYW-1H-SiG"/>
                                             <constraint firstItem="Ms6-xm-ypX" firstAttribute="width" secondItem="YIq-am-Oxz" secondAttribute="width" id="yYS-jW-eH7"/>
                                             <constraint firstAttribute="height" constant="600" id="z1o-he-FR8"/>
                                         </constraints>
@@ -385,6 +397,7 @@
                         <outlet property="headingLabel" destination="l0I-rl-rzt" id="UtK-1p-iJE"/>
                         <outlet property="nextButton" destination="Ms6-xm-ypX" id="oAn-u8-yr6"/>
                         <outlet property="partyNameField" destination="HsC-ta-iJZ" id="irb-Ot-xdd"/>
+                        <outlet property="pinField" destination="LoW-7b-vc9" id="tsY-if-VlO"/>
                         <outlet property="zipcodeField" destination="Vsj-L7-vv8" id="FKD-Ub-P7U"/>
                         <segue destination="ZJN-8z-K3X" kind="show" identifier="toCategories" id="q8j-l7-4vS"/>
                     </connections>

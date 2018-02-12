@@ -43,6 +43,7 @@ public struct FirebaseService {
                                                                 "hostId": party.hostId,
                                                                 "zipcode": party.zipCode,
                                                                 "date": date,
+                                                                "pin": party.pin,
                                                                 "categories": party.categories ?? []])
     }
     
@@ -59,10 +60,11 @@ public struct FirebaseService {
                     let partyZipcode = json["zipcode"] as? Int,
                     let dateString = json["date"] as? String,
                     let date = DateHelper.convertStringToDate(string: dateString),
+                    let pin = json["pin"] as? Int,
                     let categories = json["categories"] as? [String] else { continue }
                 
                 if zipcode == partyZipcode {
-                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: date, categories: categories)
+                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: date, pin: pin, categories: categories)
                     parties.append(party)
                 }
             }

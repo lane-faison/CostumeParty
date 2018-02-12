@@ -74,6 +74,7 @@ extension PartyListViewController {
             
             FirebaseService.fetchPartiesByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
                 strongSelf.parties = result
+                strongSelf.title = "\(zipcode)"
             }
         }
         
