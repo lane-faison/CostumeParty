@@ -25,7 +25,11 @@ class HostPartyFormViewController: UIViewController {
         let addedDays: Int = Int(sender.value.rounded())
         guard let date = Calendar.current.date(byAdding: .day, value: addedDays, to: Date()) else { return }
         partyDate = date
-        dateLabel.text = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        
+        let todaysDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
+        let futureDate = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        
+        dateLabel.text = (todaysDate == futureDate) ? "Today" : futureDate
     }
 }
 
