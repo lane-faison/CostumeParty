@@ -24,6 +24,7 @@ class HostPartyFormViewController: UIViewController {
     @IBAction func sliderDidChange(_ sender: UISlider) {
         let addedDays: Int = Int(sender.value.rounded())
         guard let date = Calendar.current.date(byAdding: .day, value: addedDays, to: Date()) else { return }
+        
         partyDate = date
         
         let todaysDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)

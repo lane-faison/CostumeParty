@@ -10,6 +10,7 @@ class PartyListViewController: UIViewController {
         didSet {
             tableView.reloadData()
             activityIndicator.stopAnimating()
+            tableView.isHidden = false
         }
     }
     
@@ -18,6 +19,7 @@ class PartyListViewController: UIViewController {
         
         presentSearch()
         
+        tableView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         
