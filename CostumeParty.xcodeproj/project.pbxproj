@@ -20,6 +20,7 @@
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
 		F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* PrimaryTextField.swift */; };
+		F69B9CDB2038004800F8F5E0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */; };
 		F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD98BA2030CE2700C7127C /* DateHelper.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
 		F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */; };
@@ -54,6 +55,7 @@
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F6847E6C1FFB5918009FEB21 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
+		F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F6AD98BA2030CE2700C7127C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				F6EB44912009DCD3008647A1 /* PartyListViewController.swift */,
 				F65B57641FFE038C0078AE96 /* RegisterViewController.swift */,
 				F6EB448B20046E07008647A1 /* SettingsViewController.swift */,
+				F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */,
 			);
 			name = "Views and Controllers";
 			path = "New Group";
@@ -379,6 +382,7 @@
 				F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */,
 				F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
+				F69B9CDB2038004800F8F5E0 /* CalendarViewController.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
 				F6EB44832002A85C008647A1 /* Party.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */,
