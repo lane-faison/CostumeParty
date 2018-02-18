@@ -3,7 +3,7 @@ import Firebase
 import AVFoundation
 import AudioToolbox
 
-class LoginViewController: UIViewController, UINavigationControllerDelegate {
+class RootViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,20 +34,20 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
             defer { strongSelf.activityIndicator.stopAnimating() }
             
             if success {
-//                AudioServicesPlayAlertSound(SystemSoundID(1103))
-                
-                guard let lobbyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LobbyViewController") as? LobbyViewController else { return }
+                //                AudioServicesPlayAlertSound(SystemSoundID(1103))
+                let lobbyVC = LobbyViewController(nibName: StoryboardName.lobby.rawValue, bundle: nil)
                 strongSelf.navigationController?.pushViewController(lobbyVC, animated: true)
             }
         }
     }
     
     @objc func userTappedRegister() {
-        performSegue(withIdentifier: "toRegistration", sender: self)
+        let registerFormVC = RegisterFormViewController(nibName: StoryboardName.registerForm.rawValue, bundle: nil)
+        navigationController?.pushViewController(registerFormVC, animated: true)
     }
 }
 
-extension LoginViewController {
+extension RootViewController {
     private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
@@ -63,7 +63,7 @@ extension LoginViewController {
     }
 }
 
-extension LoginViewController {
+extension RootViewController {
     
     private func setupView() {
         imageView.image = UIImage(named: "ghost")
@@ -99,3 +99,4 @@ extension LoginViewController {
         activityIndicator.center = view.center
     }
 }
+
