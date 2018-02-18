@@ -1,6 +1,6 @@
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterFormViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: PrimaryTextField!
     @IBOutlet weak var passwordTextField: PrimaryTextField!
@@ -21,13 +21,13 @@ class RegisterViewController: UIViewController {
     }
 }
 
-extension RegisterViewController {
+extension RegisterFormViewController {
     @objc func buttonTapped() {
         checkFields()
     }
 }
 
-extension RegisterViewController {
+extension RegisterFormViewController {
     private func checkFields() {
         var errorCount: Int = 0
         let textFields: [UITextField] = [emailTextField, passwordTextField, confirmTextField]
@@ -66,7 +66,7 @@ extension RegisterViewController {
     }
 }
 
-extension RegisterViewController {
+extension RegisterFormViewController {
     private func setupView() {
         emailTextField.fieldLabel.text = "Email"
         emailTextField.returnKeyType = .next
@@ -91,3 +91,4 @@ extension RegisterViewController {
         activityIndicator.center = view.center
     }
 }
+

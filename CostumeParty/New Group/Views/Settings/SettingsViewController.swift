@@ -1,7 +1,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-        
+    
     @IBOutlet weak var logoutButton: PrimaryButton!
     
     override func viewDidLoad() {
@@ -35,3 +35,4 @@ extension SettingsViewController {
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
 }
+

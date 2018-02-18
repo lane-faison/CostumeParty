@@ -8,10 +8,10 @@ class LobbyViewController: UIViewController {
     @IBOutlet weak var findPartyButton: PrimaryButton!
     @IBOutlet weak var hostPartyButton: PrimaryButton!
     @IBOutlet weak var settingsButton: PrimaryButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         guard let user = FirebaseService.firebaseUser() else { return }
         
         setupView(user: user)
@@ -22,15 +22,19 @@ class LobbyViewController: UIViewController {
 extension LobbyViewController {
     
     @objc func goToPartyList() {
-        performSegue(withIdentifier: "toPartyList", sender: self)
+        let partyListVC = PartyListViewController(nibName: StoryboardName.partyList.rawValue, bundle: nil)
+        navigationController?.pushViewController(partyListVC, animated: true)
+
     }
     
     @objc func goToHostParty() {
-        performSegue(withIdentifier: "toHostParty", sender: self)
+        let hostPartyForm = HostPartyFormViewController(nibName: StoryboardName.hostPartyForm.rawValue, bundle: nil)
+        navigationController?.pushViewController(hostPartyForm, animated: true)
     }
     
     @objc func goToSettings() {
-        performSegue(withIdentifier: "toSettings", sender: self)
+        let settingsVC = SettingsViewController(nibName: StoryboardName.settings.rawValue, bundle: nil)
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
 }
 
@@ -65,3 +69,4 @@ extension LobbyViewController {
         settingsButton.primaryColor = .linkColor
     }
 }
+

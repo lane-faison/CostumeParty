@@ -9,32 +9,38 @@
 /* Begin PBXBuildFile section */
 		00C694A486947D9430566BE6 /* Pods_CostumeParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2C42A7E49626ECC5C049C0 /* Pods_CostumeParty.framework */; };
 		F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3B1FE6225A00073506 /* AppDelegate.swift */; };
-		F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F7C3D1FE6225A00073506 /* LoginViewController.swift */; };
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
 		F6216079202C1AC80023A45A /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6216078202C1AC80023A45A /* SquareButton.swift */; };
-		F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */; };
-		F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B57641FFE038C0078AE96 /* RegisterViewController.swift */; };
-		F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66F6CC91FE626AC0073766E /* Main.storyboard */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
 		F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6C1FFB5918009FEB21 /* PrimaryTextField.swift */; };
-		F69B9CDB2038004800F8F5E0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */; };
 		F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD98BA2030CE2700C7127C /* DateHelper.swift */; };
 		F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */; };
-		F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */; };
+		F6E3F4692039F57D001392F9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F4672039F57D001392F9 /* RootViewController.swift */; };
+		F6E3F46A2039F57D001392F9 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F4682039F57D001392F9 /* RootViewController.xib */; };
+		F6E3F46C2039F5E7001392F9 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F46B2039F5E7001392F9 /* StoryboardHelper.swift */; };
+		F6E3F4712039FA47001392F9 /* RegisterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F46F2039FA47001392F9 /* RegisterFormViewController.swift */; };
+		F6E3F4722039FA47001392F9 /* RegisterFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F4702039FA47001392F9 /* RegisterFormViewController.xib */; };
+		F6E3F4762039FC74001392F9 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F4742039FC74001392F9 /* LobbyViewController.swift */; };
+		F6E3F4772039FC74001392F9 /* LobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F4752039FC74001392F9 /* LobbyViewController.xib */; };
+		F6E3F47C2039FEE8001392F9 /* PartyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F47A2039FEE8001392F9 /* PartyListViewController.swift */; };
+		F6E3F47D2039FEE8001392F9 /* PartyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F47B2039FEE8001392F9 /* PartyListViewController.xib */; };
+		F6E3F4812039FFEB001392F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F47F2039FFEB001392F9 /* SettingsViewController.swift */; };
+		F6E3F4822039FFEB001392F9 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F4802039FFEB001392F9 /* SettingsViewController.xib */; };
+		F6E3F486203A00B3001392F9 /* HostPartyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F484203A00B3001392F9 /* HostPartyFormViewController.swift */; };
+		F6E3F487203A00B3001392F9 /* HostPartyFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F485203A00B3001392F9 /* HostPartyFormViewController.xib */; };
+		F6E3F48B203A0194001392F9 /* CategoryFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3F489203A0194001392F9 /* CategoryFormViewController.swift */; };
+		F6E3F48C203A0194001392F9 /* CategoryFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E3F48A203A0194001392F9 /* CategoryFormViewController.xib */; };
 		F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */; };
 		F6E59FF4200060620041DBBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E59FF3200060620041DBBE /* GoogleService-Info.plist */; };
 		F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447320006B83008647A1 /* AlertHelper.swift */; };
 		F6EB4476200152BC008647A1 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB4475200152BC008647A1 /* FirebaseService.swift */; };
 		F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */; };
 		F6EB44832002A85C008647A1 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44822002A85C008647A1 /* Party.swift */; };
-		F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44882002E17B008647A1 /* LobbyViewController.swift */; };
-		F6EB448C20046E07008647A1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB448B20046E07008647A1 /* SettingsViewController.swift */; };
 		F6EB448F2009D4EB008647A1 /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB448D2009D4EB008647A1 /* PartyTableViewCell.swift */; };
 		F6EB44902009D4EB008647A1 /* PartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EB448E2009D4EB008647A1 /* PartyTableViewCell.xib */; };
-		F6EB44922009DCD3008647A1 /* PartyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB44912009DCD3008647A1 /* PartyListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,33 +49,39 @@
 		B16E58E05475573B997E0612 /* Pods-CostumeParty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostumeParty.release.xcconfig"; path = "Pods/Target Support Files/Pods-CostumeParty/Pods-CostumeParty.release.xcconfig"; sourceTree = "<group>"; };
 		F60F7C381FE6225A00073506 /* CostumeParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostumeParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60F7C3B1FE6225A00073506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F60F7C3D1FE6225A00073506 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F60F7C421FE6225A00073506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6216078202C1AC80023A45A /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
-		F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPartyFormViewController.swift; sourceTree = "<group>"; };
-		F65B57641FFE038C0078AE96 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		F66F6CC91FE626AC0073766E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F6847E6C1FFB5918009FEB21 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
-		F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F6AD98BA2030CE2700C7127C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		F6B9FB701FE6F41000DED6B4 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
-		F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		F6E3F4672039F57D001392F9 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F6E3F4682039F57D001392F9 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		F6E3F46B2039F5E7001392F9 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
+		F6E3F46F2039FA47001392F9 /* RegisterFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormViewController.swift; sourceTree = "<group>"; };
+		F6E3F4702039FA47001392F9 /* RegisterFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterFormViewController.xib; sourceTree = "<group>"; };
+		F6E3F4742039FC74001392F9 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		F6E3F4752039FC74001392F9 /* LobbyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyViewController.xib; sourceTree = "<group>"; };
+		F6E3F47A2039FEE8001392F9 /* PartyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListViewController.swift; sourceTree = "<group>"; };
+		F6E3F47B2039FEE8001392F9 /* PartyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyListViewController.xib; sourceTree = "<group>"; };
+		F6E3F47F2039FFEB001392F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F6E3F4802039FFEB001392F9 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		F6E3F484203A00B3001392F9 /* HostPartyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPartyFormViewController.swift; sourceTree = "<group>"; };
+		F6E3F485203A00B3001392F9 /* HostPartyFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HostPartyFormViewController.xib; sourceTree = "<group>"; };
+		F6E3F489203A0194001392F9 /* CategoryFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormViewController.swift; sourceTree = "<group>"; };
+		F6E3F48A203A0194001392F9 /* CategoryFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFormViewController.xib; sourceTree = "<group>"; };
 		F6E59FF120005D0A0041DBBE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		F6E59FF3200060620041DBBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6EB447320006B83008647A1 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		F6EB4475200152BC008647A1 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F6EB447B20020FB0008647A1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F6EB44822002A85C008647A1 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
-		F6EB44882002E17B008647A1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
-		F6EB448B20046E07008647A1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F6EB448D2009D4EB008647A1 /* PartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 		F6EB448E2009D4EB008647A1 /* PartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyTableViewCell.xib; sourceTree = "<group>"; };
-		F6EB44912009DCD3008647A1 /* PartyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 				F6EB447320006B83008647A1 /* AlertHelper.swift */,
 				F6EB4475200152BC008647A1 /* FirebaseService.swift */,
 				F6AD98BA2030CE2700C7127C /* DateHelper.swift */,
+				F6E3F46B2039F5E7001392F9 /* StoryboardHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,15 +235,7 @@
 				F6847E691FFB5290009FEB21 /* Extensions */,
 				F60F7C4E1FE6236500073506 /* Reusable Components */,
 				F66F6CD01FE630210073766E /* Styling */,
-				F66F6CC91FE626AC0073766E /* Main.storyboard */,
-				F6D4ACDD200AD4520078816C /* CategoriesViewController.swift */,
-				F622ADC1200A80B60073A3ED /* HostPartyFormViewController.swift */,
-				F6EB44882002E17B008647A1 /* LobbyViewController.swift */,
-				F60F7C3D1FE6225A00073506 /* LoginViewController.swift */,
-				F6EB44912009DCD3008647A1 /* PartyListViewController.swift */,
-				F65B57641FFE038C0078AE96 /* RegisterViewController.swift */,
-				F6EB448B20046E07008647A1 /* SettingsViewController.swift */,
-				F69B9CDA2038004800F8F5E0 /* CalendarViewController.swift */,
+				F6E3F4782039FD69001392F9 /* Views */,
 			);
 			name = "Views and Controllers";
 			path = "New Group";
@@ -241,6 +246,83 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F6E3F46D2039F9FE001392F9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F4672039F57D001392F9 /* RootViewController.swift */,
+				F6E3F4682039F57D001392F9 /* RootViewController.xib */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F6E3F46E2039FA18001392F9 /* RegisterForm */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F46F2039FA47001392F9 /* RegisterFormViewController.swift */,
+				F6E3F4702039FA47001392F9 /* RegisterFormViewController.xib */,
+			);
+			path = RegisterForm;
+			sourceTree = "<group>";
+		};
+		F6E3F4732039FC59001392F9 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F4742039FC74001392F9 /* LobbyViewController.swift */,
+				F6E3F4752039FC74001392F9 /* LobbyViewController.xib */,
+			);
+			path = Lobby;
+			sourceTree = "<group>";
+		};
+		F6E3F4782039FD69001392F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F488203A0174001392F9 /* CategoryForm */,
+				F6E3F483203A00A0001392F9 /* HostPartyForm */,
+				F6E3F4732039FC59001392F9 /* Lobby */,
+				F6E3F4792039FED6001392F9 /* PartyList */,
+				F6E3F46E2039FA18001392F9 /* RegisterForm */,
+				F6E3F46D2039F9FE001392F9 /* Root */,
+				F6E3F47E2039FFD5001392F9 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6E3F4792039FED6001392F9 /* PartyList */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F47A2039FEE8001392F9 /* PartyListViewController.swift */,
+				F6E3F47B2039FEE8001392F9 /* PartyListViewController.xib */,
+			);
+			path = PartyList;
+			sourceTree = "<group>";
+		};
+		F6E3F47E2039FFD5001392F9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F47F2039FFEB001392F9 /* SettingsViewController.swift */,
+				F6E3F4802039FFEB001392F9 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F6E3F483203A00A0001392F9 /* HostPartyForm */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F484203A00B3001392F9 /* HostPartyFormViewController.swift */,
+				F6E3F485203A00B3001392F9 /* HostPartyFormViewController.xib */,
+			);
+			path = HostPartyForm;
+			sourceTree = "<group>";
+		};
+		F6E3F488203A0174001392F9 /* CategoryForm */ = {
+			isa = PBXGroup;
+			children = (
+				F6E3F489203A0194001392F9 /* CategoryFormViewController.swift */,
+				F6E3F48A203A0194001392F9 /* CategoryFormViewController.xib */,
+			);
+			path = CategoryForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,11 +387,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F66F6CCA1FE626AC0073766E /* Main.storyboard in Resources */,
+				F6E3F48C203A0194001392F9 /* CategoryFormViewController.xib in Resources */,
 				F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */,
+				F6E3F46A2039F57D001392F9 /* RootViewController.xib in Resources */,
+				F6E3F487203A00B3001392F9 /* HostPartyFormViewController.xib in Resources */,
 				F6EB44902009D4EB008647A1 /* PartyTableViewCell.xib in Resources */,
 				F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */,
+				F6E3F4722039FA47001392F9 /* RegisterFormViewController.xib in Resources */,
+				F6E3F47D2039FEE8001392F9 /* PartyListViewController.xib in Resources */,
 				F6E59FF4200060620041DBBE /* GoogleService-Info.plist in Resources */,
+				F6E3F4772039FC74001392F9 /* LobbyViewController.xib in Resources */,
+				F6E3F4822039FFEB001392F9 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,28 +456,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E3F48B203A0194001392F9 /* CategoryFormViewController.swift in Sources */,
 				F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */,
-				F6EB448C20046E07008647A1 /* SettingsViewController.swift in Sources */,
 				F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */,
-				F6EB44922009DCD3008647A1 /* PartyListViewController.swift in Sources */,
-				F6EB44892002E17B008647A1 /* LobbyViewController.swift in Sources */,
-				F60F7C3E1FE6225A00073506 /* LoginViewController.swift in Sources */,
+				F6E3F47C2039FEE8001392F9 /* PartyListViewController.swift in Sources */,
 				F6EB4476200152BC008647A1 /* FirebaseService.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F6216079202C1AC80023A45A /* SquareButton.swift in Sources */,
-				F6D4ACDE200AD4520078816C /* CategoriesViewController.swift in Sources */,
+				F6E3F4692039F57D001392F9 /* RootViewController.swift in Sources */,
 				F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */,
+				F6E3F486203A00B3001392F9 /* HostPartyFormViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
-				F69B9CDB2038004800F8F5E0 /* CalendarViewController.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
+				F6E3F4712039FA47001392F9 /* RegisterFormViewController.swift in Sources */,
 				F6EB44832002A85C008647A1 /* Party.swift in Sources */,
+				F6E3F46C2039F5E7001392F9 /* StoryboardHelper.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */,
-				F65B57651FFE038C0078AE96 /* RegisterViewController.swift in Sources */,
+				F6E3F4812039FFEB001392F9 /* SettingsViewController.swift in Sources */,
 				F6EB448F2009D4EB008647A1 /* PartyTableViewCell.swift in Sources */,
-				F622ADC2200A80B60073A3ED /* HostPartyFormViewController.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
+				F6E3F4762039FC74001392F9 /* LobbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

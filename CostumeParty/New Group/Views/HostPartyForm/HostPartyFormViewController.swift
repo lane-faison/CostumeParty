@@ -57,30 +57,24 @@ extension HostPartyFormViewController {
             
             present(alert, animated: true, completion: nil)
         } else if !name.isEmpty && !zipcode.isEmpty && !pin.isEmpty {
-            performSegue(withIdentifier: "toCategories", sender: self)
+            guard let partyName = partyNameField.text,
+                let partyZipcodeString = zipcodeField.text,
+                let zipcode = Int(partyZipcodeString),
+                let pinString = pinField.text,
+                let pin = Int(pinString),
+                let id = user?.uid else { return }
+            
+            let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: partyDate, pin: pin)
+            let categoryFormVC = CategoryFormViewController(nibName: StoryboardName.categoryForm.rawValue, bundle: nil)
+            categoryFormVC.party = party
+            
+            navigationController?.pushViewController(categoryFormVC, animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "You must complete the form before proceeding.", preferredStyle: .alert)
             let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alert.addAction(okay)
             
             present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toCategories" {
-            if let destination = segue.destination as? CategoriesViewController {
-                
-                guard let partyName = partyNameField.text,
-                    let partyZipcodeString = zipcodeField.text,
-                    let zipcode = Int(partyZipcodeString),
-                    let pinString = pinField.text,
-                    let pin = Int(pinString),
-                    let id = user?.uid else { return }
-                
-                let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: partyDate, pin: pin)
-                destination.party = party
-            }
         }
     }
 }

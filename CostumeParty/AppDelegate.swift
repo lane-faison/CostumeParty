@@ -13,14 +13,22 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         UINavigationBar.appearance().barTintColor = .darkTextColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightTextColor]
         UIBarButtonItem.appearance().tintColor = .lightTextColor
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let rootViewController = RootViewController(nibName: StoryboardName.root.rawValue, bundle: nil)
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

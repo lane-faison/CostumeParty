@@ -1,6 +1,6 @@
 import UIKit
 
-class CategoriesViewController: UIViewController {
+class CategoryFormViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainView: UIView!
@@ -25,7 +25,7 @@ class CategoriesViewController: UIViewController {
     }
 }
 
-extension CategoriesViewController {
+extension CategoryFormViewController {
     
     @objc private func submitTapped() {
         grabInputs {
@@ -55,7 +55,7 @@ extension CategoriesViewController {
     }
 }
 
-extension CategoriesViewController {
+extension CategoryFormViewController {
     
     private func setupView() {
         headingLabel.font = .h4
@@ -116,7 +116,7 @@ extension CategoriesViewController {
     }
 }
 
-extension CategoriesViewController: UIScrollViewDelegate {
+extension CategoryFormViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollViewHeight = scrollView.frame.size.height
         let scrollContentSizeHeight = scrollView.contentSize.height
@@ -130,7 +130,7 @@ extension CategoriesViewController: UIScrollViewDelegate {
     }
 }
 
-extension CategoriesViewController {
+extension CategoryFormViewController {
     private func fadeAddButtonOut(_ sender: UIButton) {
         UIView.animate(withDuration: 0.1) {
             sender.alpha = 0.1
@@ -145,3 +145,4 @@ extension CategoriesViewController {
         }
     }
 }
+
