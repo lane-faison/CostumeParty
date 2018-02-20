@@ -3,11 +3,10 @@ import Firebase
 
 class LobbyViewController: UIViewController {
     
-    @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var currentPartyButton: PrimaryButton!
-    @IBOutlet weak var findPartyButton: PrimaryButton!
-    @IBOutlet weak var hostPartyButton: PrimaryButton!
-    @IBOutlet weak var settingsButton: PrimaryButton!
+    @IBOutlet weak var currentPartyButtonView: LargeButtonView!
+    @IBOutlet weak var findPartyButtonView: LargeButtonView!
+    @IBOutlet weak var hostPartyButtonView: LargeButtonView!
+    @IBOutlet weak var settingsButtonView: LargeButtonView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,29 +43,21 @@ extension LobbyViewController {
         navigationItem.hidesBackButton = true
         title = "Lobby"
         
-        let name = user.displayName ?? user.email
-        if let name = name {
-            welcomeLabel.text = "Welcome, \(name)!"
-            welcomeLabel.font = .h3
-            welcomeLabel.textColor = .darkTextColor
-        } else {
-            welcomeLabel.text = ""
-        }
+        currentPartyButtonView.mainLabel.text = "Enter current party"
+        currentPartyButtonView.primaryColor = UIColor.linkColor
         
-        currentPartyButton.setTitle("CURRENT PARTY", for: .normal)
-        currentPartyButton.primaryColor = .linkColor
+        findPartyButtonView.mainLabel.text = "Search for a party"
+        findPartyButtonView.mainButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
+        findPartyButtonView.primaryColor = UIColor.affirmativeColor
         
-        findPartyButton.setTitle("FIND A PARTY", for: .normal)
-        findPartyButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
-        findPartyButton.primaryColor = .linkColor
         
-        hostPartyButton.setTitle("HOST A PARTY", for: .normal)
-        hostPartyButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
-        hostPartyButton.primaryColor = UIColor.linkColor
+        hostPartyButtonView.mainLabel.text = "Host a party"
+        hostPartyButtonView.mainButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
+        hostPartyButtonView.primaryColor = UIColor.destructiveColor
         
-        settingsButton.setTitle("SETTINGS", for: .normal)
-        settingsButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
-        settingsButton.primaryColor = .linkColor
+        settingsButtonView.mainLabel.text = "Settings"
+        settingsButtonView.mainButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
+        settingsButtonView.primaryColor = UIColor.inactiveColor
     }
 }
 
