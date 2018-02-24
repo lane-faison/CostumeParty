@@ -12,14 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="Ce1-ob-UBx" id="5aM-Lg-rtA"/>
-                <outlet property="mainButton" destination="2oF-Ow-Anw" id="mW4-3d-ylc"/>
-                <outlet property="mainImageView" destination="pn0-fB-IgR" id="p8R-6C-h8m"/>
-                <outlet property="mainLabel" destination="hU1-j6-LTO" id="vQ0-zK-yym"/>
+                <outlet property="contentView" destination="Ce1-ob-UBx" id="8VU-7w-DXl"/>
+                <outlet property="mainButton" destination="2oF-Ow-Anw" id="HKT-5K-Spw"/>
+                <outlet property="mainImageView" destination="pn0-fB-IgR" id="r5O-Hn-iOc"/>
+                <outlet property="mainLabel" destination="hU1-j6-LTO" id="Edy-vh-iMM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ce1-ob-UBx" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ce1-ob-UBx">
             <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -52,6 +52,8 @@
                 <constraint firstItem="3Py-1w-p7s" firstAttribute="trailing" secondItem="2oF-Ow-Anw" secondAttribute="trailing" id="wbl-7i-M3e"/>
                 <constraint firstItem="hU1-j6-LTO" firstAttribute="centerY" secondItem="pn0-fB-IgR" secondAttribute="centerY" id="yPD-db-iL1"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="3Py-1w-p7s"/>
             <point key="canvasLocation" x="34.5" y="-186.5"/>

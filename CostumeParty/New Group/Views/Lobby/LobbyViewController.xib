@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LobbyViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
-                <outlet property="currentPartyButtonView" destination="kFP-o5-HXr" id="STO-dy-HZZ"/>
-                <outlet property="findPartyButtonView" destination="naE-nK-AxN" id="IIa-Hd-BtF"/>
-                <outlet property="hostPartyButtonView" destination="jey-Nx-jGU" id="g01-yF-CtR"/>
-                <outlet property="settingsButtonView" destination="1IG-dg-PPo" id="2br-Mz-Be4"/>
+                <outlet property="currentPartyButtonView" destination="jlt-kg-8uP" id="qUv-g4-iSs"/>
+                <outlet property="findPartyButtonView" destination="XE7-T6-PyI" id="sKv-Xz-3SF"/>
+                <outlet property="hostPartyButtonView" destination="Jv7-e7-Kdq" id="U1f-3X-8FS"/>
+                <outlet property="settingsButtonView" destination="Dix-KR-giI" id="MGR-Ye-GoO"/>
                 <outlet property="view" destination="Sro-Qh-3f1" id="rSI-oM-N5O"/>
             </connections>
         </placeholder>
@@ -27,19 +27,19 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O2X-Cy-b9J">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFP-o5-HXr" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlt-kg-8uP" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naE-nK-AxN" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-T6-PyI" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="162" width="375" height="161.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jey-Nx-jGU" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-e7-Kdq" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="323.5" width="375" height="162"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1IG-dg-PPo" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-KR-giI" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="485.5" width="375" height="161.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>

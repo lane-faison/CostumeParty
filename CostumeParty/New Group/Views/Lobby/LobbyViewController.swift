@@ -43,21 +43,21 @@ extension LobbyViewController {
         navigationItem.hidesBackButton = true
         title = "Lobby"
         
-        currentPartyButtonView.mainLabel.text = "Enter current party"
-        currentPartyButtonView.primaryColor = UIColor.linkColor
-        
-        findPartyButtonView.mainLabel.text = "Search for a party"
-        findPartyButtonView.mainButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
-        findPartyButtonView.primaryColor = UIColor.affirmativeColor
-        
-        
-        hostPartyButtonView.mainLabel.text = "Host a party"
-        hostPartyButtonView.mainButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
-        hostPartyButtonView.primaryColor = UIColor.destructiveColor
-        
-        settingsButtonView.mainLabel.text = "Settings"
-        settingsButtonView.mainButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
-        settingsButtonView.primaryColor = UIColor.inactiveColor
+//        currentPartyButtonView.mainLabel.text = "Enter current party"
+//        currentPartyButtonView.primaryColor = UIColor.linkColor
+//
+//        findPartyButtonView.mainLabel.text = "Search for a party"
+//        findPartyButtonView.mainButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
+//        findPartyButtonView.primaryColor = UIColor.affirmativeColor
+//
+//
+//        hostPartyButtonView.mainLabel.text = "Host a party"
+//        hostPartyButtonView.mainButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
+//        hostPartyButtonView.primaryColor = UIColor.destructiveColor
+//
+//        settingsButtonView.mainLabel.text = "Settings"
+//        settingsButtonView.mainButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
+//        settingsButtonView.primaryColor = UIColor.inactiveColor
     }
 }
 
