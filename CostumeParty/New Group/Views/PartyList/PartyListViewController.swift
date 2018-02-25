@@ -79,11 +79,18 @@ extension PartyListViewController {
                 strongSelf.title = "\(zipcode)"
             }
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.navigationController?.popViewController(animated: true)
+        }
         
         alert.addTextField { (textField) in
             textField.placeholder = "(required)"
             textField.keyboardType = .numberPad
         }
+        
+        alert.addAction(cancel)
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)

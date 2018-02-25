@@ -7,7 +7,11 @@ class LargeButtonView: UIView {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainLabel: UILabel!
     
-    var primaryColor: UIColor = .linkColor
+    var primaryColor: UIColor = .linkColor {
+        didSet {
+            setupView()
+        }
+    }
     
     override init(frame: CGRect) {   // For using CustomView in code
         super.init(frame: frame)
@@ -33,8 +37,6 @@ extension LargeButtonView {
     
     private func setupView() {
         contentView.layer.backgroundColor = primaryColor.cgColor
-        contentView.layer.borderWidth = 2.0
-        contentView.layer.borderColor = UIColor.black.cgColor
         
         mainLabel.font = UIFont.h3
         mainLabel.textColor = UIColor.lightTextColor
