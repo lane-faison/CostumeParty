@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HostPartyFormViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
+                <outlet property="dateButton" destination="tGU-89-DgU" id="qv9-ax-Ar5"/>
                 <outlet property="dateLabel" destination="ym5-I2-hwQ" id="nGk-iL-7wr"/>
-                <outlet property="dateSlider" destination="EIJ-ef-sJz" id="IdG-mo-QAf"/>
                 <outlet property="headingLabel" destination="Ewn-yd-9In" id="qDj-xG-ktS"/>
                 <outlet property="nextButton" destination="vb0-hZ-ypc" id="Bfe-V0-Oh8"/>
                 <outlet property="partyNameField" destination="N28-KM-7X9" id="HOd-av-oCp"/>
@@ -80,43 +80,47 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-hZ-ypc" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
-                                    <rect key="frame" x="47" y="422" width="279" height="50"/>
+                                    <rect key="frame" x="47" y="418" width="279" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="ksp-qK-VvE"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                 </button>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EIJ-ef-sJz">
-                                    <rect key="frame" x="45.5" y="344" width="283" height="31"/>
-                                </slider>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGU-89-DgU" customClass="PrimaryButton" customModule="CostumeParty" customModuleProvider="target">
+                                    <rect key="frame" x="47.5" y="344" width="279" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="WW4-uz-HPR"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ym5-I2-hwQ" firstAttribute="width" secondItem="9QO-vK-eQ7" secondAttribute="width" id="16A-av-GkV"/>
+                                <constraint firstItem="tGU-89-DgU" firstAttribute="centerX" secondItem="ym5-I2-hwQ" secondAttribute="centerX" id="3jb-0r-O6Z"/>
+                                <constraint firstItem="tGU-89-DgU" firstAttribute="width" secondItem="ym5-I2-hwQ" secondAttribute="width" id="3jc-Dz-2pZ"/>
                                 <constraint firstItem="ym5-I2-hwQ" firstAttribute="centerX" secondItem="9QO-vK-eQ7" secondAttribute="centerX" id="7S7-yn-1aG"/>
                                 <constraint firstItem="oGb-Ho-pdz" firstAttribute="top" secondItem="9QO-vK-eQ7" secondAttribute="bottom" constant="24" id="93x-u5-e8a"/>
+                                <constraint firstItem="tGU-89-DgU" firstAttribute="top" secondItem="ym5-I2-hwQ" secondAttribute="bottom" constant="24" id="9Pz-3Y-jaW"/>
                                 <constraint firstItem="9QO-vK-eQ7" firstAttribute="top" secondItem="N28-KM-7X9" secondAttribute="bottom" constant="24" id="AQU-02-ixr"/>
                                 <constraint firstItem="9QO-vK-eQ7" firstAttribute="width" secondItem="N28-KM-7X9" secondAttribute="width" id="F1r-xy-ne8"/>
-                                <constraint firstItem="EIJ-ef-sJz" firstAttribute="centerX" secondItem="ym5-I2-hwQ" secondAttribute="centerX" id="G3j-Hp-NC3"/>
                                 <constraint firstAttribute="trailing" secondItem="Ewn-yd-9In" secondAttribute="trailing" constant="24" id="HDa-hy-ZCC"/>
-                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="top" secondItem="EIJ-ef-sJz" secondAttribute="bottom" constant="48" id="JGO-Gc-b3V"/>
                                 <constraint firstAttribute="trailing" secondItem="N28-KM-7X9" secondAttribute="trailing" constant="48" id="OLv-ah-3lB"/>
-                                <constraint firstItem="EIJ-ef-sJz" firstAttribute="top" secondItem="ym5-I2-hwQ" secondAttribute="bottom" constant="24" id="OOg-ZN-gik"/>
                                 <constraint firstItem="LUb-4X-GI3" firstAttribute="leading" secondItem="0mI-7t-6gE" secondAttribute="leading" id="WqC-WD-Beq"/>
+                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="centerX" secondItem="tGU-89-DgU" secondAttribute="centerX" id="aah-MX-4sc"/>
+                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="width" secondItem="tGU-89-DgU" secondAttribute="width" id="cja-Mb-tij"/>
                                 <constraint firstItem="9QO-vK-eQ7" firstAttribute="centerX" secondItem="N28-KM-7X9" secondAttribute="centerX" id="fLS-AZ-h6b"/>
-                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="width" secondItem="EIJ-ef-sJz" secondAttribute="width" id="ft8-Bl-RWX"/>
                                 <constraint firstItem="N28-KM-7X9" firstAttribute="leading" secondItem="0mI-7t-6gE" secondAttribute="leading" constant="48" id="g7W-E2-UEX"/>
                                 <constraint firstItem="LUb-4X-GI3" firstAttribute="top" secondItem="Ewn-yd-9In" secondAttribute="bottom" constant="12" id="gfE-S2-WWA"/>
                                 <constraint firstItem="N28-KM-7X9" firstAttribute="top" secondItem="LUb-4X-GI3" secondAttribute="bottom" constant="24" id="hm7-Lh-7UB"/>
-                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="centerX" secondItem="EIJ-ef-sJz" secondAttribute="centerX" id="iOH-yO-PTn"/>
                                 <constraint firstItem="oGb-Ho-pdz" firstAttribute="centerX" secondItem="9QO-vK-eQ7" secondAttribute="centerX" id="kAF-3o-2ey"/>
                                 <constraint firstItem="Ewn-yd-9In" firstAttribute="top" secondItem="0mI-7t-6gE" secondAttribute="top" constant="24" id="kcX-dy-yaC"/>
+                                <constraint firstItem="vb0-hZ-ypc" firstAttribute="top" secondItem="tGU-89-DgU" secondAttribute="bottom" constant="24" id="lEv-is-i2X"/>
                                 <constraint firstItem="Ewn-yd-9In" firstAttribute="leading" secondItem="0mI-7t-6gE" secondAttribute="leading" constant="24" id="mq4-eL-Neq"/>
                                 <constraint firstAttribute="height" constant="600" id="si4-lk-0yp"/>
                                 <constraint firstItem="oGb-Ho-pdz" firstAttribute="width" secondItem="9QO-vK-eQ7" secondAttribute="width" id="sye-rK-5jM"/>
                                 <constraint firstItem="ym5-I2-hwQ" firstAttribute="top" secondItem="oGb-Ho-pdz" secondAttribute="bottom" constant="48" id="uea-Kv-fDo"/>
                                 <constraint firstAttribute="trailing" secondItem="LUb-4X-GI3" secondAttribute="trailing" id="vA1-2l-jqw"/>
-                                <constraint firstItem="EIJ-ef-sJz" firstAttribute="width" secondItem="ym5-I2-hwQ" secondAttribute="width" id="wOA-Mw-eOK"/>
                             </constraints>
                         </view>
                     </subviews>

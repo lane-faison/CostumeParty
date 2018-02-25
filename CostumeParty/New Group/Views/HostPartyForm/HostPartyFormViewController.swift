@@ -7,7 +7,7 @@ class HostPartyFormViewController: UIViewController {
     @IBOutlet weak var zipcodeField: PrimaryTextField!
     @IBOutlet weak var pinField: PrimaryTextField!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var dateSlider: UISlider!
+    @IBOutlet weak var dateButton: PrimaryButton!
     @IBOutlet weak var nextButton: PrimaryButton!
     
     let user = FirebaseService.firebaseUser()
@@ -20,22 +20,14 @@ class HostPartyFormViewController: UIViewController {
         setupViewController()
         setupView()
     }
-    
-    @IBAction func sliderDidChange(_ sender: UISlider) {
-        let addedDays: Int = Int(sender.value.rounded())
-        guard let date = Calendar.current.date(byAdding: .day, value: addedDays, to: Date()) else { return }
-        
-        partyDate = date
-        
-        let todaysDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
-        let futureDate = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
-        
-        dateLabel.text = (todaysDate == futureDate) ? "Today" : futureDate
-    }
 }
 
 extension HostPartyFormViewController {
-    @objc func buttonTapped() {
+    @objc func dateButtonTapped() {
+        nextButton.isEnabled = true
+    }
+    
+    @objc func nextButtonTapped() {
         guard let name = partyNameField.text,
             let zipcode = zipcodeField.text,
             let pin = pinField.text else { return }
@@ -99,13 +91,15 @@ extension HostPartyFormViewController {
         pinField.tag = 2
         
         dateLabel.font = .h4
-        dateLabel.text = "Move the slider to set event date"
+        dateLabel.text = "No date has been set yet"
         
-        dateSlider.minimumValue = 0
-        dateSlider.maximumValue = 60
+        dateButton.setTitle("SET DATE", for: .normal)
+        dateButton.setTitleColor(.lightTextColor, for: .normal)
+        dateButton.addTarget(self, action: #selector(dateButtonTapped), for: .touchUpInside)
         
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitleColor(.lightTextColor, for: .normal)
-        nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        nextButton.isEnabled = false
     }
 }

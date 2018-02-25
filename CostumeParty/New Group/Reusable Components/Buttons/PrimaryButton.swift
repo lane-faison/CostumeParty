@@ -21,13 +21,21 @@ class PrimaryButton: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            configure()
+        }
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        
         configure()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         configure()
     }
     
@@ -52,7 +60,7 @@ class PrimaryButton: UIButton {
     }
     
     fileprivate func configure() {
-        layer.backgroundColor = primaryColor.cgColor
+        layer.backgroundColor = isEnabled ? primaryColor.cgColor : UIColor.inactiveColor.cgColor
         layer.cornerRadius = buttonHeight/2.0
         
         setTitleColor(buttonFontColor, for: .normal)

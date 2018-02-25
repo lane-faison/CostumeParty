@@ -165,7 +165,6 @@
 				F60F7C4F1FE6238600073506 /* Buttons */,
 				F60F7C501FE6239000073506 /* Cells */,
 				F6847E641FFA1C4E009FEB21 /* Text Fields */,
-				F6D4ACE1200C74820078816C /* Views */,
 			);
 			path = "Reusable Components";
 			sourceTree = "<group>";
@@ -175,6 +174,8 @@
 			children = (
 				F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */,
 				F6216078202C1AC80023A45A /* SquareButton.swift */,
+				F6E3F49B203BEA22001392F9 /* LargeButtonView.swift */,
+				F6E3F499203BE9C0001392F9 /* LargeButtonView.xib */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -243,15 +244,6 @@
 			);
 			name = "Views and Controllers";
 			path = "New Group";
-			sourceTree = "<group>";
-		};
-		F6D4ACE1200C74820078816C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F6E3F49B203BEA22001392F9 /* LargeButtonView.swift */,
-				F6E3F499203BE9C0001392F9 /* LargeButtonView.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		F6E3F46D2039F9FE001392F9 /* Root */ = {
