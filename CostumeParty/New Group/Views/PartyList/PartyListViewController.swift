@@ -79,7 +79,7 @@ extension PartyListViewController {
                 strongSelf.title = "\(zipcode)"
             }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
             guard let strongSelf = self else { return }
             
             strongSelf.navigationController?.popViewController(animated: true)
