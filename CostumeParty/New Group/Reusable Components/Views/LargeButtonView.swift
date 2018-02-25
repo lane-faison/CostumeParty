@@ -38,6 +38,11 @@ extension LargeButtonView {
     private func setupView() {
         contentView.layer.backgroundColor = primaryColor.cgColor
         
+        mainImageView.clipsToBounds = true
+        mainImageView.layer.borderColor = UIColor.lightTextColor.cgColor
+        mainImageView.layer.borderWidth = 2.0
+        mainImageView.layer.cornerRadius = mainImageView.frame.height / 2.0
+        
         mainLabel.font = UIFont.h3
         mainLabel.textColor = UIColor.lightTextColor
     }

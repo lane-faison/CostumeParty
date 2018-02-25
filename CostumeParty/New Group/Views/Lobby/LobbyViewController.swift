@@ -42,14 +42,17 @@ extension LobbyViewController {
         title = "Lobby"
 
         findPartyButtonView.mainLabel.text = "Search"
+        findPartyButtonView.mainImageView.image = UIImage(named: "glass")
         findPartyButtonView.mainButton.addTarget(self, action: #selector(goToPartyList), for: .touchUpInside)
         findPartyButtonView.primaryColor = UIColor.primaryColor
 
         hostPartyButtonView.mainLabel.text = "Host"
+        hostPartyButtonView.mainImageView.image = UIImage(named: "balloons")
         hostPartyButtonView.mainButton.addTarget(self, action: #selector(goToHostParty), for: .touchUpInside)
         hostPartyButtonView.primaryColor = UIColor.primaryColor.lighterColor()
 
         settingsButtonView.mainLabel.text = "Settings"
+        settingsButtonView.mainImageView.image = UIImage(named: "tool")
         settingsButtonView.mainButton.addTarget(self, action: #selector(goToSettings), for: .touchUpInside)
         settingsButtonView.primaryColor = UIColor.primaryColor.lighterColor().lighterColor()
     }
