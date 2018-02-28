@@ -110,8 +110,8 @@ extension RootViewController: UINavigationControllerDelegate {
         // TODO: Use this method to check VC and animate accordingly
         if operation == .push && fromVC as? RootViewController != nil && toVC as? LobbyViewController != nil {
             transition.transitionMode = .present
-            transition.startingPoint = self.loginButton.center
-            transition.circleColor = fromVC.view.backgroundColor!
+            transition.startingPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.maxY)
+            transition.circleColor = UIColor.clear
             return transition
         } else {
             return nil
