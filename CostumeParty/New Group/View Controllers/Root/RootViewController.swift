@@ -39,7 +39,6 @@ class RootViewController: UIViewController {
             
             if success {
                 // TODO: uncomment this for sound on login: AudioServicesPlayAlertSound(SystemSoundID(1103))
-                
                 let lobbyVC = LobbyViewController(nibName: StoryboardName.lobby.rawValue, bundle: nil)
                 strongSelf.navigationController?.pushViewController(lobbyVC, animated: true)
             }
@@ -108,9 +107,10 @@ extension RootViewController {
 extension RootViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        if operation == .push {
+        // TODO: Use this method to check VC and animate accordingly
+        if operation == .push && fromVC as? RootViewController != nil && toVC as? LobbyViewController != nil {
             transition.transitionMode = .present
-            transition.startingPoint = CGPoint(x: self.view.frame.maxX, y: self.view.frame.maxY / 2)
+            transition.startingPoint = self.loginButton.center
             transition.circleColor = fromVC.view.backgroundColor!
             return transition
         } else {
