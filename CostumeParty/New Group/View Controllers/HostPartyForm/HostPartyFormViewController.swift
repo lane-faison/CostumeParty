@@ -24,8 +24,10 @@ class HostPartyFormViewController: UIViewController {
 
 extension HostPartyFormViewController {
     @objc func dateButtonTapped() {
-        let calendarVC = CalendarViewController()
-        self.present(calendarVC, animated: true, completion: nil)
+        let calendarView = CalendarView()
+        view.addSubview(calendarView)
+        calendarView.center = self.view.center
+        
         dateButton.setTitle("CHANGE DATE", for: .normal)
         nextButton.isEnabled = true
     }

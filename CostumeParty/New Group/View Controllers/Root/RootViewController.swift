@@ -3,7 +3,7 @@ import Firebase
 import AVFoundation
 import AudioToolbox
 
-class RootViewController: UIViewController, UINavigationControllerDelegate {
+class RootViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,8 +15,12 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
+    let transition = CircularTransition()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.delegate = self
         
         setupViewController()
         setupView()
@@ -34,7 +38,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
             defer { strongSelf.activityIndicator.stopAnimating() }
             
             if success {
-                //                AudioServicesPlayAlertSound(SystemSoundID(1103))
+                // TODO: uncomment this for sound on login: AudioServicesPlayAlertSound(SystemSoundID(1103))
+                
                 let lobbyVC = LobbyViewController(nibName: StoryboardName.lobby.rawValue, bundle: nil)
                 strongSelf.navigationController?.pushViewController(lobbyVC, animated: true)
             }
@@ -97,6 +102,20 @@ extension RootViewController {
         
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
+    }
+}
+
+extension RootViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            transition.transitionMode = .present
+            transition.startingPoint = CGPoint(x: self.view.frame.maxX, y: self.view.frame.maxY / 2)
+            transition.circleColor = fromVC.view.backgroundColor!
+            return transition
+        } else {
+            return nil
+        }
     }
 }
 
