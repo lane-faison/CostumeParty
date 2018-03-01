@@ -16,11 +16,15 @@ class RootViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     let transition = CircularTransition()
+    let doorTransition = DoorTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.delegate = self
+        
+        usernameTextField.text = "lane1@gmail.com"
+        passwordTextField.text = "111111"
         
         setupViewController()
         setupView()
@@ -109,10 +113,13 @@ extension RootViewController: UINavigationControllerDelegate {
         
         // TODO: Use this method to check VC and animate accordingly
         if operation == .push && fromVC as? RootViewController != nil && toVC as? LobbyViewController != nil {
-            transition.transitionMode = .present
-            transition.startingPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.maxY)
-            transition.circleColor = UIColor.clear
-            return transition
+            doorTransition.transitionMode = .present
+//            transition.transitionMode = .present
+//            transition.startingPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.maxY)
+//            transition.circleColor = UIColor.clear
+            
+//            return transition
+            return doorTransition
         } else {
             return nil
         }
