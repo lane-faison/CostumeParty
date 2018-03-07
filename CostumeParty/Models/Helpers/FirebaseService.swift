@@ -26,10 +26,10 @@ public struct FirebaseService {
         }
     }
     
-    public static func logout(viewController: UIViewController) {
+    public static func logout(viewController: UIViewController, completion: (() -> Void)?) {
         do {
             try FireAuth.signOut()
-            viewController.navigationController?.popToRootViewController(animated: true)
+            completion?()
         } catch let error {
             AlertHelper.fireErrorActionSheet(viewController: viewController, message: error.localizedDescription)
         }

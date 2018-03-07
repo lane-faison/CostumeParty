@@ -17,7 +17,9 @@ extension SettingsViewController {
     @objc private func logout() {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
         let okay = UIAlertAction(title: "Log Out", style: .default) { _ in
-            FirebaseService.logout(viewController: self)
+            FirebaseService.logout(viewController: self, completion: {
+                self.navigationController?.popToRootViewController(animated: true)
+            })
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(okay)

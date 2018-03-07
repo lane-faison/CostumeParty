@@ -16,7 +16,6 @@ class RootViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     let transition = CircularTransition()
-    let doorTransition = DoorTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,17 +109,10 @@ extension RootViewController {
 
 extension RootViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        // TODO: Use this method to check VC and animate accordingly
-        if operation == .push && fromVC as? RootViewController != nil && toVC as? LobbyViewController != nil {
-            doorTransition.transitionMode = .present
-//            transition.transitionMode = .present
-//            transition.startingPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.maxY)
-//            transition.circleColor = UIColor.clear
-            
-//            return transition
-            return doorTransition
-        } else {
+        switch operation {
+        case .push:
+            return FlipTransition(originFrame: fromVC.view.frame)
+        default:
             return nil
         }
     }

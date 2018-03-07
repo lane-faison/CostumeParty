@@ -12,9 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LobbyViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
-                <outlet property="findPartyButtonView" destination="XE7-T6-PyI" id="sKv-Xz-3SF"/>
-                <outlet property="hostPartyButtonView" destination="Jv7-e7-Kdq" id="U1f-3X-8FS"/>
-                <outlet property="settingsButtonView" destination="Dix-KR-giI" id="MGR-Ye-GoO"/>
                 <outlet property="view" destination="Sro-Qh-3f1" id="rSI-oM-N5O"/>
             </connections>
         </placeholder>
@@ -22,32 +19,7 @@
         <view contentMode="scaleToFill" id="Sro-Qh-3f1">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="O2X-Cy-b9J">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-T6-PyI" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-e7-Kdq" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="217" width="375" height="213"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-KR-giI" customClass="LargeButtonView" customModule="CostumeParty" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="434" width="375" height="213"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                    </subviews>
-                </stackView>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="O2X-Cy-b9J" firstAttribute="leading" secondItem="mNs-zY-OrK" secondAttribute="leading" id="A6u-8f-hi0"/>
-                <constraint firstItem="O2X-Cy-b9J" firstAttribute="top" secondItem="mNs-zY-OrK" secondAttribute="top" id="IMg-pu-XaD"/>
-                <constraint firstItem="mNs-zY-OrK" firstAttribute="trailing" secondItem="O2X-Cy-b9J" secondAttribute="trailing" id="OII-XG-NRc"/>
-                <constraint firstItem="mNs-zY-OrK" firstAttribute="bottom" secondItem="O2X-Cy-b9J" secondAttribute="bottom" id="cjW-RU-vhO"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="mNs-zY-OrK"/>
             <point key="canvasLocation" x="93.5" y="72.5"/>
         </view>
