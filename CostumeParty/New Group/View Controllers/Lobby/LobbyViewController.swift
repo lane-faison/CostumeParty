@@ -3,14 +3,14 @@ import Firebase
 
 class LobbyViewController: UIViewController {
     
-//    @IBOutlet weak var findPartyButtonView: LargeButtonView!
-//    @IBOutlet weak var hostPartyButtonView: LargeButtonView!
-//    @IBOutlet weak var settingsButtonView: LargeButtonView!
+    //    @IBOutlet weak var findPartyButtonView: LargeButtonView!
+    //    @IBOutlet weak var hostPartyButtonView: LargeButtonView!
+    //    @IBOutlet weak var settingsButtonView: LargeButtonView!
     
     let circleView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
-        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderColor = UIColor.inactiveColor.cgColor
         view.layer.borderWidth = 1.0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -20,9 +20,7 @@ class LobbyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let user = FirebaseService.firebaseUser() else { return }
-        
-        setupView(user: user)
+        setupView()
         setupViewController()
     }
     
@@ -36,53 +34,51 @@ class LobbyViewController: UIViewController {
 extension LobbyViewController {
     
     @objc func goToPartyList(sender: UIButton) {
-        animateButtonToCenter(sender: sender) {
+        unlockButton(sender: sender) {
             let partyListVC = PartyListViewController(nibName: StoryboardName.partyList.rawValue, bundle: nil)
             self.navigationController?.pushViewController(partyListVC, animated: true)
         }
     }
     
     @objc func goToHostParty(sender: UIButton) {
-        animateButtonToCenter(sender: sender) {
+        unlockButton(sender: sender) {
             let hostPartyForm = HostPartyFormViewController(nibName: StoryboardName.hostPartyForm.rawValue, bundle: nil)
             self.navigationController?.pushViewController(hostPartyForm, animated: true)
         }
     }
     
     @objc func goToSettings(sender: UIButton) {
-        animateButtonToCenter(sender: sender) {
+        unlockButton(sender: sender) {
             let settingsVC = SettingsViewController(nibName: StoryboardName.settings.rawValue, bundle: nil)
             self.navigationController?.pushViewController(settingsVC, animated: true)
         }
     }
     
-    private func animateButtonToCenter(sender: UIButton, completion: (() -> Void)?) {
-        
-        UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseOut, animations: {
-            sender.center = self.view.center
-        }) { _ in
-            sender.imageView?.alpha = 0.0
-            UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseInOut, animations: {
-                sender.transform = CGAffineTransform(scaleX: 15.0, y: 15.0)
+    private func unlockButton(sender: UIButton, completion: (() -> Void)?) {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+            sender.transform = CGAffineTransform(rotationAngle: .pi)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                sender.transform = CGAffineTransform(rotationAngle: -2 * .pi)
             }, completion: { _ in
                 completion?()
             })
-        }
+        })
     }
 }
 
 extension LobbyViewController {
     
-    private func setupView(user: User) {
+    private func setupView() {
         navigationItem.hidesBackButton = true
         title = "Lobby"
         let circleScale: CGFloat = 0.75
-        let buttonScale: CGFloat = 0.25
+        let buttonScale: CGFloat = 0.28
         
-        let settingsImage = UIImage(named: "gear")
-        let searchImage = UIImage(named: "search")
-        let hostImage = UIImage(named: "search")
-        let otherImage = UIImage(named: "search")
+        let settingsTitle = "Settings"
+        let searchTitle = "Search"
+        let hostTitle = "Host"
+        let otherTitle = "Other"
         
         view.addSubview(circleView)
         circleView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
@@ -90,8 +86,10 @@ extension LobbyViewController {
         circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         circleView.layer.cornerRadius = view.frame.width * circleScale / 2
+        circleView.alpha = 0.0
+        fadeCircleIn(circleView)
         
-        let settingsButton = CircleButton(color: UIColor.primaryColor, image: settingsImage)
+        let settingsButton = CircleButton(color: UIColor.black, title: settingsTitle)
         view.addSubview(settingsButton)
         settingsButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
         settingsButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
@@ -99,8 +97,10 @@ extension LobbyViewController {
         settingsButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
-
-        let searchButton = CircleButton(color: UIColor.primaryColor, image: searchImage)
+        settingsButton.alpha = 0.0
+        fadeButtonIn(settingsButton)
+        
+        let searchButton = CircleButton(color: UIColor.green, title: searchTitle)
         view.addSubview(searchButton)
         searchButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
         searchButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
@@ -108,8 +108,10 @@ extension LobbyViewController {
         searchButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.addTarget(self, action: #selector(goToPartyList(sender:)), for: .touchUpInside)
-
-        let hostButton = CircleButton(color: UIColor.primaryColor, image: hostImage)
+        searchButton.alpha = 0.0
+        fadeButtonIn(searchButton)
+        
+        let hostButton = CircleButton(color: UIColor.blue, title: hostTitle)
         view.addSubview(hostButton)
         hostButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
         hostButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
@@ -117,14 +119,30 @@ extension LobbyViewController {
         hostButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         hostButton.translatesAutoresizingMaskIntoConstraints = false
         hostButton.addTarget(self, action: #selector(goToHostParty(sender:)), for: .touchUpInside)
-
-        let otherButton = CircleButton(color: UIColor.primaryColor, image: otherImage)
+        hostButton.alpha = 0.0
+        fadeButtonIn(hostButton)
+        
+        let otherButton = CircleButton(color: UIColor.red, title: otherTitle)
         view.addSubview(otherButton)
         otherButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
         otherButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
         otherButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
         otherButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         otherButton.translatesAutoresizingMaskIntoConstraints = false
+        otherButton.alpha = 0.0
+        fadeButtonIn(otherButton)
+    }
+    
+    private func fadeButtonIn(_ button: UIButton) {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            button.alpha = 1.0
+        })
+    }
+    
+    private func fadeCircleIn(_ view: UIView) {
+        UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseInOut, animations: {
+            view.alpha = 1.0
+        })
     }
 }
 

@@ -4,11 +4,11 @@ class CircleButton: UIButton {
     
     var color: UIColor?
     
-    var image: UIImage?
+    var title: String?
     
-    init(color: UIColor, image: UIImage?) {
+    init(color: UIColor, title: String) {
         self.color = color
-        self.image = image
+        self.title = title
         
         super.init(frame: .zero)
     }
@@ -27,8 +27,8 @@ class CircleButton: UIButton {
         
         layer.backgroundColor = color?.cgColor
         layer.cornerRadius = bounds.width / 2
-        imageView?.tintColor = .white
-        imageView?.contentMode = .scaleAspectFit
-        setImage(image, for: .normal)
+        titleLabel?.font = .h5
+        setTitleColor(.white, for: .normal)
+        setTitle(title, for: .normal)
     }
 }

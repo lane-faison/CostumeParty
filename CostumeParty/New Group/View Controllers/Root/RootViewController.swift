@@ -15,12 +15,8 @@ class RootViewController: UIViewController {
     
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
-    let transition = CircularTransition()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.delegate = self
         
         usernameTextField.text = "lane1@gmail.com"
         passwordTextField.text = "111111"
@@ -106,15 +102,3 @@ extension RootViewController {
         activityIndicator.center = view.center
     }
 }
-
-extension RootViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        switch operation {
-        case .push:
-            return FlipTransition(originFrame: fromVC.view.frame)
-        default:
-            return nil
-        }
-    }
-}
-

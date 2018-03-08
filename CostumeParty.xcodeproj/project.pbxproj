@@ -16,8 +16,6 @@
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F674756B204392A400E0CD34 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674756A204392A400E0CD34 /* CalendarView.swift */; };
 		F674756D204392B200E0CD34 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F674756C204392B200E0CD34 /* CalendarView.xib */; };
-		F674757120464C5B00E0CD34 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674757020464C5B00E0CD34 /* CircularTransition.swift */; };
-		F67475732047A7FD00E0CD34 /* FlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67475722047A7FD00E0CD34 /* FlipTransition.swift */; };
 		F6747575204919A000E0CD34 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747574204919A000E0CD34 /* CircleButton.swift */; };
 		F6747577204E689E00E0CD34 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747576204E689E00E0CD34 /* AnimationHelper.swift */; };
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
@@ -65,8 +63,6 @@
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F674756A204392A400E0CD34 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F674756C204392B200E0CD34 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
-		F674757020464C5B00E0CD34 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
-		F67475722047A7FD00E0CD34 /* FlipTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTransition.swift; sourceTree = "<group>"; };
 		F6747574204919A000E0CD34 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F6747576204E689E00E0CD34 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -226,8 +222,6 @@
 		F674756F20464C4900E0CD34 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				F674757020464C5B00E0CD34 /* CircularTransition.swift */,
-				F67475722047A7FD00E0CD34 /* FlipTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -501,7 +495,6 @@
 				F6747577204E689E00E0CD34 /* AnimationHelper.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F6216079202C1AC80023A45A /* SquareButton.swift in Sources */,
-				F674757120464C5B00E0CD34 /* CircularTransition.swift in Sources */,
 				F6E3F4692039F57D001392F9 /* RootViewController.swift in Sources */,
 				F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */,
 				F6E3F486203A00B3001392F9 /* HostPartyFormViewController.swift in Sources */,
@@ -515,7 +508,6 @@
 				F6747575204919A000E0CD34 /* CircleButton.swift in Sources */,
 				F6E3F4812039FFEB001392F9 /* SettingsViewController.swift in Sources */,
 				F6EB448F2009D4EB008647A1 /* PartyTableViewCell.swift in Sources */,
-				F67475732047A7FD00E0CD34 /* FlipTransition.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 				F6E3F4762039FC74001392F9 /* LobbyViewController.swift in Sources */,
 			);
