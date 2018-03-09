@@ -82,7 +82,7 @@ extension PartyListViewController {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
             guard let strongSelf = self else { return }
             
-            strongSelf.navigationController?.popViewController(animated: true)
+            strongSelf.navigationController?.popViewController(animated: false)
         }
         
         alert.addTextField { (textField) in
