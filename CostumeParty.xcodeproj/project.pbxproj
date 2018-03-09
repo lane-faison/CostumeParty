@@ -14,8 +14,7 @@
 		F6216079202C1AC80023A45A /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6216078202C1AC80023A45A /* SquareButton.swift */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
-		F674756B204392A400E0CD34 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674756A204392A400E0CD34 /* CalendarView.swift */; };
-		F674756D204392B200E0CD34 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F674756C204392B200E0CD34 /* CalendarView.xib */; };
+		F674756B204392A400E0CD34 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674756A204392A400E0CD34 /* CalendarViewController.swift */; };
 		F6747575204919A000E0CD34 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747574204919A000E0CD34 /* CircleButton.swift */; };
 		F6747577204E689E00E0CD34 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747576204E689E00E0CD34 /* AnimationHelper.swift */; };
 		F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */; };
@@ -61,8 +60,7 @@
 		F6216078202C1AC80023A45A /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		F674756A204392A400E0CD34 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		F674756C204392B200E0CD34 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		F674756A204392A400E0CD34 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F6747574204919A000E0CD34 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F6747576204E689E00E0CD34 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		F6847E6A1FFB52AC009FEB21 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -172,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F674756F20464C4900E0CD34 /* Transitions */,
-				F674756E204392C500E0CD34 /* Views */,
+				F674756E204392C500E0CD34 /* View Controller */,
 				F60F7C4F1FE6238600073506 /* Buttons */,
 				F60F7C501FE6239000073506 /* Cells */,
 				F6847E641FFA1C4E009FEB21 /* Text Fields */,
@@ -210,13 +208,12 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
-		F674756E204392C500E0CD34 /* Views */ = {
+		F674756E204392C500E0CD34 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F674756C204392B200E0CD34 /* CalendarView.xib */,
-				F674756A204392A400E0CD34 /* CalendarView.swift */,
+				F674756A204392A400E0CD34 /* CalendarViewController.swift */,
 			);
-			path = Views;
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		F674756F20464C4900E0CD34 /* Transitions */ = {
@@ -414,7 +411,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E3F48C203A0194001392F9 /* CategoryFormViewController.xib in Resources */,
-				F674756D204392B200E0CD34 /* CalendarView.xib in Resources */,
 				F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */,
 				F6E3F46A2039F57D001392F9 /* RootViewController.xib in Resources */,
 				F6E3F487203A00B3001392F9 /* HostPartyFormViewController.xib in Resources */,
@@ -488,7 +484,7 @@
 				F6E59FF220005D0A0041DBBE /* UITableView+Extensions.swift in Sources */,
 				F6EB447420006B83008647A1 /* AlertHelper.swift in Sources */,
 				F6E3F47C2039FEE8001392F9 /* PartyListViewController.swift in Sources */,
-				F674756B204392A400E0CD34 /* CalendarView.swift in Sources */,
+				F674756B204392A400E0CD34 /* CalendarViewController.swift in Sources */,
 				F6EB4476200152BC008647A1 /* FirebaseService.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,

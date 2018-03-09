@@ -1,4 +1,5 @@
 import UIKit
+import FSCalendar
 
 class HostPartyFormViewController: UIViewController {
     
@@ -12,7 +13,7 @@ class HostPartyFormViewController: UIViewController {
     
     let user = FirebaseService.firebaseUser()
     
-    var partyDate: Date = Date()
+    var partyDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,11 @@ class HostPartyFormViewController: UIViewController {
 
 extension HostPartyFormViewController {
     @objc func dateButtonTapped() {
-        let calendarView = CalendarView()
-        view.addSubview(calendarView)
-        calendarView.center = self.view.center
+        let calendarVC = CalendarViewController()
+        calendarVC.calendarDelegate = self
+        calendarVC.date = partyDate
         
-        dateButton.setTitle("CHANGE DATE", for: .normal)
-        nextButton.isEnabled = true
+        navigationController?.pushViewController(calendarVC, animated: false)
     }
     
     @objc func nextButtonTapped() {
@@ -59,9 +59,10 @@ extension HostPartyFormViewController {
                 let zipcode = Int(partyZipcodeString),
                 let pinString = pinField.text,
                 let pin = Int(pinString),
+                let date = partyDate,
                 let id = user?.uid else { return }
             
-            let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: partyDate, pin: pin)
+            let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: date, pin: pin)
             let categoryFormVC = CategoryFormViewController(nibName: StoryboardName.categoryForm.rawValue, bundle: nil)
             categoryFormVC.party = party
             
@@ -106,5 +107,18 @@ extension HostPartyFormViewController {
         nextButton.setTitleColor(.lightTextColor, for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         nextButton.isEnabled = false
+    }
+}
+
+extension HostPartyFormViewController: CalendarDelegate {
+    func userSelectedDate(_ date: Date) {
+        partyDate = date
+        if let partyDate = partyDate {
+            let dateString = DateFormatter.localizedString(from: partyDate, dateStyle: .medium, timeStyle: .none)
+            dateLabel.text = dateString
+            
+            dateButton.setTitle("CHANGE DATE", for: .normal)
+            nextButton.isEnabled = true
+        }
     }
 }
