@@ -55,10 +55,10 @@ extension LobbyViewController {
     }
     
     private func unlockButton(sender: UIButton, completion: (() -> Void)?) {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
             sender.transform = CGAffineTransform(rotationAngle: .pi)
         }, completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
                 sender.transform = CGAffineTransform(rotationAngle: -2 * .pi)
             }, completion: { _ in
                 completion?()
@@ -75,10 +75,10 @@ extension LobbyViewController {
         let circleScale: CGFloat = 0.75
         let buttonScale: CGFloat = 0.28
         
-        let settingsTitle = "Settings"
-        let searchTitle = "Search"
-        let hostTitle = "Host"
-        let otherTitle = "Other"
+        let settingsTitle = "SETTINGS"
+        let searchTitle = "SEARCH"
+        let hostTitle = "HOST"
+        let otherTitle = "OTHER"
         
         view.addSubview(circleView)
         circleView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
