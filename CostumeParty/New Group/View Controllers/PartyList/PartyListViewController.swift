@@ -75,6 +75,20 @@ extension PartyListViewController {
             guard let zipcode = Int(zipcodeString) else { return }
             
             FirebaseService.fetchPartiesByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
+                if result.count == 0 {
+                    let zeroResultAlert = UIAlertController(title: "0 results found", message: "No events within this zipcode were found", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+                        strongSelf.navigationController?.popViewController(animated: false)
+                    })
+                    let tryAgainAction = UIAlertAction(title: "Try Again", style: .default, handler: { (_) in
+                        strongSelf.presentSearch()
+                    })
+                    zeroResultAlert.addAction(cancelAction)
+                    zeroResultAlert.addAction(tryAgainAction)
+                    
+                    self?.present(zeroResultAlert, animated: true, completion: nil)
+                    
+                }
                 strongSelf.parties = result
                 strongSelf.title = "\(zipcode)"
             }
