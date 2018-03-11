@@ -57,14 +57,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CostumeParty/New Group/View Controllers/PartyList/PartyListViewController.swift"
-            timestampString = "542354440.008049"
+            filePath = "CostumeParty/New Group/Reusable Components/Cells/PartyTableViewCell.swift"
+            timestampString = "542483416.635741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "presentSearch()"
-            landmarkType = "7">
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "party"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,4 +16,10 @@ public struct DateHelper {
         guard let date: Date = formatter.date(from: string) else { return nil }
         return date
     }
+    
+    static func convertDateToStringForDisplay(date: Date?) -> String? {
+        guard let date = date else { return nil }
+        let dateString = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        return dateString
+    }
 }

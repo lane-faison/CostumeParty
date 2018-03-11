@@ -44,7 +44,7 @@ extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: PartyTableViewCell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.reuseIdentifier) as! PartyTableViewCell
         let party = parties[indexPath.row]
         cell.iconImage = UIImage(named: "ghost")
-        cell.partyLabel.text = party.name
+        cell.party = party
         return cell
     }
     

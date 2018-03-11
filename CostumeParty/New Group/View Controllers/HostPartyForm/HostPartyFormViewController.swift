@@ -114,9 +114,7 @@ extension HostPartyFormViewController: CalendarDelegate {
     func userSelectedDate(_ date: Date) {
         partyDate = date
         if let partyDate = partyDate {
-            let dateString = DateFormatter.localizedString(from: partyDate, dateStyle: .medium, timeStyle: .none)
-            dateLabel.text = dateString
-            
+            dateLabel.text = DateHelper.convertDateToStringForDisplay(date: partyDate)
             dateButton.setTitle("CHANGE DATE", for: .normal)
             nextButton.isEnabled = true
         }
