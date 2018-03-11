@@ -43,7 +43,7 @@ extension LobbyViewController {
             if let party = self.currentParty {
                 
             } else {
-                AlertHelper.fireErrorActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and find the event you are attending.")
+                AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and find the event you are attending.")
             }
         }
     }
