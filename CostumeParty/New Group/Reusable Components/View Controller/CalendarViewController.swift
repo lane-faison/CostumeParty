@@ -8,7 +8,7 @@ protocol CalendarDelegate {
 class CalendarViewController: UIViewController {
     
     private lazy var calendar: FSCalendar = {
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.width * 0.95, height: view.frame.height * 0.50))
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.50))
         calendar.dataSource = self
         calendar.delegate = self
         calendar.backgroundColor = .white

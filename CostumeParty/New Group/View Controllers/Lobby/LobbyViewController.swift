@@ -3,10 +3,6 @@ import Firebase
 
 class LobbyViewController: UIViewController {
     
-    //    @IBOutlet weak var findPartyButtonView: LargeButtonView!
-    //    @IBOutlet weak var hostPartyButtonView: LargeButtonView!
-    //    @IBOutlet weak var settingsButtonView: LargeButtonView!
-    
     let circleView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
@@ -16,6 +12,8 @@ class LobbyViewController: UIViewController {
         return view
     }()
     let buttonSize = CGRect(x: 50, y: 50, width: 50, height: 50)
+    
+    var currentParty: Party?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +35,16 @@ extension LobbyViewController {
         unlockButton(sender: sender) {
             let partyListVC = PartyListViewController(nibName: StoryboardName.partyList.rawValue, bundle: nil)
             self.navigationController?.pushViewController(partyListVC, animated: true)
+        }
+    }
+    
+    @objc func goToCurrentParty(sender: UIButton) {
+        unlockButton(sender: sender) {
+            if let party = self.currentParty {
+                
+            } else {
+                AlertHelper.fireErrorActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and find the event you are attending.")
+            }
         }
     }
     
@@ -78,7 +86,7 @@ extension LobbyViewController {
         let settingsTitle = "SETTINGS"
         let searchTitle = "SEARCH"
         let hostTitle = "HOST"
-        let otherTitle = "OTHER"
+        let currentPartyTitle = "CURRENT"
         
         view.addSubview(circleView)
         circleView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
@@ -122,15 +130,16 @@ extension LobbyViewController {
         hostButton.alpha = 0.0
         fadeButtonIn(hostButton)
         
-        let otherButton = CircleButton(color: UIColor.red, title: otherTitle)
-        view.addSubview(otherButton)
-        otherButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
-        otherButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
-        otherButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        otherButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
-        otherButton.translatesAutoresizingMaskIntoConstraints = false
-        otherButton.alpha = 0.0
-        fadeButtonIn(otherButton)
+        let currentPartyButton = CircleButton(color: UIColor.red, title: currentPartyTitle)
+        view.addSubview(currentPartyButton)
+        currentPartyButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
+        currentPartyButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
+        currentPartyButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
+        currentPartyButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        currentPartyButton.translatesAutoresizingMaskIntoConstraints = false
+        currentPartyButton.addTarget(self, action: #selector(goToCurrentParty(sender:)), for: .touchUpInside)
+        currentPartyButton.alpha = 0.0
+        fadeButtonIn(currentPartyButton)
     }
     
     private func fadeButtonIn(_ button: UIButton) {

@@ -8,15 +8,25 @@ class PartyTableViewCell: UITableViewCell {
         }
     }
     
+    var iconImage: UIImage? {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
     @IBOutlet weak var partyIcon: UIImageView!
     @IBOutlet weak var partyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        partyIcon.layer.cornerRadius = 10
+        clipsToBounds = true
     }
-
-
     
+    override func setNeedsLayout() {
+        super.setNeedsLayout()
+        
+        partyIcon.contentMode = .scaleAspectFit
+        partyIcon.image = iconImage
+    }
 }
