@@ -15,17 +15,11 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController {
     
     @objc private func logout() {
-        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
-        let okay = UIAlertAction(title: "Log Out", style: .default) { _ in
+        AlertHelper.fireCancelOrActionAlert(viewContoller: self, title: "Log Out", message: "Are you sure you want to log out?", okayTitle: "Log Out") {
             FirebaseService.logout(viewController: self, completion: {
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(okay)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
     }
 }
 

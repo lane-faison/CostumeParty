@@ -53,12 +53,10 @@ class RootViewController: UIViewController {
 extension RootViewController {
     private func userLogin(email: String, password: String, completion: @escaping (Bool) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                if let error = error {
-                    self.activityIndicator.stopAnimating()
-                    AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
-                    return
-                }
+            if error != nil, let error = error {
+                self.activityIndicator.stopAnimating()
+                AlertHelper.fireErrorActionSheet(viewController: self, message: error.localizedDescription)
+                return
             } else {
                 completion(true)
             }
@@ -67,11 +65,10 @@ extension RootViewController {
 }
 
 extension RootViewController {
-    
     private func setupView() {
         imageView.image = UIImage(named: "ghost")
         
-        titleLabel.text = "RankEvent!"
+        titleLabel.text = "My Event"
         titleLabel.font = UIFont.h2
         titleLabel.textColor = .darkTextColor
         

@@ -19,11 +19,10 @@ class EventListViewController: UIViewController {
         
         presentSearch()
         
+        let cell = UINib(nibName: "EventTableViewCell", bundle: nil)
         tableView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let cell = UINib(nibName: "EventTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: EventTableViewCell.reuseIdentifier)
         
         setupViewController()
@@ -48,10 +47,6 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
     }
 }
 

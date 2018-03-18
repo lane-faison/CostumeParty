@@ -55,7 +55,7 @@ class PrimaryButton: UIButton {
                        animations: {
                         sender.transform = CGAffineTransform.identity
         },
-                       completion: { Void in()  }
+                       completion: { Void in() }
         )
     }
     

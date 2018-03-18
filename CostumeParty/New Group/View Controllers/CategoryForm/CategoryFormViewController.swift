@@ -56,7 +56,6 @@ extension CategoryFormViewController {
 }
 
 extension CategoryFormViewController {
-    
     private func setupView() {
         headingLabel.font = .h4
         headingLabel.text = "Next, let's add some categories for your event."
@@ -75,12 +74,10 @@ extension CategoryFormViewController {
         stack.distribution = .equalSpacing
         stack.alignment = .fill
         stack.spacing = 24.0
-        
         stack.addArrangedSubview(categoryTextField)
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         mainView.addSubview(stack)
-        
         stack.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 48.0).isActive = true
         stack.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
         stack.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
@@ -122,11 +119,7 @@ extension CategoryFormViewController: UIScrollViewDelegate {
         let scrollContentSizeHeight = scrollView.contentSize.height
         let scrollOffset = scrollView.contentOffset.y
         
-        if scrollOffset + scrollViewHeight + 200 >= scrollContentSizeHeight {
-            fadeAddButtonIn(addButton)
-        } else {
-            fadeAddButtonOut(addButton)
-        }
+        (scrollOffset + scrollViewHeight + 200 >= scrollContentSizeHeight) ? fadeAddButtonIn(addButton) : fadeAddButtonOut(addButton)
     }
 }
 

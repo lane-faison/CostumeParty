@@ -11,6 +11,7 @@ class LobbyViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let buttonSize = CGRect(x: 50, y: 50, width: 50, height: 50)
     
     var currentEvent: Event?
@@ -80,6 +81,7 @@ extension LobbyViewController {
     private func setupView() {
         navigationItem.hidesBackButton = true
         title = "Lobby"
+        
         let circleScale: CGFloat = 0.75
         let buttonScale: CGFloat = 0.28
         

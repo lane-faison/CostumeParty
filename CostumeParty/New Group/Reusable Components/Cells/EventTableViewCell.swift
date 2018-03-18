@@ -47,8 +47,10 @@ class EventTableViewCell: UITableViewCell {
         view.layer.borderWidth = 1.0
         view.layer.borderColor = UIColor.darkGray.cgColor
         view.layer.cornerRadius = view.bounds.height * 0.05
+        
         eventIcon.contentMode = .scaleAspectFit
         eventIcon.image = iconImage
+        
         joinButton.setTitle("Join Event", for: .normal)
         joinButton.setTitleColor(UIColor.lightTextColor, for: .normal)
         joinButton.backgroundColor = UIColor.affirmativeColor

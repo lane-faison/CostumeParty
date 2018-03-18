@@ -42,17 +42,9 @@ extension HostEventFormViewController {
         let pinNumbersOnly = pin.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
         
         if zipcode.count != 5 || zipcode.count != zipNumbersOnly.count {
-            let alert = UIAlertController(title: "ZIP Code error", message: "Please enter a valid 5-digit ZIP Code", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okay)
-            
-            present(alert, animated: true, completion: nil)
+            AlertHelper.fireErrorActionSheet(viewController: self, title: "ZIP Code error", message: "Please enter a valid 5-digit ZIP Code")
         } else if pin.count != 4 || pin.count != pinNumbersOnly.count {
-            let alert = UIAlertController(title: "Pin error", message: "Please enter a valid 4-digit pin", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okay)
-            
-            present(alert, animated: true, completion: nil)
+            AlertHelper.fireErrorActionSheet(viewController: self, title: "PIN error", message: "Please enter a valid 4-digit PIN")
         } else if !name.isEmpty && !zipcode.isEmpty && !pin.isEmpty {
             guard let eventName = eventNameField.text,
                 let eventZipcodeString = zipcodeField.text,
@@ -68,11 +60,7 @@ extension HostEventFormViewController {
             
             navigationController?.pushViewController(categoryFormVC, animated: true)
         } else {
-            let alert = UIAlertController(title: "Error", message: "You must complete the form before proceeding.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okay)
-            
-            present(alert, animated: true, completion: nil)
+            AlertHelper.fireErrorActionSheet(viewController: self, title: "Error", message: "You must complete the form before proceeding.")
         }
     }
 }

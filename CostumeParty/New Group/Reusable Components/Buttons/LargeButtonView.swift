@@ -16,18 +16,18 @@ class LargeButtonView: UIView {
     override init(frame: CGRect) {   // For using CustomView in code
         super.init(frame: frame)
 
-        commonInit()
+        configure()
     }
 
     required init?(coder aDecoder: NSCoder) {   // For using CustomView in IB
         super.init(coder: aDecoder)
 
-        commonInit()
+        configure()
     }
 }
 
 extension LargeButtonView {
-    private func commonInit() {
+    private func configure() {
         Bundle.main.loadNibNamed("LargeButtonView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds

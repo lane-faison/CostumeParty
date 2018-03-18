@@ -173,7 +173,6 @@
 		F60F7C4E1FE6236500073506 /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
-				F674756F20464C4900E0CD34 /* Transitions */,
 				F674756E204392C500E0CD34 /* View Controller */,
 				F60F7C4F1FE6238600073506 /* Buttons */,
 				F60F7C501FE6239000073506 /* Cells */,
@@ -218,13 +217,6 @@
 				F674756A204392A400E0CD34 /* CalendarViewController.swift */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		F674756F20464C4900E0CD34 /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transitions;
 			sourceTree = "<group>";
 		};
 		F67FFB4D205E317A00EC0290 /* Event */ = {

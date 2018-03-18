@@ -14,6 +14,7 @@ class CalendarViewController: UIViewController {
         calendar.backgroundColor = .white
         calendar.layer.cornerRadius = calendar.bounds.height * 0.01
         calendar.scrollDirection = .horizontal
+        
         return calendar
     }()
     

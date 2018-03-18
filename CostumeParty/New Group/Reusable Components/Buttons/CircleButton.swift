@@ -27,6 +27,7 @@ class CircleButton: UIButton {
         
         layer.backgroundColor = color?.cgColor
         layer.cornerRadius = bounds.width / 2
+        
         titleLabel?.font = .h5
         titleLabel?.adjustsFontSizeToFitWidth = true
         setTitleColor(.white, for: .normal)

@@ -20,6 +20,19 @@ public struct AlertHelper {
         viewController.present(actionSheet, animated: true, completion: nil)
     }
     
+    // CANCEL OR OKAY (No action on cancel for now)
+    static func fireCancelOrActionAlert(viewContoller: UIViewController, title: String, message: String, okayTitle: String? = "Okay", okayAction: @escaping (() -> Void)) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okay = UIAlertAction(title: okayTitle, style: .default) { _ in
+            okayAction()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(okay)
+        alert.addAction(cancel)
+        
+        viewContoller.present(alert, animated: true, completion: nil)
+    }
+    
     // SUCCESSFUL REGISTRATION
     static func fireSuccessActionSheet(viewController: UIViewController, title: String? = "Success", message: String, dismissButtonTitle: String? = "Dismiss") {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
