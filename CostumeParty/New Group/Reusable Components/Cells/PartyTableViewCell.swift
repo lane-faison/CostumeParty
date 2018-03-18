@@ -1,5 +1,9 @@
 import UIKit
 
+protocol PartyCellDelegate {
+    func userTappedJoin(party: Party)
+}
+
 class PartyTableViewCell: UITableViewCell {
     
     class var reuseIdentifier: String {
@@ -21,6 +25,8 @@ class PartyTableViewCell: UITableViewCell {
             partyDateLabel.text = DateHelper.convertDateToStringForDisplay(date: partyDate)
         }
     }
+    
+    var delegate: PartyCellDelegate?
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var partyIcon: UIImageView!
@@ -47,5 +53,11 @@ class PartyTableViewCell: UITableViewCell {
         joinButton.setTitleColor(UIColor.darkTextColor, for: .normal)
         joinButton.backgroundColor = UIColor.primaryColor
         joinButton.clipsToBounds = true
+        joinButton.addTarget(self, action: #selector(userTappedJoinEvent), for: .touchUpInside)
+    }
+    
+    @objc func userTappedJoinEvent() {
+        guard let party = party else { return }
+        delegate?.userTappedJoin(party: party)
     }
 }

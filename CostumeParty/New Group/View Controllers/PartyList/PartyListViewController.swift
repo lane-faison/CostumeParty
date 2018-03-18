@@ -45,6 +45,8 @@ extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
         let party = parties[indexPath.row]
         cell.iconImage = UIImage(named: "ghost")
         cell.party = party
+        cell.delegate = self
+        
         return cell
     }
     
@@ -71,8 +73,7 @@ extension PartyListViewController {
             
             let textField = alert.textFields![0] as UITextField
             
-            guard let zipcodeString = textField.text else { return }
-            guard let zipcode = Int(zipcodeString) else { return }
+            guard let zipcodeString = textField.text, let zipcode = Int(zipcodeString) else { return }
             
             FirebaseService.fetchPartiesByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
                 if result.count == 0 {
@@ -86,7 +87,7 @@ extension PartyListViewController {
                     zeroResultAlert.addAction(cancelAction)
                     zeroResultAlert.addAction(tryAgainAction)
                     
-                    self?.present(zeroResultAlert, animated: true, completion: nil)
+                    strongSelf.present(zeroResultAlert, animated: true, completion: nil)
                     
                 }
                 strongSelf.parties = result
@@ -112,6 +113,40 @@ extension PartyListViewController {
     
     @objc private func searchTapped() {
         presentSearch()
+    }
+}
+
+extension PartyListViewController: PartyCellDelegate {
+    
+    func userTappedJoin(party: Party) {
+        let alert = UIAlertController(title: "Pin", message: "Please enter the 4-digit PIN number created by the event's host to access this event.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Enter", style: .default) { [weak self] alertAction in
+            guard let strongSelf = self else { return }
+            
+            let textField = alert.textFields![0] as UITextField
+            
+            guard let pinString = textField.text, let pin = Int(pinString) else { return }
+            
+            if pin == party.pin {
+                print("Correct passcode")
+            } else {
+                print("incorrect passcode")
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.dismiss(animated: true, completion: nil)
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "(required)"
+            textField.keyboardType = .numberPad
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
