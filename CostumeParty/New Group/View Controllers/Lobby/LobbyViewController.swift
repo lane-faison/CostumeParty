@@ -97,7 +97,7 @@ extension LobbyViewController {
         circleView.alpha = 0.0
         fadeCircleIn(circleView)
         
-        let settingsButton = CircleButton(color: UIColor.black, title: settingsTitle)
+        let settingsButton = CircleButton(color: UIColor.inactiveColor, title: settingsTitle)
         view.addSubview(settingsButton)
         settingsButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
         settingsButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
@@ -108,7 +108,7 @@ extension LobbyViewController {
         settingsButton.alpha = 0.0
         fadeButtonIn(settingsButton)
         
-        let searchButton = CircleButton(color: UIColor.green, title: searchTitle)
+        let searchButton = CircleButton(color: UIColor.affirmativeColor, title: searchTitle)
         view.addSubview(searchButton)
         searchButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
         searchButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
@@ -119,7 +119,7 @@ extension LobbyViewController {
         searchButton.alpha = 0.0
         fadeButtonIn(searchButton)
         
-        let hostButton = CircleButton(color: UIColor.blue, title: hostTitle)
+        let hostButton = CircleButton(color: UIColor.linkColor, title: hostTitle)
         view.addSubview(hostButton)
         hostButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
         hostButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
@@ -130,7 +130,7 @@ extension LobbyViewController {
         hostButton.alpha = 0.0
         fadeButtonIn(hostButton)
         
-        let currentPartyButton = CircleButton(color: UIColor.red, title: currentPartyTitle)
+        let currentPartyButton = CircleButton(color: UIColor.destructiveColor, title: currentPartyTitle)
         view.addSubview(currentPartyButton)
         currentPartyButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
         currentPartyButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
@@ -143,13 +143,13 @@ extension LobbyViewController {
     }
     
     private func fadeButtonIn(_ button: UIButton) {
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
             button.alpha = 1.0
         })
     }
     
     private func fadeCircleIn(_ view: UIView) {
-        UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseInOut, animations: {
             view.alpha = 1.0
         })
     }

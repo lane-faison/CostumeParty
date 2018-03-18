@@ -37,7 +37,7 @@ class PartyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        clipsToBounds = true
+        view.clipsToBounds = true
     }
     
     override func setNeedsLayout() {
@@ -50,8 +50,8 @@ class PartyTableViewCell: UITableViewCell {
         partyIcon.contentMode = .scaleAspectFit
         partyIcon.image = iconImage
         joinButton.setTitle("Join Event", for: .normal)
-        joinButton.setTitleColor(UIColor.darkTextColor, for: .normal)
-        joinButton.backgroundColor = UIColor.primaryColor
+        joinButton.setTitleColor(UIColor.lightTextColor, for: .normal)
+        joinButton.backgroundColor = UIColor.affirmativeColor
         joinButton.clipsToBounds = true
         joinButton.addTarget(self, action: #selector(userTappedJoinEvent), for: .touchUpInside)
     }

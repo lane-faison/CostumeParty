@@ -90,7 +90,7 @@ extension PartyListViewController {
                     strongSelf.present(zeroResultAlert, animated: true, completion: nil)
                     
                 }
-                strongSelf.parties = result
+                strongSelf.parties = result.sorted(by: { $0.date < $1.date })
                 strongSelf.title = "\(zipcode)"
             }
         }
@@ -120,6 +120,7 @@ extension PartyListViewController: PartyCellDelegate {
     
     func userTappedJoin(party: Party) {
         let alert = UIAlertController(title: "Pin", message: "Please enter the 4-digit PIN number created by the event's host to access this event.", preferredStyle: .alert)
+        
         let action = UIAlertAction(title: "Enter", style: .default) { [weak self] alertAction in
             guard let strongSelf = self else { return }
             
@@ -128,7 +129,9 @@ extension PartyListViewController: PartyCellDelegate {
             guard let pinString = textField.text, let pin = Int(pinString) else { return }
             
             if pin == party.pin {
-                print("Correct passcode")
+                let partyVC = PartyViewController(nibName: StoryboardName.party.rawValue, bundle: nil)
+                partyVC.party = party
+                strongSelf.navigationController?.pushViewController(partyVC, animated: true)
             } else {
                 print("incorrect passcode")
             }
@@ -138,6 +141,7 @@ extension PartyListViewController: PartyCellDelegate {
             
             strongSelf.dismiss(animated: true, completion: nil)
         }
+        
         alert.addTextField { (textField) in
             textField.placeholder = "(required)"
             textField.keyboardType = .numberPad
