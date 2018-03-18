@@ -19,6 +19,12 @@ class PrimaryTextField: UITextField, UITextFieldDelegate {
         return label
     }()
     
+    override var text: String? {
+        didSet {
+            animateWhenActive(fieldLabel)
+        }
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         

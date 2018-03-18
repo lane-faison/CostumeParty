@@ -12,14 +12,12 @@ class RootViewController: UIViewController {
     @IBOutlet weak var loginButton: PrimaryButton!
     @IBOutlet weak var registerButton: PrimaryButton!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var developerButton: UIButton!
     
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        usernameTextField.text = "lane1@gmail.com"
-        passwordTextField.text = "111111"
         
         setupViewController()
         setupView()
@@ -95,7 +93,15 @@ extension RootViewController {
         authorLabel.font = UIFont.h5
         authorLabel.textColor = .darkTextColor
         
+        developerButton.addTarget(self, action: #selector(addDevCredentials), for: .touchUpInside)
+        
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
+    }
+    
+    @objc private func addDevCredentials() {
+        usernameTextField.text = "lane1@gmail.com"
+        passwordTextField.text = "111111"
+        developerButton.isEnabled = false
     }
 }

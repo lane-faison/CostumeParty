@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
                 <outlet property="authorLabel" destination="gzC-vK-2WK" id="a7U-B4-N5k"/>
+                <outlet property="developerButton" destination="p66-zX-TUZ" id="Nw0-0v-9WC"/>
                 <outlet property="imageView" destination="JmL-Jt-Utw" id="vwJ-Pm-8E5"/>
                 <outlet property="loginButton" destination="m4Z-Tr-HC4" id="uUS-ii-h4p"/>
                 <outlet property="passwordTextField" destination="wTl-R4-gNx" id="vhD-QC-j6r"/>
@@ -91,6 +92,13 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p66-zX-TUZ">
+                                    <rect key="frame" x="162.5" y="518.5" width="49" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="Developer">
+                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -106,6 +114,7 @@
                                 <constraint firstAttribute="trailing" secondItem="gUd-jk-FZz" secondAttribute="trailing" constant="48" id="NM8-Bb-gOr"/>
                                 <constraint firstItem="Dte-1n-gzl" firstAttribute="top" secondItem="m4Z-Tr-HC4" secondAttribute="bottom" constant="12" id="Na9-yl-cAE"/>
                                 <constraint firstItem="m4Z-Tr-HC4" firstAttribute="width" secondItem="wTl-R4-gNx" secondAttribute="width" id="Ozi-ZH-Dhy"/>
+                                <constraint firstItem="p66-zX-TUZ" firstAttribute="top" secondItem="gzC-vK-2WK" secondAttribute="bottom" constant="10" id="TiZ-Fz-Lsn"/>
                                 <constraint firstItem="wTl-R4-gNx" firstAttribute="top" secondItem="gUd-jk-FZz" secondAttribute="bottom" constant="12" id="Yql-nm-uMm"/>
                                 <constraint firstItem="gzC-vK-2WK" firstAttribute="centerX" secondItem="Dte-1n-gzl" secondAttribute="centerX" id="YrP-JK-Afh"/>
                                 <constraint firstItem="JmL-Jt-Utw" firstAttribute="centerX" secondItem="voR-hR-81c" secondAttribute="centerX" id="aAW-Lr-Mjb"/>
@@ -114,6 +123,7 @@
                                 <constraint firstItem="m4Z-Tr-HC4" firstAttribute="centerX" secondItem="wTl-R4-gNx" secondAttribute="centerX" id="rrt-3f-sS1"/>
                                 <constraint firstAttribute="height" constant="700" id="rt8-Cs-GeM"/>
                                 <constraint firstItem="gzC-vK-2WK" firstAttribute="top" secondItem="Dte-1n-gzl" secondAttribute="bottom" constant="48" id="uQm-mX-1Dm"/>
+                                <constraint firstItem="p66-zX-TUZ" firstAttribute="centerX" secondItem="gzC-vK-2WK" secondAttribute="centerX" id="y04-gb-OeE"/>
                             </constraints>
                         </view>
                     </subviews>
