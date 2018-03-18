@@ -1,17 +1,17 @@
 import UIKit
 
-class PartyViewController: UIViewController {
+class EventViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    var party: Party?
+    var event: Event?
     
     override func viewDidLoad() {
         
-        if let party = party {
-            name.text = party.name
-            date.text = "\(party.date)"
+        if let event = event {
+            name.text = event.name
+            date.text = "\(event.date)"
         }
         
         setupViewController()

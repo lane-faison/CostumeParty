@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HostPartyFormViewController" customModule="CostumeParty" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HostEventFormViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
-                <outlet property="dateButton" destination="tGU-89-DgU" id="qv9-ax-Ar5"/>
-                <outlet property="dateLabel" destination="ym5-I2-hwQ" id="nGk-iL-7wr"/>
-                <outlet property="headingLabel" destination="Ewn-yd-9In" id="qDj-xG-ktS"/>
-                <outlet property="nextButton" destination="vb0-hZ-ypc" id="Bfe-V0-Oh8"/>
-                <outlet property="partyNameField" destination="N28-KM-7X9" id="HOd-av-oCp"/>
-                <outlet property="pinField" destination="oGb-Ho-pdz" id="P4y-90-rrm"/>
+                <outlet property="dateButton" destination="tGU-89-DgU" id="AbA-2P-oXI"/>
+                <outlet property="dateLabel" destination="ym5-I2-hwQ" id="lzx-ae-mdr"/>
+                <outlet property="eventNameField" destination="N28-KM-7X9" id="yqW-vF-mAe"/>
+                <outlet property="headingLabel" destination="Ewn-yd-9In" id="a6A-JR-exA"/>
+                <outlet property="nextButton" destination="vb0-hZ-ypc" id="QXq-lZ-V1a"/>
+                <outlet property="pinField" destination="oGb-Ho-pdz" id="fP9-7b-aMm"/>
                 <outlet property="view" destination="eqy-Ej-kW2" id="UAi-oz-FG8"/>
-                <outlet property="zipcodeField" destination="9QO-vK-eQ7" id="k1B-ov-ZY5"/>
+                <outlet property="zipcodeField" destination="9QO-vK-eQ7" id="kjk-4b-g9H"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

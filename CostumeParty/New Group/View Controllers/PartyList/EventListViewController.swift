@@ -1,12 +1,12 @@
 import UIKit
 
-class PartyListViewController: UIViewController {
+class EventListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
-    fileprivate var parties: [Party] = [] {
+    fileprivate var events: [Event] = [] {
         didSet {
             tableView.reloadData()
             activityIndicator.stopAnimating()
@@ -23,28 +23,28 @@ class PartyListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let cell = UINib(nibName: "PartyTableViewCell", bundle: nil)
-        tableView.register(cell, forCellReuseIdentifier: PartyTableViewCell.reuseIdentifier)
+        let cell = UINib(nibName: "EventTableViewCell", bundle: nil)
+        tableView.register(cell, forCellReuseIdentifier: EventTableViewCell.reuseIdentifier)
         
         setupViewController()
         setupView()
     }
 }
 
-extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
+extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return parties.count
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PartyTableViewCell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.reuseIdentifier) as! PartyTableViewCell
-        let party = parties[indexPath.row]
+        let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.reuseIdentifier) as! EventTableViewCell
+        let event = events[indexPath.row]
         cell.iconImage = UIImage(named: "ghost")
-        cell.party = party
+        cell.event = event
         cell.delegate = self
         
         return cell
@@ -55,7 +55,7 @@ extension PartyListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension PartyListViewController {
+extension EventListViewController {
     private func setupView() {
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
@@ -75,7 +75,7 @@ extension PartyListViewController {
             
             guard let zipcodeString = textField.text, let zipcode = Int(zipcodeString) else { return }
             
-            FirebaseService.fetchPartiesByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
+            FirebaseService.fetchEventsByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
                 if result.count == 0 {
                     let zeroResultAlert = UIAlertController(title: "0 results found", message: "No events within this zipcode were found", preferredStyle: .alert)
                     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
@@ -90,7 +90,7 @@ extension PartyListViewController {
                     strongSelf.present(zeroResultAlert, animated: true, completion: nil)
                     
                 }
-                strongSelf.parties = result.sorted(by: { $0.date < $1.date })
+                strongSelf.events = result.sorted(by: { $0.date < $1.date })
                 strongSelf.title = "\(zipcode)"
             }
         }
@@ -116,9 +116,9 @@ extension PartyListViewController {
     }
 }
 
-extension PartyListViewController: PartyCellDelegate {
+extension EventListViewController: EventCellDelegate {
     
-    func userTappedJoin(party: Party) {
+    func userTappedJoin(event: Event) {
         let alert = UIAlertController(title: "Pin", message: "Please enter the 4-digit PIN number created by the event's host to access this event.", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Enter", style: .default) { [weak self] alertAction in
@@ -128,10 +128,10 @@ extension PartyListViewController: PartyCellDelegate {
             
             guard let pinString = textField.text, let pin = Int(pinString) else { return }
             
-            if pin == party.pin {
-                let partyVC = PartyViewController(nibName: StoryboardName.party.rawValue, bundle: nil)
-                partyVC.party = party
-                strongSelf.navigationController?.pushViewController(partyVC, animated: true)
+            if pin == event.pin {
+                let eventVC = EventViewController(nibName: StoryboardName.event.rawValue, bundle: nil)
+                eventVC.event = event
+                strongSelf.navigationController?.pushViewController(eventVC, animated: true)
             } else {
                 print("incorrect passcode")
             }

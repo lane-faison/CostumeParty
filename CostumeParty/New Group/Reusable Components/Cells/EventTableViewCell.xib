@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="320" id="KGk-i7-Jjw" customClass="PartyTableViewCell" customModule="CostumeParty" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="320" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="CostumeParty" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="317"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -72,10 +72,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="eventDateLabel" destination="pmc-CF-THA" id="hKd-XN-jWw"/>
+                <outlet property="eventIcon" destination="bEs-FF-Ohv" id="apM-Ij-zPe"/>
+                <outlet property="eventLabel" destination="Dvz-6z-mDQ" id="aUU-EC-LZR"/>
                 <outlet property="joinButton" destination="Wap-TU-tkA" id="vtc-WL-MYG"/>
-                <outlet property="partyDateLabel" destination="pmc-CF-THA" id="8fv-cn-ftj"/>
-                <outlet property="partyIcon" destination="bEs-FF-Ohv" id="ma5-dn-Kie"/>
-                <outlet property="partyLabel" destination="Dvz-6z-mDQ" id="Ugq-me-VhN"/>
                 <outlet property="view" destination="NeK-yi-bvQ" id="lAk-OD-OR5"/>
             </connections>
             <point key="canvasLocation" x="34" y="157.5"/>

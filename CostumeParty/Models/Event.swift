@@ -1,6 +1,6 @@
 import UIKit
 
-public struct Party: Decodable {
+public struct Event: Decodable {
     var name: String
     var zipCode: Int
     var hostId: String

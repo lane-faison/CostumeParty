@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartyListViewController" customModule="CostumeParty" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventListViewController" customModule="CostumeParty" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="wCv-0p-03Q" id="1fn-e6-s5o"/>
                 <outlet property="view" destination="tcT-Fz-xtL" id="XQV-TZ-ZJF"/>

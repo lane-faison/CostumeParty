@@ -36,39 +36,39 @@ public struct FirebaseService {
     }
     
     // DATABASE
-    public static func createParty(viewController: UIViewController, party: Party) {
-        guard let date = DateHelper.convertDateToString(date: party.date) else { return }
+    public static func createEvent(viewController: UIViewController, event: Event) {
+        guard let date = DateHelper.convertDateToString(date: event.date) else { return }
         
-        FireDatabase.child("parties").childByAutoId().setValue(["name": party.name,
-                                                                "hostId": party.hostId,
-                                                                "zipcode": party.zipCode,
+        FireDatabase.child("events").childByAutoId().setValue(["name": event.name,
+                                                                "hostId": event.hostId,
+                                                                "zipcode": event.zipCode,
                                                                 "date": date,
-                                                                "pin": party.pin,
-                                                                "categories": party.categories ?? []])
+                                                                "pin": event.pin,
+                                                                "categories": event.categories ?? []])
     }
     
-    public static func fetchPartiesByZipcode(viewController: UIViewController, zipcode: Int, completion: @escaping (([Party]) -> ())) {
+    public static func fetchEventsByZipcode(viewController: UIViewController, zipcode: Int, completion: @escaping (([Event]) -> ())) {
         
-        FireDatabase.child("parties").observeSingleEvent(of: .value) { (snapshot) in
-            var parties: [Party] = []
+        FireDatabase.child("events").observeSingleEvent(of: .value) { (snapshot) in
+            var events: [Event] = []
             
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 guard let json = child.value as? [String: Any] else { continue }
                 
                 guard let name = json["name"] as? String,
                     let hostId = json["hostId"] as? String,
-                    let partyZipcode = json["zipcode"] as? Int,
+                    let eventZipcode = json["zipcode"] as? Int,
                     let dateString = json["date"] as? String,
                     let date = DateHelper.convertStringToDate(string: dateString),
                     let pin = json["pin"] as? Int,
                     let categories = json["categories"] as? [String] else { continue }
                 
-                if zipcode == partyZipcode {
-                    let party = Party.init(name: name, zipCode: partyZipcode, hostId: hostId, date: date, pin: pin, categories: categories)
-                    parties.append(party)
+                if zipcode == eventZipcode {
+                    let event = Event.init(name: name, zipCode: eventZipcode, hostId: hostId, date: date, pin: pin, categories: categories)
+                    events.append(event)
                 }
             }
-            completion(parties)
+            completion(events)
         }
     }
 }

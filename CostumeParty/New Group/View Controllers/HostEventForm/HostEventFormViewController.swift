@@ -1,10 +1,10 @@
 import UIKit
 import FSCalendar
 
-class HostPartyFormViewController: UIViewController {
+class HostEventFormViewController: UIViewController {
     
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var partyNameField: PrimaryTextField!
+    @IBOutlet weak var eventNameField: PrimaryTextField!
     @IBOutlet weak var zipcodeField: PrimaryTextField!
     @IBOutlet weak var pinField: PrimaryTextField!
     @IBOutlet weak var dateLabel: UILabel!
@@ -13,7 +13,7 @@ class HostPartyFormViewController: UIViewController {
     
     let user = FirebaseService.firebaseUser()
     
-    var partyDate: Date?
+    var eventDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +23,17 @@ class HostPartyFormViewController: UIViewController {
     }
 }
 
-extension HostPartyFormViewController {
+extension HostEventFormViewController {
     @objc func dateButtonTapped() {
         let calendarVC = CalendarViewController()
         calendarVC.calendarDelegate = self
-        calendarVC.date = partyDate
+        calendarVC.date = eventDate
         
         navigationController?.pushViewController(calendarVC, animated: false)
     }
     
     @objc func nextButtonTapped() {
-        guard let name = partyNameField.text,
+        guard let name = eventNameField.text,
             let zipcode = zipcodeField.text,
             let pin = pinField.text else { return }
         
@@ -54,17 +54,17 @@ extension HostPartyFormViewController {
             
             present(alert, animated: true, completion: nil)
         } else if !name.isEmpty && !zipcode.isEmpty && !pin.isEmpty {
-            guard let partyName = partyNameField.text,
-                let partyZipcodeString = zipcodeField.text,
-                let zipcode = Int(partyZipcodeString),
+            guard let eventName = eventNameField.text,
+                let eventZipcodeString = zipcodeField.text,
+                let zipcode = Int(eventZipcodeString),
                 let pinString = pinField.text,
                 let pin = Int(pinString),
-                let date = partyDate,
+                let date = eventDate,
                 let id = user?.uid else { return }
             
-            let party = Party(name: partyName, zipCode: zipcode, hostId: id, date: date, pin: pin)
+            let event = Event(name: eventName, zipCode: zipcode, hostId: id, date: date, pin: pin)
             let categoryFormVC = CategoryFormViewController(nibName: StoryboardName.categoryForm.rawValue, bundle: nil)
-            categoryFormVC.party = party
+            categoryFormVC.event = event
             
             navigationController?.pushViewController(categoryFormVC, animated: true)
         } else {
@@ -77,17 +77,17 @@ extension HostPartyFormViewController {
     }
 }
 
-extension HostPartyFormViewController {
+extension HostEventFormViewController {
     private func setupView() {
         headingLabel.font = .h4
-        headingLabel.text = "First, enter in some basic information to better help your guests find your party!"
+        headingLabel.text = "First, enter in some basic information to better help your guests find your event!"
         headingLabel.textColor = .darkTextColor
         
-        partyNameField.fieldLabel.text = "Party name"
-        partyNameField.returnKeyType = .next
-        partyNameField.tag = 0
+        eventNameField.fieldLabel.text = "Event name"
+        eventNameField.returnKeyType = .next
+        eventNameField.tag = 0
         
-        zipcodeField.fieldLabel.text = "Party zip code"
+        zipcodeField.fieldLabel.text = "Event zip code"
         zipcodeField.keyboardType = .numberPad
         zipcodeField.returnKeyType = .next
         zipcodeField.tag = 1
@@ -110,11 +110,11 @@ extension HostPartyFormViewController {
     }
 }
 
-extension HostPartyFormViewController: CalendarDelegate {
+extension HostEventFormViewController: CalendarDelegate {
     func userSelectedDate(_ date: Date) {
-        partyDate = date
-        if let partyDate = partyDate {
-            dateLabel.text = DateHelper.convertDateToStringForDisplay(date: partyDate)
+        eventDate = date
+        if let eventDate = eventDate {
+            dateLabel.text = DateHelper.convertDateToStringForDisplay(date: eventDate)
             dateButton.setTitle("CHANGE DATE", for: .normal)
             nextButton.isEnabled = true
         }

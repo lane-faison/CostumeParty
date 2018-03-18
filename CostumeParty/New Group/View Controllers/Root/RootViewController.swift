@@ -71,7 +71,7 @@ extension RootViewController {
     private func setupView() {
         imageView.image = UIImage(named: "ghost")
         
-        titleLabel.text = "Costume Party!"
+        titleLabel.text = "RankEvent!"
         titleLabel.font = UIFont.h2
         titleLabel.textColor = .darkTextColor
         

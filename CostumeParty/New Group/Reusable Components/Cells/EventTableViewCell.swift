@@ -1,14 +1,14 @@
 import UIKit
 
-protocol PartyCellDelegate {
-    func userTappedJoin(party: Party)
+protocol EventCellDelegate {
+    func userTappedJoin(event: Event)
 }
 
-class PartyTableViewCell: UITableViewCell {
+class EventTableViewCell: UITableViewCell {
     
     class var reuseIdentifier: String {
         get {
-            return "PartyTableViewCell"
+            return "EventTableViewCell"
         }
     }
     
@@ -18,20 +18,20 @@ class PartyTableViewCell: UITableViewCell {
         }
     }
     
-    var party: Party? {
+    var event: Event? {
         didSet {
-            partyLabel.text = party?.name
-            let partyDate = party?.date
-            partyDateLabel.text = DateHelper.convertDateToStringForDisplay(date: partyDate)
+            eventLabel.text = event?.name
+            let eventDate = event?.date
+            eventDateLabel.text = DateHelper.convertDateToStringForDisplay(date: eventDate)
         }
     }
     
-    var delegate: PartyCellDelegate?
+    var delegate: EventCellDelegate?
     
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var partyIcon: UIImageView!
-    @IBOutlet weak var partyLabel: UILabel!
-    @IBOutlet weak var partyDateLabel: UILabel!
+    @IBOutlet weak var eventIcon: UIImageView!
+    @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var joinButton: UIButton!
     
     override func awakeFromNib() {
@@ -47,8 +47,8 @@ class PartyTableViewCell: UITableViewCell {
         view.layer.borderWidth = 1.0
         view.layer.borderColor = UIColor.darkGray.cgColor
         view.layer.cornerRadius = view.bounds.height * 0.05
-        partyIcon.contentMode = .scaleAspectFit
-        partyIcon.image = iconImage
+        eventIcon.contentMode = .scaleAspectFit
+        eventIcon.image = iconImage
         joinButton.setTitle("Join Event", for: .normal)
         joinButton.setTitleColor(UIColor.lightTextColor, for: .normal)
         joinButton.backgroundColor = UIColor.affirmativeColor
@@ -57,7 +57,7 @@ class PartyTableViewCell: UITableViewCell {
     }
     
     @objc func userTappedJoinEvent() {
-        guard let party = party else { return }
-        delegate?.userTappedJoin(party: party)
+        guard let event = event else { return }
+        delegate?.userTappedJoin(event: event)
     }
 }

@@ -7,7 +7,7 @@ class CategoryFormViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
-    var party: Party?
+    var event: Event?
     
     let stack = UIStackView()
     let addButton = SquareButton()
@@ -29,11 +29,11 @@ extension CategoryFormViewController {
     
     @objc private func submitTapped() {
         grabInputs {
-            guard var party = self.party else { return }
+            guard var event = self.event else { return }
             
-            party.categories = self.categories
+            event.categories = self.categories
             
-            FirebaseService.createParty(viewController: self, party: party)
+            FirebaseService.createEvent(viewController: self, event: event)
             
             guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
             self.navigationController?.popToViewController(lobby, animated: true)
