@@ -3,37 +3,44 @@ import Firebase
 
 class LobbyViewController: UIViewController {
     
-    let circleView: UIView = {
+    let spacingSquareView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
         view.layer.borderColor = UIColor.inactiveColor.cgColor
         view.layer.borderWidth = 1.0
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
         return view
     }()
     
-    let lineViewOne: UIView = {
+    let lineHorizontal: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.primaryBackgroundColorLight
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let lineViewTwo: UIView = {
+    let lineVertical: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.primaryBackgroundColorLight
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let circleScale: CGFloat = 0.50
-    let buttonScale: CGFloat = 0.50
-    let buttonSize = CGRect(x: 50, y: 50, width: 50, height: 50)
+    let circleScale: CGFloat = 0.45
+    let buttonScale: CGFloat = 0.80
     
     var currentEvent: Event?
     
+    let settingsTitle = "SETTINGS"
+    let searchTitle = "SEARCH"
+    let hostTitle = "HOST"
+    let currentEventTitle = "CURRENT"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.primaryBackgroundColor
         
         navigationItem.hidesBackButton = true
         title = "Lobby"
@@ -100,76 +107,70 @@ extension LobbyViewController {
 
 extension LobbyViewController {
     private func setupCircle(completion: (() -> Void)?) {
-        view.addSubview(circleView)
-        circleView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
-        circleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
-        circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        circleView.layer.cornerRadius = view.bounds.width * circleScale / 2
-        circleView.alpha = 0.0
-        fadeCircleIn(circleView)
+        view.addSubview(spacingSquareView)
+        spacingSquareView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
+        spacingSquareView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
+        spacingSquareView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spacingSquareView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spacingSquareView.alpha = 0.0
+        fadeCircleIn(spacingSquareView)
         completion?()
     }
     
     private func setupView() {
-        let settingsTitle = "SETTINGS"
-        let searchTitle = "SEARCH"
-        let hostTitle = "HOST"
-        let currentEventTitle = "CURRENT"
+        let lineScale: CGFloat = 2 * circleScale
         
-        view.addSubview(lineViewOne)
-        lineViewOne.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
-        lineViewOne.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
-        lineViewOne.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
-        lineViewOne.widthAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
-        lineViewOne.transform = CGAffineTransform(rotationAngle: .pi / 4)
+        view.addSubview(lineHorizontal)
+        lineHorizontal.centerXAnchor.constraint(equalTo: spacingSquareView.centerXAnchor).isActive = true
+        lineHorizontal.centerYAnchor.constraint(equalTo: spacingSquareView.centerYAnchor).isActive = true
+        lineHorizontal.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineHorizontal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: lineScale).isActive = true
         
-        view.addSubview(lineViewTwo)
-        lineViewTwo.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
-        lineViewTwo.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
-        lineViewTwo.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
-        lineViewTwo.widthAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
-        lineViewTwo.transform = CGAffineTransform(rotationAngle: -.pi / 4)
+        view.addSubview(lineVertical)
+        lineVertical.centerXAnchor.constraint(equalTo: spacingSquareView.centerXAnchor).isActive = true
+        lineVertical.centerYAnchor.constraint(equalTo: spacingSquareView.centerYAnchor).isActive = true
+        lineVertical.widthAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineVertical.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: lineScale).isActive = true
         
-        let searchButton = CircleButton(color: UIColor.affirmativeColor, title: searchTitle)
+        let searchButton = LobbyButton(title: searchTitle)
         view.addSubview(searchButton)
-        searchButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
-        searchButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
-        searchButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        searchButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        searchButton.centerXAnchor.constraint(equalTo: spacingSquareView.leadingAnchor).isActive = true
+        searchButton.centerYAnchor.constraint(equalTo: spacingSquareView.topAnchor).isActive = true
+        searchButton.widthAnchor.constraint(equalTo: spacingSquareView.widthAnchor, multiplier: buttonScale).isActive = true
+        searchButton.heightAnchor.constraint(equalTo: spacingSquareView.heightAnchor, multiplier: buttonScale).isActive = true
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.addTarget(self, action: #selector(goToEventList(sender:)), for: .touchUpInside)
         searchButton.alpha = 0.0
         fadeButtonIn(searchButton, delay: 1.0)
         
-        let currentEventButton = CircleButton(color: UIColor.destructiveColor, title: currentEventTitle)
+        let currentEventButton = LobbyButton(title: currentEventTitle)
         view.addSubview(currentEventButton)
-        currentEventButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
-        currentEventButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
-        currentEventButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        currentEventButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        currentEventButton.centerXAnchor.constraint(equalTo: spacingSquareView.trailingAnchor).isActive = true
+        currentEventButton.centerYAnchor.constraint(equalTo: spacingSquareView.topAnchor).isActive = true
+        currentEventButton.widthAnchor.constraint(equalTo: spacingSquareView.widthAnchor, multiplier: buttonScale).isActive = true
+        currentEventButton.heightAnchor.constraint(equalTo: spacingSquareView.heightAnchor, multiplier: buttonScale).isActive = true
         currentEventButton.translatesAutoresizingMaskIntoConstraints = false
         currentEventButton.addTarget(self, action: #selector(goToCurrentEvent(sender:)), for: .touchUpInside)
         currentEventButton.alpha = 0.0
         fadeButtonIn(currentEventButton, delay: 1.25)
         
-        let hostButton = CircleButton(color: UIColor.linkColor, title: hostTitle)
+        let hostButton = LobbyButton(title: hostTitle)
         view.addSubview(hostButton)
-        hostButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
-        hostButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
-        hostButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        hostButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        hostButton.centerXAnchor.constraint(equalTo: spacingSquareView.leadingAnchor).isActive = true
+        hostButton.centerYAnchor.constraint(equalTo: spacingSquareView.bottomAnchor).isActive = true
+        hostButton.widthAnchor.constraint(equalTo: spacingSquareView.widthAnchor, multiplier: buttonScale).isActive = true
+        hostButton.heightAnchor.constraint(equalTo: spacingSquareView.heightAnchor, multiplier: buttonScale).isActive = true
         hostButton.translatesAutoresizingMaskIntoConstraints = false
         hostButton.addTarget(self, action: #selector(goToHostEvent(sender:)), for: .touchUpInside)
         hostButton.alpha = 0.0
         fadeButtonIn(hostButton, delay: 1.50)
         
-        let settingsButton = CircleButton(color: UIColor.inactiveColor, title: settingsTitle)
+        let settingsButton = LobbyButton(title: settingsTitle)
         view.addSubview(settingsButton)
-        settingsButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
-        settingsButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
-        settingsButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        settingsButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        settingsButton.centerXAnchor.constraint(equalTo: spacingSquareView.trailingAnchor).isActive = true
+        settingsButton.centerYAnchor.constraint(equalTo: spacingSquareView.bottomAnchor).isActive = true
+        settingsButton.widthAnchor.constraint(equalTo: spacingSquareView.widthAnchor, multiplier: buttonScale).isActive = true
+        settingsButton.heightAnchor.constraint(equalTo: spacingSquareView.heightAnchor, multiplier: buttonScale).isActive = true
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
         settingsButton.alpha = 0.0

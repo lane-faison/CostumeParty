@@ -1,6 +1,8 @@
 import UIKit
 
 extension UIColor {
+    static let primaryBackgroundColor = UIColor(red:0.25, green:0.32, blue:0.71, alpha:1.0) // Indigo
+    static let primaryBackgroundColorLight = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0) // Lightest Indigo
     static let destructiveColor = UIColor(red:0.93, green:0.30, blue:0.24, alpha:1.0) // Red
     static let linkColor = UIColor(red:0.18, green:0.49, blue:0.96, alpha:1.0) // Blue
     static let affirmativeColor = UIColor(red:0.47, green:0.84, blue:0.45, alpha:1.0) // Green

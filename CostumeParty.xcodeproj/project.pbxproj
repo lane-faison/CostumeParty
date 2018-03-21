@@ -15,7 +15,7 @@
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F674756B204392A400E0CD34 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674756A204392A400E0CD34 /* CalendarViewController.swift */; };
-		F6747575204919A000E0CD34 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747574204919A000E0CD34 /* CircleButton.swift */; };
+		F6747575204919A000E0CD34 /* LobbyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747574204919A000E0CD34 /* LobbyButton.swift */; };
 		F6747577204E689E00E0CD34 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747576204E689E00E0CD34 /* AnimationHelper.swift */; };
 		F67FFB4F205E318E00EC0290 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67FFB4E205E318D00EC0290 /* EventViewController.swift */; };
 		F67FFB51205E331700EC0290 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67FFB50205E331700EC0290 /* EventViewController.xib */; };
@@ -63,7 +63,7 @@
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F674756A204392A400E0CD34 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		F6747574204919A000E0CD34 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		F6747574204919A000E0CD34 /* LobbyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyButton.swift; sourceTree = "<group>"; };
 		F6747576204E689E00E0CD34 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		F67FFB4E205E318D00EC0290 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		F67FFB50205E331700EC0290 /* EventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				F6216078202C1AC80023A45A /* SquareButton.swift */,
 				F6E3F49B203BEA22001392F9 /* LargeButtonView.swift */,
 				F6E3F499203BE9C0001392F9 /* LargeButtonView.xib */,
-				F6747574204919A000E0CD34 /* CircleButton.swift */,
+				F6747574204919A000E0CD34 /* LobbyButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 				F6E3F46C2039F5E7001392F9 /* StoryboardHelper.swift in Sources */,
 				F6E3F49C203BEA22001392F9 /* LargeButtonView.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */,
-				F6747575204919A000E0CD34 /* CircleButton.swift in Sources */,
+				F6747575204919A000E0CD34 /* LobbyButton.swift in Sources */,
 				F6E3F4812039FFEB001392F9 /* SettingsViewController.swift in Sources */,
 				F60F7C3C1FE6225A00073506 /* AppDelegate.swift in Sources */,
 				F6E3F4762039FC74001392F9 /* LobbyViewController.swift in Sources */,

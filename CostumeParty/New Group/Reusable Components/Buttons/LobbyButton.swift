@@ -1,13 +1,10 @@
 import UIKit
 
-class CircleButton: UIButton {
-    
-    var color: UIColor?
+class LobbyButton: UIButton {
     
     var title: String?
     
-    init(color: UIColor, title: String) {
-        self.color = color
+    init(title: String) {
         self.title = title
         
         super.init(frame: .zero)
@@ -24,9 +21,6 @@ class CircleButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        layer.backgroundColor = color?.cgColor
-        layer.cornerRadius = bounds.width / 2
         
         titleLabel?.font = .h5
         titleLabel?.adjustsFontSizeToFitWidth = true
