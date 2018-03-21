@@ -15,20 +15,22 @@ class LobbyViewController: UIViewController {
     
     let lineHorizontal: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.primaryBackgroundColorLight
+        view.backgroundColor = UIColor.lobbyThemeColor
+        view.layer.cornerRadius = 1.0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let lineVertical: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.primaryBackgroundColorLight
+        view.backgroundColor = UIColor.lobbyThemeColor
+        view.layer.cornerRadius = 1.0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let circleScale: CGFloat = 0.45
-    let buttonScale: CGFloat = 0.80
+    let buttonScale: CGFloat = 0.95
     
     var currentEvent: Event?
     
@@ -39,8 +41,6 @@ class LobbyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.primaryBackgroundColor
         
         navigationItem.hidesBackButton = true
         title = "Lobby"
@@ -112,12 +112,13 @@ extension LobbyViewController {
         spacingSquareView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
         spacingSquareView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spacingSquareView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        spacingSquareView.alpha = 0.0
-        fadeCircleIn(spacingSquareView)
         completion?()
     }
     
     private func setupView() {
+        fadeInHorizontalLine()
+        fadeInVerticalLine()
+        
         let lineScale: CGFloat = 2 * circleScale
         
         view.addSubview(lineHorizontal)
@@ -183,10 +184,18 @@ extension LobbyViewController {
         })
     }
     
-    private func fadeCircleIn(_ view: UIView) {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            view.alpha = 1.0
-        })
+    private func fadeInHorizontalLine() {
+        lineHorizontal.transform = CGAffineTransform(scaleX: 0.0, y: 1.0)
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+            self.lineHorizontal.transform = .identity
+        }, completion: nil)
+    }
+    
+    private func fadeInVerticalLine() {
+        lineVertical.transform = CGAffineTransform(scaleX: 1.0, y: 0.0)
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+            self.lineVertical.transform = .identity
+        }, completion: nil)
     }
 }
 

@@ -24,7 +24,7 @@ class LobbyButton: UIButton {
         
         titleLabel?.font = .h5
         titleLabel?.adjustsFontSizeToFitWidth = true
-        setTitleColor(.white, for: .normal)
+        setTitleColor(.lobbyThemeColor, for: .normal)
         setTitle(title, for: .normal)
     }
 }
