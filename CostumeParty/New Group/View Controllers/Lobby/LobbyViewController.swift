@@ -12,8 +12,22 @@ class LobbyViewController: UIViewController {
         return view
     }()
     
-    let circleScale: CGFloat = 0.75
-    let buttonScale: CGFloat = 0.28
+    let lineViewOne: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineViewTwo: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let circleScale: CGFloat = 0.50
+    let buttonScale: CGFloat = 0.50
     let buttonSize = CGRect(x: 50, y: 50, width: 50, height: 50)
     
     var currentEvent: Event?
@@ -91,7 +105,7 @@ extension LobbyViewController {
         circleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: circleScale).isActive = true
         circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        circleView.layer.cornerRadius = view.bounds.width * circleScale / 2
+//        circleView.layer.cornerRadius = view.bounds.width * circleScale / 2
         circleView.alpha = 0.0
         fadeCircleIn(circleView)
         completion?()
@@ -103,9 +117,23 @@ extension LobbyViewController {
         let hostTitle = "HOST"
         let currentEventTitle = "CURRENT"
         
+        view.addSubview(lineViewOne)
+        lineViewOne.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
+        lineViewOne.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
+        lineViewOne.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineViewOne.widthAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
+        lineViewOne.transform = CGAffineTransform(rotationAngle: .pi / 4)
+        
+        view.addSubview(lineViewTwo)
+        lineViewTwo.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
+        lineViewTwo.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
+        lineViewTwo.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineViewTwo.widthAnchor.constraint(equalTo: circleView.widthAnchor).isActive = true
+        lineViewTwo.transform = CGAffineTransform(rotationAngle: -.pi / 4)
+        
         let searchButton = CircleButton(color: UIColor.affirmativeColor, title: searchTitle)
         view.addSubview(searchButton)
-        searchButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
+        searchButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
         searchButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
         searchButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
         searchButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
@@ -117,7 +145,7 @@ extension LobbyViewController {
         let currentEventButton = CircleButton(color: UIColor.destructiveColor, title: currentEventTitle)
         view.addSubview(currentEventButton)
         currentEventButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
-        currentEventButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
+        currentEventButton.centerYAnchor.constraint(equalTo: circleView.topAnchor).isActive = true
         currentEventButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
         currentEventButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         currentEventButton.translatesAutoresizingMaskIntoConstraints = false
@@ -125,27 +153,27 @@ extension LobbyViewController {
         currentEventButton.alpha = 0.0
         fadeButtonIn(currentEventButton, delay: 1.25)
         
+        let hostButton = CircleButton(color: UIColor.linkColor, title: hostTitle)
+        view.addSubview(hostButton)
+        hostButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
+        hostButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
+        hostButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
+        hostButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
+        hostButton.translatesAutoresizingMaskIntoConstraints = false
+        hostButton.addTarget(self, action: #selector(goToHostEvent(sender:)), for: .touchUpInside)
+        hostButton.alpha = 0.0
+        fadeButtonIn(hostButton, delay: 1.50)
+        
         let settingsButton = CircleButton(color: UIColor.inactiveColor, title: settingsTitle)
         view.addSubview(settingsButton)
-        settingsButton.centerXAnchor.constraint(equalTo: circleView.centerXAnchor).isActive = true
+        settingsButton.centerXAnchor.constraint(equalTo: circleView.trailingAnchor).isActive = true
         settingsButton.centerYAnchor.constraint(equalTo: circleView.bottomAnchor).isActive = true
         settingsButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
         settingsButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
         settingsButton.alpha = 0.0
-        fadeButtonIn(settingsButton, delay: 1.50)
-        
-        let hostButton = CircleButton(color: UIColor.linkColor, title: hostTitle)
-        view.addSubview(hostButton)
-        hostButton.centerXAnchor.constraint(equalTo: circleView.leadingAnchor).isActive = true
-        hostButton.centerYAnchor.constraint(equalTo: circleView.centerYAnchor).isActive = true
-        hostButton.widthAnchor.constraint(equalTo: circleView.widthAnchor, multiplier: buttonScale).isActive = true
-        hostButton.heightAnchor.constraint(equalTo: circleView.heightAnchor, multiplier: buttonScale).isActive = true
-        hostButton.translatesAutoresizingMaskIntoConstraints = false
-        hostButton.addTarget(self, action: #selector(goToHostEvent(sender:)), for: .touchUpInside)
-        hostButton.alpha = 0.0
-        fadeButtonIn(hostButton, delay: 1.75)
+        fadeButtonIn(settingsButton, delay: 1.75)
     }
     
     private func fadeButtonIn(_ button: UIButton, delay: TimeInterval) {
