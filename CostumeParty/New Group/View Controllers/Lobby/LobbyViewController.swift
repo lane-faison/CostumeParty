@@ -121,6 +121,11 @@ extension LobbyViewController {
         
         let lineScale: CGFloat = 2 * circleScale
         
+        let searchImage = UIImage(named: "search")!
+        let settingsImage = UIImage(named: "settings")!
+        let hostImage = UIImage(named: "event")!
+        let currentImage = UIImage(named: "star")!
+        
         view.addSubview(lineHorizontal)
         lineHorizontal.centerXAnchor.constraint(equalTo: spacingSquareView.centerXAnchor).isActive = true
         lineHorizontal.centerYAnchor.constraint(equalTo: spacingSquareView.centerYAnchor).isActive = true
@@ -133,7 +138,7 @@ extension LobbyViewController {
         lineVertical.widthAnchor.constraint(equalToConstant: 2.0).isActive = true
         lineVertical.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: lineScale).isActive = true
         
-        let searchButton = LobbyButton(title: searchTitle)
+        let searchButton = LobbyButton(title: searchTitle, image: searchImage)
         view.addSubview(searchButton)
         searchButton.centerXAnchor.constraint(equalTo: spacingSquareView.leadingAnchor).isActive = true
         searchButton.centerYAnchor.constraint(equalTo: spacingSquareView.topAnchor).isActive = true
@@ -144,7 +149,7 @@ extension LobbyViewController {
         searchButton.alpha = 0.0
         fadeButtonIn(searchButton, delay: 1.0)
         
-        let currentEventButton = LobbyButton(title: currentEventTitle)
+        let currentEventButton = LobbyButton(title: currentEventTitle, image: currentImage)
         view.addSubview(currentEventButton)
         currentEventButton.centerXAnchor.constraint(equalTo: spacingSquareView.trailingAnchor).isActive = true
         currentEventButton.centerYAnchor.constraint(equalTo: spacingSquareView.topAnchor).isActive = true
@@ -153,9 +158,9 @@ extension LobbyViewController {
         currentEventButton.translatesAutoresizingMaskIntoConstraints = false
         currentEventButton.addTarget(self, action: #selector(goToCurrentEvent(sender:)), for: .touchUpInside)
         currentEventButton.alpha = 0.0
-        fadeButtonIn(currentEventButton, delay: 1.25)
+        fadeButtonIn(currentEventButton, delay: 1.0)
         
-        let hostButton = LobbyButton(title: hostTitle)
+        let hostButton = LobbyButton(title: hostTitle, image: hostImage)
         view.addSubview(hostButton)
         hostButton.centerXAnchor.constraint(equalTo: spacingSquareView.leadingAnchor).isActive = true
         hostButton.centerYAnchor.constraint(equalTo: spacingSquareView.bottomAnchor).isActive = true
@@ -164,9 +169,9 @@ extension LobbyViewController {
         hostButton.translatesAutoresizingMaskIntoConstraints = false
         hostButton.addTarget(self, action: #selector(goToHostEvent(sender:)), for: .touchUpInside)
         hostButton.alpha = 0.0
-        fadeButtonIn(hostButton, delay: 1.50)
+        fadeButtonIn(hostButton, delay: 1.0)
         
-        let settingsButton = LobbyButton(title: settingsTitle)
+        let settingsButton = LobbyButton(title: settingsTitle, image: settingsImage)
         view.addSubview(settingsButton)
         settingsButton.centerXAnchor.constraint(equalTo: spacingSquareView.trailingAnchor).isActive = true
         settingsButton.centerYAnchor.constraint(equalTo: spacingSquareView.bottomAnchor).isActive = true
@@ -175,7 +180,7 @@ extension LobbyViewController {
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
         settingsButton.alpha = 0.0
-        fadeButtonIn(settingsButton, delay: 1.75)
+        fadeButtonIn(settingsButton, delay: 1.0)
     }
     
     private func fadeButtonIn(_ button: UIButton, delay: TimeInterval) {
