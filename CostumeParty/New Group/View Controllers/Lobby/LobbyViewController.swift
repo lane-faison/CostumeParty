@@ -85,22 +85,10 @@ extension LobbyViewController {
     }
     
     @objc func goToSettings(sender: UIButton) {
-        unlockButton(sender: sender) {
+        spinGear(sender: sender) {
             let settingsVC = SettingsViewController(nibName: StoryboardName.settings.rawValue, bundle: nil)
             self.navigationController?.pushViewController(settingsVC, animated: true)
         }
-    }
-    
-    private func unlockButton(sender: UIButton, completion: (() -> Void)?) {
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-            sender.transform = CGAffineTransform(rotationAngle: .pi)
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-                sender.transform = CGAffineTransform(rotationAngle: -2 * .pi)
-            }, completion: { _ in
-                completion?()
-            })
-        })
     }
 }
 // radius of circle / sqrRt2 is a leg
@@ -182,7 +170,9 @@ extension LobbyViewController {
         settingsButton.alpha = 0.0
         fadeButtonIn(settingsButton, delay: 1.0)
     }
-    
+}
+
+extension LobbyViewController {
     private func fadeButtonIn(_ button: UIButton, delay: TimeInterval) {
         UIView.animate(withDuration: 0.5, delay: delay, options: .curveEaseInOut, animations: {
             button.alpha = 1.0
@@ -201,6 +191,27 @@ extension LobbyViewController {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             self.lineVertical.transform = .identity
         }, completion: nil)
+    }
+    
+    private func unlockButton(sender: UIButton, completion: (() -> Void)?) {
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
+            sender.transform = CGAffineTransform(rotationAngle: .pi)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
+                sender.transform = CGAffineTransform(rotationAngle: -2 * .pi)
+            }, completion: { _ in
+                completion?()
+            })
+        })
+    }
+    
+    private func spinGear(sender: UIButton, completion: (() -> Void)?) {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+            sender.transform = CGAffineTransform(rotationAngle: .pi)
+        }, completion: { _ in
+            sender.transform = .identity
+            completion?()
+        })
     }
 }
 
