@@ -22,20 +22,15 @@ class LobbyButton: UIButton {
         super.init(coder: aDecoder)
     }
     
-    override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.midX / 2, y: bounds.midY / 3, width: bounds.midX, height: bounds.midY)
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let titleInset: CGFloat = bounds.height / 1.5
-        titleEdgeInsets = UIEdgeInsets(top: titleInset, left: 0, bottom: 0, right: 0)
+        let imageInset: CGFloat = bounds.height / 4
+        imageEdgeInsets = UIEdgeInsets(top: imageInset, left: imageInset, bottom: imageInset, right: imageInset)
         
-        titleLabel?.font = .h5
-        titleLabel?.adjustsFontSizeToFitWidth = true
-        setTitleColor(.lobbyThemeColor, for: .normal)
-        setTitle(title, for: .normal)
-        setBackgroundImage(image, for: .normal)
+        let image = self.image?.withRenderingMode(.alwaysTemplate)
+        setImage(image, for: .normal)
+        tintColor = .lobbyThemeColor
+        imageView?.contentMode = .scaleAspectFit
     }
 }

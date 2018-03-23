@@ -17,6 +17,7 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Event Search"
         presentSearch()
         
         let cell = UINib(nibName: "EventTableViewCell", bundle: nil)

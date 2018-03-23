@@ -61,27 +61,21 @@ class LobbyViewController: UIViewController {
 extension LobbyViewController {
     
     @objc func goToEventList(sender: UIButton) {
-        unlockButton(sender: sender) {
-            let eventListVC = EventListViewController(nibName: StoryboardName.eventList.rawValue, bundle: nil)
-            self.navigationController?.pushViewController(eventListVC, animated: true)
-        }
+        let eventListVC = EventListViewController(nibName: StoryboardName.eventList.rawValue, bundle: nil)
+        self.navigationController?.pushViewController(eventListVC, animated: true)
     }
     
     @objc func goToCurrentEvent(sender: UIButton) {
-        unlockButton(sender: sender) {
-            if let event = self.currentEvent {
-                
-            } else {
-                AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and find the event you are attending.")
-            }
+        if let event = self.currentEvent {
+            
+        } else {
+            AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and find the event you are attending.")
         }
     }
     
     @objc func goToHostEvent(sender: UIButton) {
-        unlockButton(sender: sender) {
-            let hostEventForm = HostEventFormViewController(nibName: StoryboardName.hostEventForm.rawValue, bundle: nil)
-            self.navigationController?.pushViewController(hostEventForm, animated: true)
-        }
+        let hostEventForm = HostEventFormViewController(nibName: StoryboardName.hostEventForm.rawValue, bundle: nil)
+        self.navigationController?.pushViewController(hostEventForm, animated: true)
     }
     
     @objc func goToSettings(sender: UIButton) {
@@ -108,6 +102,7 @@ extension LobbyViewController {
         fadeInVerticalLine()
         
         let lineScale: CGFloat = 2 * circleScale
+        let lineWidth: CGFloat = 1.0
         
         let searchImage = UIImage(named: "search")!
         let settingsImage = UIImage(named: "settings")!
@@ -117,13 +112,13 @@ extension LobbyViewController {
         view.addSubview(lineHorizontal)
         lineHorizontal.centerXAnchor.constraint(equalTo: spacingSquareView.centerXAnchor).isActive = true
         lineHorizontal.centerYAnchor.constraint(equalTo: spacingSquareView.centerYAnchor).isActive = true
-        lineHorizontal.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineHorizontal.heightAnchor.constraint(equalToConstant: lineWidth).isActive = true
         lineHorizontal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: lineScale).isActive = true
         
         view.addSubview(lineVertical)
         lineVertical.centerXAnchor.constraint(equalTo: spacingSquareView.centerXAnchor).isActive = true
         lineVertical.centerYAnchor.constraint(equalTo: spacingSquareView.centerYAnchor).isActive = true
-        lineVertical.widthAnchor.constraint(equalToConstant: 2.0).isActive = true
+        lineVertical.widthAnchor.constraint(equalToConstant: lineWidth).isActive = true
         lineVertical.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: lineScale).isActive = true
         
         let searchButton = LobbyButton(title: searchTitle, image: searchImage)
@@ -191,18 +186,6 @@ extension LobbyViewController {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             self.lineVertical.transform = .identity
         }, completion: nil)
-    }
-    
-    private func unlockButton(sender: UIButton, completion: (() -> Void)?) {
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-            sender.transform = CGAffineTransform(rotationAngle: .pi)
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-                sender.transform = CGAffineTransform(rotationAngle: -2 * .pi)
-            }, completion: { _ in
-                completion?()
-            })
-        })
     }
     
     private func spinGear(sender: UIButton, completion: (() -> Void)?) {

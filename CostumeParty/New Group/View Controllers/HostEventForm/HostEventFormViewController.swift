@@ -18,6 +18,8 @@ class HostEventFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Host Event"
+        
         setupViewController()
         setupView()
     }
