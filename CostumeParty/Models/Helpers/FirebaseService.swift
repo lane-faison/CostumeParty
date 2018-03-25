@@ -36,15 +36,19 @@ public struct FirebaseService {
     }
     
     // DATABASE
-    public static func createEvent(viewController: UIViewController, event: Event) {
+    public static func createEvent(viewController: UIViewController, event: Event, completion: (() -> Void)?) {
         guard let date = DateHelper.convertDateToString(date: event.date) else { return }
         
         FireDatabase.child("events").childByAutoId().setValue(["name": event.name,
-                                                                "hostId": event.hostId,
-                                                                "zipcode": event.zipCode,
-                                                                "date": date,
-                                                                "pin": event.pin,
-                                                                "categories": event.categories ?? []])
+                                                               "hostId": event.hostId,
+                                                               "zipcode": event.zipCode,
+                                                               "date": date,
+                                                               "pin": event.pin,
+                                                               "categories": event.categories ?? []]) { (error, _) in
+                                                                if error == nil {
+                                                                    completion?()
+                                                                }
+        }
     }
     
     public static func fetchEventsByZipcode(viewController: UIViewController, zipcode: Int, completion: @escaping (([Event]) -> ())) {

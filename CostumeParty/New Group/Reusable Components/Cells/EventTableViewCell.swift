@@ -38,6 +38,7 @@ class EventTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         view.clipsToBounds = true
+        eventLabel.numberOfLines = 0
     }
     
     override func setNeedsLayout() {
