@@ -310,7 +310,7 @@
 				F6E3F488203A0174001392F9 /* CategoryForm */,
 				F6E3F483203A00A0001392F9 /* HostEventForm */,
 				F6E3F4732039FC59001392F9 /* Lobby */,
-				F6E3F4792039FED6001392F9 /* PartyList */,
+				F6E3F4792039FED6001392F9 /* EventList */,
 				F6E3F46E2039FA18001392F9 /* RegisterForm */,
 				F6E3F46D2039F9FE001392F9 /* Root */,
 				F6E3F47E2039FFD5001392F9 /* Settings */,
@@ -318,13 +318,13 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		F6E3F4792039FED6001392F9 /* PartyList */ = {
+		F6E3F4792039FED6001392F9 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
 				F6E3F47A2039FEE8001392F9 /* EventListViewController.swift */,
 				F6E3F47B2039FEE8001392F9 /* EventListViewController.xib */,
 			);
-			path = PartyList;
+			path = EventList;
 			sourceTree = "<group>";
 		};
 		F6E3F47E2039FFD5001392F9 /* Settings */ = {

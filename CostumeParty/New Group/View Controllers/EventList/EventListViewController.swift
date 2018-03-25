@@ -2,7 +2,11 @@ import UIKit
 
 class EventListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.allowsSelection = false
+        }
+    }
     
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     

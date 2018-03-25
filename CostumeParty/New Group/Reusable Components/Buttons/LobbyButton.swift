@@ -25,6 +25,8 @@ class LobbyButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        adjustsImageWhenHighlighted = false
+        
         let imageInset: CGFloat = bounds.height / 4
         imageEdgeInsets = UIEdgeInsets(top: imageInset, left: imageInset, bottom: imageInset, right: imageInset)
         
