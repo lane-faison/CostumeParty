@@ -12,6 +12,10 @@
 		F60F7C431FE6225A00073506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C421FE6225A00073506 /* Assets.xcassets */; };
 		F60F7C461FE6225A00073506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60F7C441FE6225A00073506 /* LaunchScreen.storyboard */; };
 		F6216079202C1AC80023A45A /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6216078202C1AC80023A45A /* SquareButton.swift */; };
+		F6662CC2206872AB0023EF14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6662CC1206872AB0023EF14 /* User.swift */; };
+		F6662CC72068A77A0023EF14 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6662CC62068A77A0023EF14 /* EventService.swift */; };
+		F6662CC92068A8210023EF14 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6662CC82068A8210023EF14 /* UserService.swift */; };
+		F6662CCB2068AB9E0023EF14 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6662CCA2068AB9E0023EF14 /* AuthService.swift */; };
 		F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */; };
 		F66F6CD21FE630310073766E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F6CD11FE630310073766E /* AppColors.swift */; };
 		F674756B204392A400E0CD34 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F674756A204392A400E0CD34 /* CalendarViewController.swift */; };
@@ -60,6 +64,10 @@
 		F60F7C451FE6225A00073506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60F7C471FE6225A00073506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6216078202C1AC80023A45A /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
+		F6662CC1206872AB0023EF14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F6662CC62068A77A0023EF14 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		F6662CC82068A8210023EF14 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F6662CCA2068AB9E0023EF14 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F66F6CCE1FE62E7C0073766E /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F66F6CD11FE630310073766E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F674756A204392A400E0CD34 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +138,8 @@
 		F605B08B1FEB950A00896503 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F6662CC32068A6450023EF14 /* Firebase */,
 				F6EB447320006B83008647A1 /* AlertHelper.swift */,
-				F6EB4475200152BC008647A1 /* FirebaseService.swift */,
 				F6AD98BA2030CE2700C7127C /* DateHelper.swift */,
 				F6E3F46B2039F5E7001392F9 /* StoryboardHelper.swift */,
 				F6747576204E689E00E0CD34 /* AnimationHelper.swift */,
@@ -202,6 +210,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F6662CC32068A6450023EF14 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB4475200152BC008647A1 /* FirebaseService.swift */,
+				F6662CCA2068AB9E0023EF14 /* AuthService.swift */,
+				F6662CC62068A77A0023EF14 /* EventService.swift */,
+				F6662CC82068A8210023EF14 /* UserService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		F66F6CD01FE630210073766E /* Styling */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				F6EB44822002A85C008647A1 /* Event.swift */,
+				F6662CC1206872AB0023EF14 /* User.swift */,
 				F605B08B1FEB950A00896503 /* Helpers */,
 			);
 			path = Models;
@@ -494,19 +514,23 @@
 				F67FFB4F205E318E00EC0290 /* EventViewController.swift in Sources */,
 				F674756B204392A400E0CD34 /* CalendarViewController.swift in Sources */,
 				F6EB4476200152BC008647A1 /* FirebaseService.swift in Sources */,
+				F6662CCB2068AB9E0023EF14 /* AuthService.swift in Sources */,
 				F6B9FB711FE6F41000DED6B4 /* AppFonts.swift in Sources */,
 				F6847E6B1FFB52AC009FEB21 /* UIViewController+Extensions.swift in Sources */,
 				F6747577204E689E00E0CD34 /* AnimationHelper.swift in Sources */,
 				F66F6CD21FE630310073766E /* AppColors.swift in Sources */,
 				F6216079202C1AC80023A45A /* SquareButton.swift in Sources */,
 				F6E3F4692039F57D001392F9 /* RootViewController.swift in Sources */,
+				F6662CC92068A8210023EF14 /* UserService.swift in Sources */,
 				F6AD98BB2030CE2700C7127C /* DateHelper.swift in Sources */,
 				F6E3F486203A00B3001392F9 /* HostEventFormViewController.swift in Sources */,
 				F66F6CCF1FE62E7C0073766E /* PrimaryButton.swift in Sources */,
 				F6EB447C20020FB0008647A1 /* UIView+Extensions.swift in Sources */,
+				F6662CC72068A77A0023EF14 /* EventService.swift in Sources */,
 				F6E3F4712039FA47001392F9 /* RegisterFormViewController.swift in Sources */,
 				F6D924DD205EC48400FE08B4 /* EventTableViewCell.swift in Sources */,
 				F6EB44832002A85C008647A1 /* Event.swift in Sources */,
+				F6662CC2206872AB0023EF14 /* User.swift in Sources */,
 				F6E3F46C2039F5E7001392F9 /* StoryboardHelper.swift in Sources */,
 				F6E3F49C203BEA22001392F9 /* LargeButtonView.swift in Sources */,
 				F6847E6D1FFB5918009FEB21 /* PrimaryTextField.swift in Sources */,

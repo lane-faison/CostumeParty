@@ -33,7 +33,7 @@ extension CategoryFormViewController {
             
             event.categories = self.categories
             
-            FirebaseService.createEvent(viewController: self, event: event, completion: {
+            EventService.createEvent(viewController: self, event: event, completion: {
                 guard let lobby = self.navigationController?.viewControllers.filter({ $0 is LobbyViewController }).first else { return }
                 
                 UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {

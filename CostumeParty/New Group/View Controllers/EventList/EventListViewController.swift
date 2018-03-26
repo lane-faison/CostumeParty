@@ -75,7 +75,7 @@ extension EventListViewController {
             
             guard let zipcodeString = textField.text, let zipcode = Int(zipcodeString) else { return }
             
-            FirebaseService.fetchEventsByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
+            EventService.fetchEventsByZipcode(viewController: strongSelf, zipcode: zipcode) { (result) -> () in
                 if result.count == 0 {
                     let zeroResultAlert = UIAlertController(title: "0 results found", message: "No events within this zipcode were found", preferredStyle: .alert)
                     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in

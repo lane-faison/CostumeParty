@@ -33,6 +33,7 @@ class LobbyViewController: UIViewController {
     let buttonScale: CGFloat = 0.95
     
     var currentEvent: Event?
+    var currentUser: User?
     
     let settingsTitle = "SETTINGS"
     let searchTitle = "SEARCH"
@@ -66,6 +67,10 @@ extension LobbyViewController {
     }
     
     @objc func goToCurrentEvent(sender: UIButton) {
+        fetchCurrentUser {
+            guard let currentUser = self.currentUser else { return }
+            print(currentUser.name)
+        }
         if let event = self.currentEvent {
             
         } else {
@@ -164,6 +169,15 @@ extension LobbyViewController {
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
         settingsButton.alpha = 0.0
         fadeButtonIn(settingsButton, delay: 1.0)
+    }
+    
+    private func fetchCurrentUser(completion: (() -> Void)?) {
+        guard let currentUser = FirebaseService.firebaseUser() else { return }
+        
+        UserService.fetchCurrentUser(byUserId: currentUser.uid) { (user) in
+            self.currentUser = user
+            completion?()
+        }
     }
 }
 
