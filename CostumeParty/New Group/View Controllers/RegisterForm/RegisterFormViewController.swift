@@ -52,7 +52,7 @@ extension RegisterFormViewController {
                 return
             } else if password == confirmPassword {
                 activityIndicator.startAnimating()
-                AuthService.createUser(viewController: self, email: email, password: password) {
+                UserService.createUser(viewController: self, email: email, password: password) {
                     self.activityIndicator.stopAnimating()
                 }
             } else {
