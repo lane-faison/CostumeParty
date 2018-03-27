@@ -6,7 +6,7 @@ public struct EventService {
     public static func createEvent(viewController: UIViewController, event: Event, completion: (() -> Void)?) {
         guard let date = DateHelper.convertDateToString(date: event.date) else { return }
         
-        FirebaseService.FireDatabase.child("events").childByAutoId().setValue(
+        FireService.FireDatabase.child("events").childByAutoId().setValue(
             ["name": event.name,
              "id": event.id,
              "hostId": event.hostId,
@@ -22,7 +22,7 @@ public struct EventService {
     
     // FETCH EVENT BY ZIP CODE
     public static func fetchEventsByZipcode(viewController: UIViewController, zipcode: Int, completion: @escaping (([Event]) -> ())) {
-        FirebaseService.FireDatabase.child("events").observeSingleEvent(of: .value) { (snapshot) in
+        FireService.FireDatabase.child("events").observeSingleEvent(of: .value) { (snapshot) in
             var events: [Event] = []
             
             for child in snapshot.children.allObjects as! [DataSnapshot] {

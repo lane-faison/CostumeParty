@@ -67,14 +67,15 @@ extension LobbyViewController {
     }
     
     @objc func goToCurrentEvent(sender: UIButton) {
-        fetchCurrentUser {
-            guard let currentUser = self.currentUser else { return }
-            print(currentUser.name)
-        }
-        if let event = self.currentEvent {
+        UserService.fetchCurrentUserObject { (user) in
+            print(user.email)
+            print(user.id)
             
-        } else {
-            AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and join the event.")
+            if let event = user.currentEvent {
+                self.currentEvent = event
+            } else {
+                AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and join the event.")
+            }
         }
     }
     
@@ -169,15 +170,6 @@ extension LobbyViewController {
         settingsButton.addTarget(self, action: #selector(goToSettings(sender:)), for: .touchUpInside)
         settingsButton.alpha = 0.0
         fadeButtonIn(settingsButton, delay: 1.0)
-    }
-    
-    private func fetchCurrentUser(completion: (() -> Void)?) {
-        guard let currentUser = FirebaseService.firebaseUser() else { return }
-        
-        UserService.fetchCurrentUser(byUserId: currentUser.uid) { (user) in
-            self.currentUser = user
-            completion?()
-        }
     }
 }
 

@@ -4,7 +4,7 @@ import Firebase
 public struct UserService {
     // CREATE USER
     public static func createUser(viewController: UIViewController, email: String, password: String, completion: (() -> Void)?) {
-        FirebaseService.FireAuth.createUser(withEmail: email, password: password) { (firebaseUser, error) in
+        FireService.FireAuth.createUser(withEmail: email, password: password) { (firebaseUser, error) in
             
             defer { completion?() }
             
@@ -14,7 +14,7 @@ public struct UserService {
             } else {
                 guard let user = firebaseUser else { return }
                 
-                createUserObject(name: user.displayName, id: user.uid, completion: {
+                createUserObject(viewController: viewController, email: user.email, id: user.uid, completion: {
                     let message = "Congratulations! Your account has been successfully created. Please log in to continue!"
                     AlertHelper.fireSuccessActionSheet(viewController: viewController, message: message)
                 })
@@ -23,32 +23,30 @@ public struct UserService {
     }
     
     // CREATE USER OBJECT
-    public static func createUserObject(name: String?, id: String, completion: (() -> Void)?) {
-        guard let name = name else { return }
+    public static func createUserObject(viewController: UIViewController, email: String?, id: String, completion: (() -> Void)?) {
+        guard let email = email else { return }
         
-        FirebaseService.FireDatabase.child("users").childByAutoId().setValue(["name": name, "id": id]) { (error, _) in
+        FireService.FireDatabase.child("users").child(id).setValue(["email": email, "id": id]) { (error, _) in
             if error == nil {
                 completion?()
+            } else {
+                AlertHelper.fireErrorActionSheet(viewController: viewController, message: "\(error.debugDescription)")
             }
         }
     }
     
-    // FETCH CURRENT USER
-    public static func fetchCurrentUser(byUserId userId: String, completion: @escaping ((User) -> ())) {
-        FirebaseService.FireDatabase.child("users").observeSingleEvent(of: .value) { (snapshot) in
-            var currentUser: User = User(name: "", id: "")
+    // FETCH CURRENT USER (OBJECT)
+    public static func fetchCurrentUserObject(completion: @escaping ((User) -> ())) {
+        guard let user = FireService.firebaseUser() else { return }
+        
+        FireService.FireDatabase.child("users").child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? NSDictionary else { return }
             
-            for child in snapshot.children.allObjects as! [DataSnapshot] {
-                guard let json = child.value as? [String: Any] else { continue }
-                
-                guard let name = json["name"] as? String,
-                    let id = json["id"] as? String  else { continue }
-                
-                if userId == id {
-                    currentUser = User.init(name: name, id: id)
-                }
-            }
-            completion(currentUser)
+            let email = value["email"] as? String ?? ""
+            let id = value["id"] as? String ?? ""
+            let user = User(email: email, id: id)
+            
+            completion(user)
         }
     }
 }

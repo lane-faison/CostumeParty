@@ -11,7 +11,7 @@ class HostEventFormViewController: UIViewController {
     @IBOutlet weak var dateButton: PrimaryButton!
     @IBOutlet weak var nextButton: PrimaryButton!
     
-    let user = FirebaseService.firebaseUser()
+    let user = FireService.firebaseUser()
     
     var eventDate: Date?
     
