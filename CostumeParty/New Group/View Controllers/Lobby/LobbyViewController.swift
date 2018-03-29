@@ -68,11 +68,12 @@ extension LobbyViewController {
     
     @objc func goToCurrentEvent(sender: UIButton) {
         UserService.fetchCurrentUserObject { (user) in
-            print(user.email)
-            print(user.id)
+            print(user.currentEvent?.id)
             
-            if let event = user.currentEvent {
-                self.currentEvent = event
+            if let eventId = user.currentEvent?.id {
+                EventService.fetchEventById(eventId, completion: { (event) in
+                    self.currentEvent = event
+                })
             } else {
                 AlertHelper.fireInfoActionSheet(viewController: self, message: "This will be a shortcut for you to access the event you are currently at. To enable this, please go to Search and join the event.")
             }
